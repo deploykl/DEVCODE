@@ -92,7 +92,7 @@
                     <textarea v-model="reporte.recomendaciones" :disabled="!reporte.campos_bloqueados" maxlength="500"
                       placeholder="Ingrese recomendaciones..." rows="3"></textarea>
                     <span class="char-counter">{{ reporte.recomendaciones ? reporte.recomendaciones.length : 0
-                      }}/500</span>
+                    }}/500</span>
                   </div>
                 </td>
 
@@ -128,14 +128,17 @@
         </table>
       </div>
 
-      <div class="action-buttons">
-        <button @click="guardarTodosRegistros" class="btn-save" :disabled="loading">
-          <i class="fas" :class="loading ? 'fa-spinner fa-spin' : 'fa-save'"></i>
-          {{ loading ? 'Guardando...' : 'Guardar Todos los Registros' }}
-        </button>
-        <button @click="crearReportesFaltantes" class="btn-update">
-          <i class="fas fa-sync-alt"></i> Actualizar Reportes Faltantes
-        </button>
+      <div class="floating-action-buttons">
+        <div class="action-buttons">
+          <button @click="guardarTodosRegistros" class="btn-save icon-button" :disabled="loading">
+            <i class="fas" :class="loading ? 'fa-spinner fa-spin' : 'fa-save'"></i>
+            <span class="button-text">{{ loading ? 'Guardando...' : '' }}</span>
+          </button>
+          <button @click="crearReportesFaltantes" class="btn-update icon-button">
+            <i class="fas fa-sync-alt"></i>
+            <span class="button-text"></span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -178,11 +181,6 @@ const validarInput = (event) => {
 };
 
 const validarEjecucionFisica = (reporte) => {
-  if (reporte.ejec_fisica > reporte.repro_fisica) {
-    // Si la ejecución física es mayor a la programada, ajustamos al máximo permitido
-    reporte.ejec_fisica = reporte.repro_fisica;
-    //alert('La ejecución física no puede ser mayor a la programada.');
-  }
 
   // Validación adicional: asegurarse de que ambos valores sean números positivos
   if (reporte.ejec_fisica < 0 || reporte.repro_fisica < 0) {
@@ -238,7 +236,6 @@ const calcularPorcentajeFisica = (reporte) => {
 const calcularSustento = (reporte) => {
   let sustento = { text: '', class: '' };
 
-  // Verificar si la repro_fisica es 0
   if (reporte.repro_fisica === 0) {
     if (reporte.ejec_fisica > 0) {
       sustento.text = 'Ejecución no programada';
@@ -247,6 +244,9 @@ const calcularSustento = (reporte) => {
       sustento.text = 'No programado';
       sustento.class = 'text-secondary';
     }
+  } else if (reporte.ejec_fisica > reporte.repro_fisica) {
+    sustento.text = 'Exceso de ejecución 🤔';
+    sustento.class = 'text-dark';
   } else if (reporte.repro_fisica > reporte.ejec_fisica) {
     sustento.text = 'Déficit de ejecución';
     sustento.class = 'text-danger';
@@ -257,6 +257,8 @@ const calcularSustento = (reporte) => {
 
   return sustento;
 };
+
+
 
 
 const getBadgeClass = (reporte) => {
@@ -837,6 +839,102 @@ textarea:disabled {
 
   textarea {
     min-height: 60px;
+  }
+}
+.floating-action-buttons {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.floating-action-buttons .action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  border-right: none;
+  transition: all 0.3s ease;
+}
+
+.icon-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.icon-button .button-text {
+  position: absolute;
+  left: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.icon-button:hover {
+  width: auto;
+  padding: 0 10px 0 20px;
+  border-radius: 20px;
+}
+
+.icon-button:hover .button-text {
+  opacity: 1;
+  left: 40px;
+}
+
+
+/* Efecto hover para el contenedor */
+.floating-action-buttons:hover {
+  right: 0;
+  background: white;
+  padding-right: 10px;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .floating-action-buttons {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+  
+  .floating-action-buttons .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 8px;
+    border-right: 1px solid #eaeaea;
+  }
+  
+  .icon-button {
+    width: auto;
+    padding: 0 15px;
+    border-radius: 20px;
+  }
+  
+  .icon-button .button-text {
+    position: static;
+    opacity: 1;
+    margin-left: 8px;
+  }
+  
+  .icon-button:hover {
+    padding: 0 15px;
   }
 }
 </style>
