@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+whitenoise = "*"
+drf-spectacular = "*"
+pillow = "*"
+mssql-django = "*"
+dotenv = "*"
+django-cors-headers = "*"
+pipenv = "*"
+djangorestframework-simplejwt = "*"
+django-filter = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"

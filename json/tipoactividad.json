@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "codigo": "001",
+    "name": "ACCION"
+  },
+  {
+    "id": 2,
+    "codigo": "023",
+    "name": "CONVENIO"
+  },
+  {
+    "id": 3,
+    "codigo": "036",
+    "name": "DOCUMENTO"
+  },
+  {
+    "id": 4,
+    "codigo": "042",
+    "name": "EQUIPO"
+  },
+  {
+    "id": 5,
+    "codigo": "044",
+    "name": "ESTABLECIMIENTO DE SALUD"
+  },
+  {
+    "id": 6,
+    "codigo": "060",
+    "name": "INFORME"
+  },
+  {
+    "id": 7,
+    "codigo": "065",
+    "name": "INTERVENCION"
+  },
+  {
+    "id": 8,
+    "codigo": 599,
+    "name": "ACTA"
+  },
+  {
+    "id": 9,
+    "codigo": 615,
+    "name": "KIT"
+  }
+]

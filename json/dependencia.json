@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "area_id": "Administración",
+    "name": "DGOS"
+  },
+  {
+    "id": 2,
+    "area_id": "Archivo",
+    "name": "DGOS"
+  },
+  {
+    "id": 3,
+    "area_id": "Área Legal",
+    "name": "DGOS"
+  },
+  {
+    "id": 4,
+    "area_id": "Asesor",
+    "name": "DGOS"
+  },
+  {
+    "id": 5,
+    "area_id": "Dirección Ejecutiva",
+    "name": "DIEM"
+  },
+  {
+    "id": 6,
+    "area_id": "Dirección Ejecutiva",
+    "name": "DIMON"
+  },
+  {
+    "id": 7,
+    "area_id": "Comunicaciones",
+    "name": "DGOS"
+  },
+  {
+    "id": 8,
+    "area_id": "Convenios",
+    "name": "DIMON"
+  },
+  {
+    "id": 9,
+    "area_id": "Diem",
+    "name": "DIEM"
+  },
+  {
+    "id": 10,
+    "area_id": "Dirección General",
+    "name": "DGOS"
+  },
+  {
+    "id": 11,
+    "area_id": "Gestión De La Información",
+    "name": "DIMON"
+  },
+  {
+    "id": 12,
+    "area_id": "Macro Centro",
+    "name": "DIMON"
+  },
+  {
+    "id": 13,
+    "area_id": "Macro Centro Medio",
+    "name": "DIMON"
+  },
+  {
+    "id": 14,
+    "area_id": "Macro Norte",
+    "name": "DIMON"
+  },
+  {
+    "id": 15,
+    "area_id": "Macro Oriente",
+    "name": "DIMON"
+  },
+  {
+    "id": 16,
+    "area_id": "Macro Sur",
+    "name": "DIMON"
+  },
+  {
+    "id": 17,
+    "area_id": "Oniees",
+    "name": "DIEM"
+  },
+  {
+    "id": 18,
+    "area_id": "Planeamiento Y Presupuesto",
+    "name": "DGOS"
+  },
+  {
+    "id": 19,
+    "area_id": "Secretaria General",
+    "name": "DGOS"
+  },
+  {
+    "id": 20,
+    "area_id": "Seguridad",
+    "name": "DGOS"
+  },
+  {
+    "id": 21,
+    "area_id": "Informática",
+    "name": "DGOS"
+  },
+  {
+    "id": 22,
+    "area_id": "UFE",
+    "name": "DIEM"
+  },
+  {
+    "id": 23,
+    "area_id": "UFI",
+    "name": "DIEM"
+  },
+  {
+    "id": 24,
+    "area_id": "UFM",
+    "name": "DIEM"
+  },
+  {
+    "id": 25,
+    "area_id": "UFN",
+    "name": "DIEM"
+  },
+  {
+    "id": 26,
+    "area_id": "UPP",
+    "name": "DIEM"
+  }
+]

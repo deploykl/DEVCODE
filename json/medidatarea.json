@@ -1,0 +1,567 @@
+[
+  {
+    "id": 1,
+    "tarea_id": 1,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 2,
+    "tarea_id": 2,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 3,
+    "tarea_id": 3,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 4,
+    "tarea_id": 4,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 5,
+    "tarea_id": 5,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 6,
+    "tarea_id": 6,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 7,
+    "tarea_id": 7,
+    "tipo_tarea_id": 19
+  },
+  {
+    "id": 8,
+    "tarea_id": 8,
+    "tipo_tarea_id": 19
+  },
+  {
+    "id": 9,
+    "tarea_id": 9,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 10,
+    "tarea_id": 10,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 11,
+    "tarea_id": 11,
+    "tipo_tarea_id": 9
+  },
+  {
+    "id": 12,
+    "tarea_id": 12,
+    "tipo_tarea_id": 9
+  },
+  {
+    "id": 13,
+    "tarea_id": 13,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 14,
+    "tarea_id": 14,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 15,
+    "tarea_id": 15,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 16,
+    "tarea_id": 16,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 17,
+    "tarea_id": 17,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 18,
+    "tarea_id": 18,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 19,
+    "tarea_id": 19,
+    "tipo_tarea_id": 5
+  },
+  {
+    "id": 20,
+    "tarea_id": 20,
+    "tipo_tarea_id": 4
+  },
+  {
+    "id": 21,
+    "tarea_id": 21,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 22,
+    "tarea_id": 22,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 23,
+    "tarea_id": 23,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 24,
+    "tarea_id": 24,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 25,
+    "tarea_id": 25,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 26,
+    "tarea_id": 26,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 27,
+    "tarea_id": 27,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 28,
+    "tarea_id": 28,
+    "tipo_tarea_id": 1
+  },
+  {
+    "id": 29,
+    "tarea_id": 29,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 30,
+    "tarea_id": 30,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 31,
+    "tarea_id": 31,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 32,
+    "tarea_id": 32,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 33,
+    "tarea_id": 33,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 34,
+    "tarea_id": 34,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 35,
+    "tarea_id": 35,
+    "tipo_tarea_id": 6
+  },
+  {
+    "id": 36,
+    "tarea_id": 36,
+    "tipo_tarea_id": 16
+  },
+  {
+    "id": 37,
+    "tarea_id": 37,
+    "tipo_tarea_id": 16
+  },
+  {
+    "id": 38,
+    "tarea_id": 38,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 39,
+    "tarea_id": 39,
+    "tipo_tarea_id": 16
+  },
+  {
+    "id": 40,
+    "tarea_id": 40,
+    "tipo_tarea_id": 4
+  },
+  {
+    "id": 41,
+    "tarea_id": 41,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 42,
+    "tarea_id": 42,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 43,
+    "tarea_id": 43,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 44,
+    "tarea_id": 44,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 45,
+    "tarea_id": 45,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 46,
+    "tarea_id": 46,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 47,
+    "tarea_id": 47,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 48,
+    "tarea_id": 48,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 49,
+    "tarea_id": 49,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 50,
+    "tarea_id": 50,
+    "tipo_tarea_id": 8
+  },
+  {
+    "id": 51,
+    "tarea_id": 51,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 52,
+    "tarea_id": 52,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 53,
+    "tarea_id": 53,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 54,
+    "tarea_id": 54,
+    "tipo_tarea_id": 15
+  },
+  {
+    "id": 55,
+    "tarea_id": 55,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 56,
+    "tarea_id": 56,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 57,
+    "tarea_id": 57,
+    "tipo_tarea_id": 3
+  },
+  {
+    "id": 58,
+    "tarea_id": 58,
+    "tipo_tarea_id": 18
+  },
+  {
+    "id": 59,
+    "tarea_id": 59,
+    "tipo_tarea_id": 3
+  },
+  {
+    "id": 60,
+    "tarea_id": 60,
+    "tipo_tarea_id": 9
+  },
+  {
+    "id": 61,
+    "tarea_id": 61,
+    "tipo_tarea_id": 21
+  },
+  {
+    "id": 62,
+    "tarea_id": 62,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 63,
+    "tarea_id": 63,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 64,
+    "tarea_id": 64,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 65,
+    "tarea_id": 65,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 66,
+    "tarea_id": 66,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 67,
+    "tarea_id": 67,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 68,
+    "tarea_id": 68,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 69,
+    "tarea_id": 69,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 70,
+    "tarea_id": 70,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 71,
+    "tarea_id": 71,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 72,
+    "tarea_id": 72,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 73,
+    "tarea_id": 73,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 74,
+    "tarea_id": 74,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 75,
+    "tarea_id": 75,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 76,
+    "tarea_id": 76,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 77,
+    "tarea_id": 77,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 78,
+    "tarea_id": 78,
+    "tipo_tarea_id": 13
+  },
+  {
+    "id": 79,
+    "tarea_id": 79,
+    "tipo_tarea_id": 10
+  },
+  {
+    "id": 80,
+    "tarea_id": 80,
+    "tipo_tarea_id": 7
+  },
+  {
+    "id": 81,
+    "tarea_id": 81,
+    "tipo_tarea_id": 17
+  },
+  {
+    "id": 82,
+    "tarea_id": 82,
+    "tipo_tarea_id": 7
+  },
+  {
+    "id": 83,
+    "tarea_id": 83,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 84,
+    "tarea_id": 84,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 85,
+    "tarea_id": 85,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 86,
+    "tarea_id": 86,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 87,
+    "tarea_id": 87,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 88,
+    "tarea_id": 88,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 89,
+    "tarea_id": 89,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 90,
+    "tarea_id": 90,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 91,
+    "tarea_id": 91,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 92,
+    "tarea_id": 92,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 93,
+    "tarea_id": 93,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 94,
+    "tarea_id": 94,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 95,
+    "tarea_id": 95,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 96,
+    "tarea_id": 96,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 97,
+    "tarea_id": 97,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 98,
+    "tarea_id": 98,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 99,
+    "tarea_id": 99,
+    "tipo_tarea_id": 20
+  },
+  {
+    "id": 100,
+    "tarea_id": 100,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 101,
+    "tarea_id": 101,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 102,
+    "tarea_id": 102,
+    "tipo_tarea_id": 1
+  },
+  {
+    "id": 103,
+    "tarea_id": 103,
+    "tipo_tarea_id": 1
+  },
+  {
+    "id": 104,
+    "tarea_id": 104,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 105,
+    "tarea_id": 105,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 106,
+    "tarea_id": 106,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 107,
+    "tarea_id": 107,
+    "tipo_tarea_id": 2
+  },
+  {
+    "id": 108,
+    "tarea_id": 108,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 109,
+    "tarea_id": 109,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 110,
+    "tarea_id": 110,
+    "tipo_tarea_id": 22
+  },
+  {
+    "id": 111,
+    "tarea_id": 111,
+    "tipo_tarea_id": 14
+  },
+  {
+    "id": 112,
+    "tarea_id": 112,
+    "tipo_tarea_id": 11
+  },
+  {
+    "id": 113,
+    "tarea_id": 113,
+    "tipo_tarea_id": 12
+  }
+]

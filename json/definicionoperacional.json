@@ -1,0 +1,567 @@
+[
+  {
+    "id": 1,
+    "name": "Desarrollo del documento normativo para realizar el monitoreo y evaluación de la Gestión Administrativa,  y en equipamiento e infraestructura, concordante con las funciones y los documentos normativos vigentes.",
+    "tarea_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Desarrollo de reuniones de trabajo de carácter informativo o toma de desiciones; que permitan detallar informaciones, compartir opiniones, que contribuyan a la toma de desiciones para mejorar los procesos administrativos y sanitarios por los equipos de la DGOS.",
+    "tarea_id": 2
+  },
+  {
+    "id": 3,
+    "name": "Elaboración de Informes Técnico Legal.",
+    "tarea_id": 3
+  },
+  {
+    "id": 4,
+    "name": "Seguimiento y acompañamiento en asistencia legal a la DIMON de la DGOS.",
+    "tarea_id": 4
+  },
+  {
+    "id": 5,
+    "name": "Se brindara asistencia técnica legal a los profesionales y/o equipos funcionales de la DIEM - DIMON de la DGOS.",
+    "tarea_id": 5
+  },
+  {
+    "id": 6,
+    "name": "elaboracion de documentos (Memo, Informe y Oficio)",
+    "tarea_id": 6
+  },
+  {
+    "id": 7,
+    "name": "Elaboracóon de Informes Técnico Legal y Proyecto de Resolución Directoral.",
+    "tarea_id": 7
+  },
+  {
+    "id": 8,
+    "name": "Elaboracóon de Informes Técnico Legal y Proyecto de Resolución Directoral.",
+    "tarea_id": 8
+  },
+  {
+    "id": 9,
+    "name": "Elaboración de documentos.",
+    "tarea_id": 9
+  },
+  {
+    "id": 10,
+    "name": "Informe que contiene la propuesta de los anexos correspondiente a la definición de los indicadores de desempeño y compromisos de mejora de los servicios, los scripts y los criterios técnicos para su aplicación e implementación en el ejercicio fiscal 2023.",
+    "tarea_id": 10
+  },
+  {
+    "id": 11,
+    "name": "Decreto Supremo que aprueba la propuesta de los indicadores de desempeño y compromisos de mejora de los servicios para el año 2024.",
+    "tarea_id": 11
+  },
+  {
+    "id": 12,
+    "name": "Documento que regula los aspectos metodológicos para la evaluación del cumplimiento de los ID y CM de los servicios alcanzados en el año.",
+    "tarea_id": 12
+  },
+  {
+    "id": 13,
+    "name": "Reunión de difusión de los documentos normativos y las fichas técnicas de los ID y CM con las IPRESS y UGIPRESS.",
+    "tarea_id": 13
+  },
+  {
+    "id": 14,
+    "name": "Proceso planificado, permanente e interactivo, mediante el cual se fortalecen los conocimientos y habilidades de los equipo de IPRESS y UGIPRESS que forman parte de los convenios.",
+    "tarea_id": 14
+  },
+  {
+    "id": 15,
+    "name": "Documento que permite organizar las áreas y recursos; coordinar mejor las tareas, actividades,  controlar y evaluar mejor los resultados.",
+    "tarea_id": 15
+  },
+  {
+    "id": 16,
+    "name": "Publicación que permite socializar los resultados para conocimiento de los interesados.",
+    "tarea_id": 16
+  },
+  {
+    "id": 17,
+    "name": "Documento que evidencia la culminación del proceso de evaluación y permite gestionar el pago a los trabajadores.",
+    "tarea_id": 17
+  },
+  {
+    "id": 18,
+    "name": "Proceso de interacción entre los equipos técnicos del MINSA, sus órganos desconcentrados, INEN y la DIRES/GERESA del gobierno regional, orientado a la elección del logro esperado.",
+    "tarea_id": 18
+  },
+  {
+    "id": 19,
+    "name": "Formalización del documento de negociación para el cumplimiento de los ID y CM de los servicios de salud.",
+    "tarea_id": 19
+  },
+  {
+    "id": 20,
+    "name": "Desarrollo de  notas de prensa, material informativo o post en redes sociales respecto a las actividades de la DGOS.",
+    "tarea_id": 20
+  },
+  {
+    "id": 21,
+    "name": "Coordinación con instituciones involucradas para el desarrollo de la actividad.",
+    "tarea_id": 21
+  },
+  {
+    "id": 22,
+    "name": "Coordinación con los establecimientos y protocolo MINSA para la participación y visita de autoridades.",
+    "tarea_id": 22
+  },
+  {
+    "id": 23,
+    "name": "Consiste en realizar tareas de Elaboración y aprobación del POI (POI Multianual y POI Anual consistente con el PIA),  Modificaciones en el POI, Registro de Actividades Operativas e Inversiones en el aplicativo CEPLAN V.01, Gestión del Riesgo en el POI, Seguimiento de planes institucionales, Presentación de los reportes de seguimiento de los planes institucionales, Evaluación de planes institucionales - Evaluación de Implementación (POI).",
+    "tarea_id": 23
+  },
+  {
+    "id": 24,
+    "name": "Reportar los montos presupuestales por clasificador de gastos, de metas administrativas y otras asignaciones presupuestales.",
+    "tarea_id": 24
+  },
+  {
+    "id": 25,
+    "name": "Elaboración de documentación sustentatoria ante la OGA para la compra y/o adquisición de BB.SS de DGOS y/o sus Direcciones Ejecutivas, asicomo la gestión de su conformidad.",
+    "tarea_id": 25
+  },
+  {
+    "id": 26,
+    "name": "Tardanzas y faltas injustificadas (CAS y Nombrados).",
+    "tarea_id": 26
+  },
+  {
+    "id": 27,
+    "name": "Asistencia Técnica para la elaboración del Plan de Implementación Multianual de O&M.",
+    "tarea_id": 27
+  },
+  {
+    "id": 28,
+    "name": "Asistencia Técnica para la implementación del Plan de Implementacion Multianual de O&M",
+    "tarea_id": 28
+  },
+  {
+    "id": 29,
+    "name": "Desarrollo de una propuesta de documento normativo para realizar el monitoreo y evaluación de la Gestión Administrativa, concordante con las funciones.",
+    "tarea_id": 29
+  },
+  {
+    "id": 30,
+    "name": "Informe del consolidado de la opinión técnica dada por las  Unidades Orgánicas del Ministerio de Salud relacionada a la validación del documento normativo propuesto.",
+    "tarea_id": 30
+  },
+  {
+    "id": 31,
+    "name": "Envío a OGAJ del proyecto de documento normativo validado, para su aprobación.",
+    "tarea_id": 31
+  },
+  {
+    "id": 32,
+    "name": "Proceso planificado mediante el cual, se realiza para fortalecer los conocimientos y habilidades de los equipos técnicos de las Unidades funcionales de DIMON, con la finalidad de implementar el documento técnico",
+    "tarea_id": 32
+  },
+  {
+    "id": 33,
+    "name": "Formular un flujo de procedimientos para la elaboración de informes dirigido a los  otros órganos del Ministerio de Salud sobre las deficiencias identificadas en las acciones de monitoreo de la gestión de IPRESS/UGIPRESS realizados por la DIMON en el marco de sus funciones.",
+    "tarea_id": 33
+  },
+  {
+    "id": 34,
+    "name": "Elaborar el listado priorizado con los principales problemas relacionados con los sistemas administrativos identificados en las IPRESS y UGIPRESS como resultado de las acciones de monitoreo en el periódo anterior y según los plazos de los compromisos establecidos, que sirva de insumo para los siguientes monitoreos y seguimiento.",
+    "tarea_id": 34
+  },
+  {
+    "id": 35,
+    "name": "Elaboracion de un plan de monitoreo anual de IPRESS/UGIPRESS a Lima Metropolitana y Regiones.",
+    "tarea_id": 35
+  },
+  {
+    "id": 36,
+    "name": "La acción corresponde a IPRESS/UGIPRESS proirizada monitoreada en Lima Metropolitana, cuyo verificador de la acción es un acta.",
+    "tarea_id": 36
+  },
+  {
+    "id": 37,
+    "name": "La acción corresponde a IPRESS/UGIPRESS proirizada monitoreada en regiones, cuyo verificador de la acción es un acta.",
+    "tarea_id": 37
+  },
+  {
+    "id": 38,
+    "name": "Emitir un informe a los organos correspondientes del MINSA, presentando los resultados de las acciones de monitoreo de IPRESS/ UGIPRESS, que contienen problemáticas que corresponden ser atendido por los otros órganos del MINSA.",
+    "tarea_id": 38
+  },
+  {
+    "id": 39,
+    "name": "Seguimiento (Físico o virtual) a IPRESS o UGIPRESS sobre el cumplimiento de las recomendaciones dadas en las acciones de monitoreo, cuyo verificador de la accion es un informe o acta.",
+    "tarea_id": 39
+  },
+  {
+    "id": 40,
+    "name": "Elaborar de las acciones de monitoreo (presenciales y virtuales) realizado a las IPRESS y UGIPRESS a nivel nacional.",
+    "tarea_id": 40
+  },
+  {
+    "id": 41,
+    "name": "Emitir el reporte de los hallazgos de las acciones de Monitoreo de las IPRESS y UGIPRESS a nivel nacional.",
+    "tarea_id": 41
+  },
+  {
+    "id": 42,
+    "name": "Emitir el reporte de seguimiento del cumplimiento de los compromisos establecidos en los monitoreos de las IPRESS y UGIPRESS a nivel nacional, incluyendo los compromisos de las asistencias técnicas realizadas.",
+    "tarea_id": 42
+  },
+  {
+    "id": 43,
+    "name": "Elaborar un plan de asistencia técnica anual de IPRESS/UGIPRESS a nivel nacional.",
+    "tarea_id": 43
+  },
+  {
+    "id": 44,
+    "name": "Brindar y/o gestiónar las acciones de asistencia técnica para los procesos administrativos con necesidad de optimización en las IPRESS y UGIPRESS  (presencial o virtual).",
+    "tarea_id": 44
+  },
+  {
+    "id": 45,
+    "name": "Brindar y/o Gestiónar las acciones de asistencia técnica para los procesos administrativos con necesidad de optimización (fisica o virtual) .",
+    "tarea_id": 45
+  },
+  {
+    "id": 46,
+    "name": "Elaborar el informe de la ejecución de las Asistencias Técnicas del proceso de evaluación de los indicadores de desempeño y compromisos de mejora del periódo 2023.",
+    "tarea_id": 46
+  },
+  {
+    "id": 47,
+    "name": "Recolección contínua y sistemática de datos para medir los avances hacia el cumplimiento de los indicadores de desempeño 2024.",
+    "tarea_id": 47
+  },
+  {
+    "id": 48,
+    "name": "Emitir reportes contínuos y sistemáticos de datos para medir los avances hacia el cumplimiento de los indicadores de desempeño 2024.",
+    "tarea_id": 48
+  },
+  {
+    "id": 49,
+    "name": "Emitir un informe del seguimiento y monitoreo de indicadores de los compromisos de gestión y metas de cobertura del FED 2024 en las DIRIS.",
+    "tarea_id": 49
+  },
+  {
+    "id": 50,
+    "name": "Revisión y emisión de opinión técnica de documentos normativos a solicitud de örganos y Unidades Órganicas del Ministerio de Salud.",
+    "tarea_id": 50
+  },
+  {
+    "id": 51,
+    "name": "Acompañamiento a los equipos tecnicos de las IPRESS para fortalecimiento de los centros quirurgicos en las regiones y Lima Metropolitana",
+    "tarea_id": 51
+  },
+  {
+    "id": 52,
+    "name": "Seguimiento de la atencion quirurgica especializada con oferta fija e itinerante en las regiones y Lima Metropolitana",
+    "tarea_id": 52
+  },
+  {
+    "id": 53,
+    "name": "Comparacion de los logros alcanzados del Plan de Desembalse Quirurgico en las regiones y Lima Metropolitana",
+    "tarea_id": 53
+  },
+  {
+    "id": 54,
+    "name": "Ejecucion de intervenciones quirurgicas de baja, mediana y alta complejidad en los Establecimientos de Salud que cuentan con centro quirurgico",
+    "tarea_id": 54
+  },
+  {
+    "id": 55,
+    "name": "Seguimiento y Monitoreo de la tareas programadas en el plan de acción de la actividad 1.1. Fortalecimiento de la capacidad resolutiva de los establecimientos de salud de las Direcciones Generales de Salud/Gerencia Regional de Salud/Dirección de Redes Integrads de Salud en atención de casos de dengue.",
+    "tarea_id": 55
+  },
+  {
+    "id": 56,
+    "name": "Seguimiento y Evaluación de la implementación de las metas, actividades e indicadores de los 4 componentes del plan de acción, así como de la ejecución presupuestal.",
+    "tarea_id": 56
+  },
+  {
+    "id": 57,
+    "name": "Consiste en la formulación de los anteproyectos de nuevos documentos normativos (NTS, directivas, guías técnicas y documentos Técnicos), su validación por los usuarios, la solicitud de opiniones favorables y la presentación del proyecto para su aprobación.",
+    "tarea_id": 57
+  },
+  {
+    "id": 58,
+    "name": "Consiste en la formulación de los anteproyectos de actualización de documentos normativos vigentes (NTS, directivas, guías técnicas y documentos Técnicos), su validación por los usuarios, la solicitud de opiniones favorables y la presentación del proyecto para su aprobación.",
+    "tarea_id": 58
+  },
+  {
+    "id": 59,
+    "name": "Consiste en la formulación de los anteproyectos de Fichas de Homologación de Equipos, su validación por los usuarios, la solicitud de opiniones favorables y la presentación del proyecto para su aprobación.",
+    "tarea_id": 59
+  },
+  {
+    "id": 60,
+    "name": "Consiste en poner de conocimiento de los documentos normativos aprobados a las entidades usuarias para su  aplicación, a través de medios impresos, magnéticos y virtuales.",
+    "tarea_id": 60
+  },
+  {
+    "id": 61,
+    "name": "Consiste en realizar talleres con los usuarios a fin de transmitir los conocimientos y las recomendaciones necesarias para la aplicación de los documentos normativos aprobados",
+    "tarea_id": 61
+  },
+  {
+    "id": 62,
+    "name": "Consiste en el seguimiento de la aplicación de las normas técnicas de salud de infraestructura y equipamiento, a través de la aplicación, por parte de las DIRESAS/GERESA, de procedimientos e instrumentos elaborados por la DIEM-DGOS.",
+    "tarea_id": 62
+  },
+  {
+    "id": 63,
+    "name": "Consiste en evaluar mediante evidencias, el logro de los objetivos propuetos en los documentos normativos, y la propuesta de acciones correspondientes de mejora.",
+    "tarea_id": 63
+  },
+  {
+    "id": 64,
+    "name": "Consiste en la implementación de talleres con los equipos de las DIRESAS/GERESAS, para la elaboración del plan multianual de mantenimiento y de equipamiento 2025-2027 de EESS a los gobiernos regionales y órganos de lima metropolitana.",
+    "tarea_id": 64
+  },
+  {
+    "id": 65,
+    "name": "Consiste, en actividades de asistencia técnica a los equipos de las DIRESAS/GERESAS/DIRIS, sobre aspectos en la formulación de los Planes de Equipamiento y Mantenimiento de los EESS.",
+    "tarea_id": 65
+  },
+  {
+    "id": 66,
+    "name": "Consiste, en actividades de asistencia técnica a los equipos de las DIRESAS/GERESAS/DIRIS, en la formulación y registro de las IOARR de Optimiación y Reposición de Equipamiento.",
+    "tarea_id": 66
+  },
+  {
+    "id": 67,
+    "name": "Consiste, en actividades de asistencia técnica virtual por parte de la UPP-DIEM, sobre aspectos de conocimientos y normatividad en la Formulación de Planes de Mantenimiento y Equipamiento de los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS.",
+    "tarea_id": 67
+  },
+  {
+    "id": 68,
+    "name": "Consiste, en actividades de análisis y verificación en el cumplimiento de los lineamientos de los Planes Multianuales de mantenimiento y Equipamiento.",
+    "tarea_id": 68
+  },
+  {
+    "id": 69,
+    "name": "Consiste en la implementación de talleres con los equipos de las DIRESAS/GERESAS, para la elaboración del plan multianual de mantenimiento y de equipamiento 2025-2027 de EESS a los gobiernos regionales y órganos de Lima Metropolitana.",
+    "tarea_id": 69
+  },
+  {
+    "id": 70,
+    "name": "Consiste, en actividades de asistencia técnica a los equipos de las DIRESAS/GERESAS/DIRIS, sobre aspectos en la formulación de los Planes de Equipamiento y Mantenimiento de los EESS.",
+    "tarea_id": 70
+  },
+  {
+    "id": 71,
+    "name": "Consiste, en actividades de asistencia técnica virtual por parte de la UPP-DIEM, sobre aspectos de conocimientos y normatividad en la Formulación de Planes de Mantenimiento y Equipamiento de los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS.",
+    "tarea_id": 71
+  },
+  {
+    "id": 72,
+    "name": "Consiste, en actividades de análisis y verificación en el cumplimiento de los lineamientos de los Planes Multianuales de Mantenimiento y Equipamiento.",
+    "tarea_id": 72
+  },
+  {
+    "id": 73,
+    "name": "Consiste, en actividades de seguimiento físico y presupuestal de la ejecución en el cumplimiento de los Planes Multianuales de mantenimiento y Equipamiento.",
+    "tarea_id": 73
+  },
+  {
+    "id": 74,
+    "name": "Consiste en absolver, a través de informes escritos, consultas formuladas por las entidades de salud de nivel nacional y regional, sobre aspectos relativos a los documentos normativos de infraestructura, equipamiento y mantenimiento de los establecimientos de salud.",
+    "tarea_id": 74
+  },
+  {
+    "id": 75,
+    "name": "Consiste en absolver, a través de informes escritos, consultas formuladas por las entidades de salud de nivel nacional y regional, sobre aspectos  técnicos relativos de la Infraestructura de los EESS.",
+    "tarea_id": 75
+  },
+  {
+    "id": 76,
+    "name": "Consiste en absolver, a través de informes escritos, consultas formuladas por las entidades de salud de nivel nacional y regional, sobre aspectos  técnicos relativos del Equipamiento de los EESS.",
+    "tarea_id": 76
+  },
+  {
+    "id": 77,
+    "name": "Consiste en absolver, a través de informes escritos, consultas formuladas por las entidades de salud de nivel nacional y regional, sobre aspectos  técnicos relativos del Mantenimiento Preventivo y/o Correctivo de los EESS.",
+    "tarea_id": 77
+  },
+  {
+    "id": 78,
+    "name": "Consiste en sensibilizar y asistir a las DIRESAS/GERESAS para la gestión ante sus respectivos gobiernos regionales, la suscripción de convenios de colaboración para la asistencia técnica, y tramite para su suscripción ante los órganos del MINSA.",
+    "tarea_id": 78
+  },
+  {
+    "id": 79,
+    "name": "Consiste en el diseño y desarrollo de los procedimientos, metodología y herramientas para la programación y ejecución de la asistencia técnca a cargo de la DIEM.",
+    "tarea_id": 79
+  },
+  {
+    "id": 80,
+    "name": "Consiste en talleres con los equipos de gestión de las DIRESAS/GERESAS, previo reconocimiento de campo, para identificar necesidades de sistencia técnica y la programación de asistencias técnicas específicas, para cuya ejecución se establecen compromisos de ambas partes.",
+    "tarea_id": 80
+  },
+  {
+    "id": 81,
+    "name": "Consiste en la programación mensual de asistencia técnicas virtuales de acuerdo a las necesidades recogidas de las DIRESAS/GERESAS y DIRIS, en coordinación con las unidades funcionales de la DIEM.",
+    "tarea_id": 81
+  },
+  {
+    "id": 82,
+    "name": "Consiste, en actividades de asistencia técnica en cumplimiento de la Programación Tentativa del MINSA al 2023 aprobado por RM N° 599-2022/MINSA, de asistior a las DIRESAS/GERESAS, para la aplicación de las estrategias de cambio climático en los EESS priorizados.",
+    "tarea_id": 82
+  },
+  {
+    "id": 83,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de conocimientos y normatividad de la Infraestrcutura en los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS.",
+    "tarea_id": 83
+  },
+  {
+    "id": 84,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de conocimientos y normatividad del Equipamiento en los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS",
+    "tarea_id": 84
+  },
+  {
+    "id": 85,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de conocimientos y normatividad del Mantenimiento Preventivo y/o Correctivo en los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS.",
+    "tarea_id": 85
+  },
+  {
+    "id": 86,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de conocimientos y normatividad del Infraestructura, Equipamiento y Mantenimiento  en los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS.",
+    "tarea_id": 86
+  },
+  {
+    "id": 87,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de Infraestrcutura, Equipamiento y Mantenimiento en los EE.SS, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS en el marco de las RIS.",
+    "tarea_id": 87
+  },
+  {
+    "id": 88,
+    "name": "Consiste, en actividades de asistencia técnica a las DIRESAS/GERESAS/DIRIS, en el marco del Destrabe de inversiones y la puesta en marcha de operaciones de los nuevos Establecimientos de Salud.",
+    "tarea_id": 88
+  },
+  {
+    "id": 89,
+    "name": "Consiste, en actividades de asistencia técnica a las DIRESAS/GERESAS/DIRIS y demas instituciones del sector, sobre la información registrada en el ONIEES, para una adecuada toma de deciciones y /o diagnóstico de los EESS.",
+    "tarea_id": 89
+  },
+  {
+    "id": 90,
+    "name": "Consiste, en actividades de asistencia técnica  sobre la información registrada en el ONIEES, para una toma de deciciones y /o diagnóstico de los EESS.",
+    "tarea_id": 90
+  },
+  {
+    "id": 91,
+    "name": "Consiste en las Reuniones de la de la Comisión Multisectorial del ONIEES, para identificar las necesidades de las regiones y las entidades del sector en el mantenimiento y desarrollo de la Infraestructura y Equipamiento.",
+    "tarea_id": 91
+  },
+  {
+    "id": 92,
+    "name": "Consiste, en actividades de fortalecimiento de capacidades para el desarrollo  de la capacitación en mantenimiento de infraestructura y equipo.",
+    "tarea_id": 92
+  },
+  {
+    "id": 93,
+    "name": "Consiste, en la formulación de los perfiles de competencias de profesionales y técnicos en mantenimiento de Infraestructura y Equipamiento de los EESS.",
+    "tarea_id": 93
+  },
+  {
+    "id": 94,
+    "name": "Consiste, en actividades de asistencia técnica virtual por parte de la ONIESS, para el  fortalecimiento de las competencias y conocimientos a los usuarios del aplicativo en el manejo del sofware.",
+    "tarea_id": 94
+  },
+  {
+    "id": 95,
+    "name": "Consiste, en actividades de monitoreo de la calidad de energia del sistema electrico de los EESS, con el objetivo de evaluar la eficiencia de las cargas eléctricas",
+    "tarea_id": 95
+  },
+  {
+    "id": 96,
+    "name": "Consiste, en actividades de monitoreo del mantenimientodel  equipamiento electromecanico de los  EESS de acuerdo a lo programado.",
+    "tarea_id": 96
+  },
+  {
+    "id": 97,
+    "name": "Consiste, en actividades de monitoreo del mantenimiento del  equipamiento biomedico de los  EESS de acuerdo a lo programado.",
+    "tarea_id": 97
+  },
+  {
+    "id": 98,
+    "name": "Consiste, en actividades de monitoreo de los Sistemas Térmicos en los Hospitales, con el objetivo de evaluar la eficiencia de los citados sistemas.",
+    "tarea_id": 98
+  },
+  {
+    "id": 99,
+    "name": "Consiste, en actividades de asistencia técnica virtual por parte de la UFM-DIEM, para el  fortalecimiento de las competencias y conocimientos a los  equipos técnicos  responsables del mantenimiento preventivo de Infraestructura y Equipamiento, mediante el cual se fortalecen los conocimientos, habilidades y destrezas de las DIRESAS/GERESAS.",
+    "tarea_id": 99
+  },
+  {
+    "id": 100,
+    "name": "Consiste, en actividades del monitoreopor parte de la UFM-DIEM, en el mantenimiento a las Plantas Generadoras de Oxígeno Medicinal de las IPRESS",
+    "tarea_id": 100
+  },
+  {
+    "id": 101,
+    "name": "Consiste, en actividades del seguimiento por parte de la UFM-DIEM, en el mantenimiento a las Plantas Generadoras de Oxígeno Medicinal de las IPRESS.",
+    "tarea_id": 101
+  },
+  {
+    "id": 102,
+    "name": "Acompañamiento técnico a las DIRESAs/GERESAs/DIRIS para el mantenimiento correctivo de la infraestructura y del equipamiento, en el marco del Plan de Conntingencia frente  al Fenómeno El Niño y lluvias intensas.",
+    "tarea_id": 102
+  },
+  {
+    "id": 103,
+    "name": "Supervisar acciones y actividades a las DIRESAs/GERESAs/DIRIS, en el marco del Plan de Conntingencia frente  al Fenómeno El Niño y lluvias intensas para el mantenimiento correctivo de la infraestructura y del equipamiento.",
+    "tarea_id": 103
+  },
+  {
+    "id": 104,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de conocimientos y normatividad del Mantenimiento de  las Ambulancias donadas por el Gobierno de Japón a las IPRESS asignadas.",
+    "tarea_id": 104
+  },
+  {
+    "id": 105,
+    "name": "Consiste, en actividades de asistencia técnica sobre la verificación del equipamiento transferidos por SUNAT.",
+    "tarea_id": 105
+  },
+  {
+    "id": 106,
+    "name": "Consiste, en actividades de asistencia técnica a las IPRESS asignados del Sistema de Salud Público, en la habilitación de la Infraestructura y la Recepción del Equipamiento para la prevención y control del Cáncer.",
+    "tarea_id": 106
+  },
+  {
+    "id": 107,
+    "name": "Consiste, en actividades de asistencia técnica sobre aspectos de conocimientos y normatividad del Mantenimiento de  las Ambulancias donadas por el Gobierno de Japón a las IPRESS asignadas.",
+    "tarea_id": 107
+  },
+  {
+    "id": 108,
+    "name": "Consiste, en actividades de asistencia técnica sobre la verificación del equipamiento transferidos por SUNAT",
+    "tarea_id": 108
+  },
+  {
+    "id": 109,
+    "name": "Consiste, en actividades de asistencia técnica a las IPRESS asignados del Sistema de Salud Público, en la habilitación de la Infraestructura y la Recepción del Equipamiento para la prevención y control del Cáncer.",
+    "tarea_id": 109
+  },
+  {
+    "id": 110,
+    "name": "",
+    "tarea_id": 110
+  },
+  {
+    "id": 111,
+    "name": "",
+    "tarea_id": 111
+  },
+  {
+    "id": 112,
+    "name": "",
+    "tarea_id": 112
+  },
+  {
+    "id": 113,
+    "name": "",
+    "tarea_id": 113
+  }
+]

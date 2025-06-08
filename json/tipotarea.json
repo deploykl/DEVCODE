@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "ACCION"
+  },
+  {
+    "id": 2,
+    "name": "ACTA"
+  },
+  {
+    "id": 3,
+    "name": "ANTEPROYECTO DE DOCUMENTO NORMATIVO"
+  },
+  {
+    "id": 4,
+    "name": "BOLETÍN"
+  },
+  {
+    "id": 5,
+    "name": "CONVENIO"
+  },
+  {
+    "id": 6,
+    "name": "CRONOGRAMA APROBADO"
+  },
+  {
+    "id": 7,
+    "name": "DIRESA / GERESA"
+  },
+  {
+    "id": 8,
+    "name": "DOCUMENTO"
+  },
+  {
+    "id": 9,
+    "name": "DOCUMENTO NORMATIVO"
+  },
+  {
+    "id": 10,
+    "name": "DOCUMENTO TECNICO"
+  },
+  {
+    "id": 11,
+    "name": "EQUIPO"
+  },
+  {
+    "id": 12,
+    "name": "ESTABLECIMIENTO DE SALUD"
+  },
+  {
+    "id": 13,
+    "name": "GOBIERNO REGIONAL"
+  },
+  {
+    "id": 14,
+    "name": "INFORME"
+  },
+  {
+    "id": 15,
+    "name": "INTERVENCIONES"
+  },
+  {
+    "id": 16,
+    "name": "IPRESS / UGIPRESS"
+  },
+  {
+    "id": 17,
+    "name": "PROGRAMA MENSUAL"
+  },
+  {
+    "id": 18,
+    "name": "PROYECTO DE FICHA"
+  },
+  {
+    "id": 19,
+    "name": "PROYECTO DE R.D."
+  },
+  {
+    "id": 20,
+    "name": "REPORTE"
+  },
+  {
+    "id": 21,
+    "name": "TALLER"
+  },
+  {
+    "id": 22,
+    "name": "KIT"
+  }
+]

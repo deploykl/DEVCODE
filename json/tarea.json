@@ -1,0 +1,680 @@
+[
+  {
+    "id": 1,
+    "name": "Elaboración de la propuesta de lineamiento para asegurar la operatividad de los servicios de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Reuniones técnicas.",
+    "trazabilidad": "NO",
+    "actividad_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Emisión de opiniones técnicas legales en el marco de la competencia de la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 4,
+    "name": "Brindar seguimiento a las sentencias emitidas por la Corte Interamerican de Derechos Humanos, en etapa de cumplimiento de sentencia con reparaciones en materia de salud aun pediente de cumplimiento, en el marco de la competencia de la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 5,
+    "name": "Brindar Asistencia Tenico Legal a las Direcciones Ejecutivas de la DGOS (DIEM Y DIMON) en el marco de la competencia de la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 6,
+    "name": "Brindar seguimiento a las recomendaciones vertidas por los Organos de Control Interno (OCI) de las distintas Unidades Ejecutoras en el marco de la competencia de la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 7,
+    "name": "Absolver los recursos impugnatorios interpuestos por los administrados, asi como resolver en segunda instancia recurso de nulidad en el marco de la competencia De la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 8,
+    "name": "Emisión de actos Resolutivos (Resolución Directoral) en el marco de la comptencia de la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 9,
+    "name": "Brindar atención a las solcitudes y/o requerimientos efectuados por los administrados, Congreso de la Republica, PCM, Defensoria del Pueblo, Ministerio Publico, Poder Judicial, y otras Instituciones del Estado. (en el marco de la competencia de la DGOS).",
+    "trazabilidad": "SI",
+    "actividad_id": 2
+  },
+  {
+    "id": 10,
+    "name": "Propuesta de indicadores de desempeño y compromisos de mejora.",
+    "trazabilidad": "SI",
+    "actividad_id": 3
+  },
+  {
+    "id": 11,
+    "name": "Aprobación con Decreto Supremo los indicadores para el ejercicio presupuestal del siguiente periódo.",
+    "trazabilidad": "SI",
+    "actividad_id": 3
+  },
+  {
+    "id": 12,
+    "name": "Aprobación de Directiva Administrativa con Resolución Ministerial, que regula la metodología del proceso de Convenio",
+    "trazabilidad": "SI",
+    "actividad_id": 3
+  },
+  {
+    "id": 13,
+    "name": "Socialización de los Indicadores de desempeño y compromisos de mejora con las IPRESS y UGIPRESS a nivel nacional",
+    "trazabilidad": "SI",
+    "actividad_id": 3
+  },
+  {
+    "id": 14,
+    "name": "Asistencia técnica sobre los ID y CM del periódo 2024.",
+    "trazabilidad": "SI",
+    "actividad_id": 3
+  },
+  {
+    "id": 15,
+    "name": "Aprobación de cronograma de evaluacion por el grupo de trabajo del MINSA",
+    "trazabilidad": "SI",
+    "actividad_id": 4
+  },
+  {
+    "id": 16,
+    "name": "Publicación de los resultados finales de la evaluación de los  indicadores de desempeño y compromiso de mejora del año correspondiente",
+    "trazabilidad": "SI",
+    "actividad_id": 4
+  },
+  {
+    "id": 17,
+    "name": "Informe final del proceso de evaluación de los ID y CM",
+    "trazabilidad": "SI",
+    "actividad_id": 4
+  },
+  {
+    "id": 18,
+    "name": "Negociación de los pesos ponderados de los indicadores de desempeño y compromiso de mejora, con las IPRESS y UGIPRESS a nivel nacional.",
+    "trazabilidad": "NO",
+    "actividad_id": 5
+  },
+  {
+    "id": 19,
+    "name": "Suscripción de Convenios de Gestión con las IPRESS, UGIPRESS y GOREs.",
+    "trazabilidad": "SI",
+    "actividad_id": 5
+  },
+  {
+    "id": 20,
+    "name": "Generación de contenidos respecto a las actividades de la Dirección General de Operaciones en Salud y sus Direcciones Ejecutivas.",
+    "trazabilidad": "SI",
+    "actividad_id": 6
+  },
+  {
+    "id": 21,
+    "name": "Coordinación de los eventos o actividades institucionales de la Dirección General de Operaciones de Salud y/o sus Direcciones Ejecutivas.",
+    "trazabilidad": "NO",
+    "actividad_id": 6
+  },
+  {
+    "id": 22,
+    "name": "Seguimiento y compendio de la matriz de actividades de las 30 ejecutoras de Lima Metropolitana (IPRESS Y UGIPRESS), respeto a sus actividades protocolares y extramurales.",
+    "trazabilidad": "NO",
+    "actividad_id": 6
+  },
+  {
+    "id": 23,
+    "name": "Asistencia técnica para la elaboración, seguimiento y evaluación de las actividades del POI.",
+    "trazabilidad": "SI",
+    "actividad_id": 7
+  },
+  {
+    "id": 24,
+    "name": "Seguimiento de la ejecución presupuestal de la DGOS.",
+    "trazabilidad": "SI",
+    "actividad_id": 7
+  },
+  {
+    "id": 25,
+    "name": "Realizar la gestíon para la provisión de de bienes y servicios",
+    "trazabilidad": "SI",
+    "actividad_id": 7
+  },
+  {
+    "id": 26,
+    "name": "Control de asistencia del personal.",
+    "trazabilidad": "SI",
+    "actividad_id": 7
+  },
+  {
+    "id": 27,
+    "name": "Asistencia Técnica para la elaboración del Plan de Implementacion Multianual de O&M.",
+    "trazabilidad": "SI",
+    "actividad_id": 8
+  },
+  {
+    "id": 28,
+    "name": "Asistencia Técnica para la implementación del Plan de Implementacion Multianual de O&M",
+    "trazabilidad": "NO",
+    "actividad_id": 8
+  },
+  {
+    "id": 29,
+    "name": "Elaboración de documento normativo.",
+    "trazabilidad": "NO",
+    "actividad_id": 9
+  },
+  {
+    "id": 30,
+    "name": "Validación de documento normativo.",
+    "trazabilidad": "NO",
+    "actividad_id": 9
+  },
+  {
+    "id": 31,
+    "name": "Proyecto de documento normativo.",
+    "trazabilidad": "SI",
+    "actividad_id": 9
+  },
+  {
+    "id": 32,
+    "name": "Asistencia técnica para la implementación del documanto normativo aprobado.",
+    "trazabilidad": "NO",
+    "actividad_id": 9
+  },
+  {
+    "id": 33,
+    "name": "Formulación de un flujo de procedimientos para la elaboracion de informes dirigido a los  otros órganos del Ministerio de Salud sobre las deficiencias identificadas en las acciones de monitoreo de la gestion de IPRESS/UGIPRESS realizados por la DIMON en el marco de sus funciones.",
+    "trazabilidad": "SI",
+    "actividad_id": 10
+  },
+  {
+    "id": 34,
+    "name": "Priorización de los principales problemas identificado en el monitoreo de las IPRESS y UGIPRESS, relacionado a la Gestión Administrativa.",
+    "trazabilidad": "NO",
+    "actividad_id": 11
+  },
+  {
+    "id": 35,
+    "name": "Elaborar la Plan anual de Monitoreo a IPRESS y UGIPRESS.",
+    "trazabilidad": "NO",
+    "actividad_id": 11
+  },
+  {
+    "id": 36,
+    "name": "Acciones de monitoreo en Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 11
+  },
+  {
+    "id": 37,
+    "name": "Acciones de monitoreo en Regiones.",
+    "trazabilidad": "SI",
+    "actividad_id": 11
+  },
+  {
+    "id": 38,
+    "name": "Socialización de los resultados de monitoreo de IPRESS/UGIPRESS con los Órganos y Unidades Orgánicas del MINSA.",
+    "trazabilidad": "NO",
+    "actividad_id": 11
+  },
+  {
+    "id": 39,
+    "name": "Seguimiento de las recomendaciones establecidos en las acciones de monitoreo de IPRESS y UGIPRESS.",
+    "trazabilidad": "NO",
+    "actividad_id": 11
+  },
+  {
+    "id": 40,
+    "name": "Elaboración de Boletín con información del monitoreo de las IPRESS y UGIPRESS.",
+    "trazabilidad": "SI",
+    "actividad_id": 12
+  },
+  {
+    "id": 41,
+    "name": "Emisión de reportes de los hallazgos de las acciones de monitoreo de las IPRESS y UGIPRESS.",
+    "trazabilidad": "NO",
+    "actividad_id": 12
+  },
+  {
+    "id": 42,
+    "name": "Emisión de reportes de seguimiento del cumplimiento de los compromisos establecidos en los monitoreos de las IPRESS y UGIPRESS, incluyendo los compromisos de las asistencias técnicas.",
+    "trazabilidad": "NO",
+    "actividad_id": 12
+  },
+  {
+    "id": 43,
+    "name": "Elaboración del Plan anual de asistencia técnica.",
+    "trazabilidad": "NO",
+    "actividad_id": 13
+  },
+  {
+    "id": 44,
+    "name": "Asistencia técnica a IPRESS y UGIPRESS a nivel Nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 13
+  },
+  {
+    "id": 45,
+    "name": "Asistencia técnica a IPRESS y UGIPRESS en Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 13
+  },
+  {
+    "id": 46,
+    "name": "Asistencia Técnica en el proceso de evaluación de los indicadores de desempeño y compromisos de mejora del periódo 2023.",
+    "trazabilidad": "SI",
+    "actividad_id": 14
+  },
+  {
+    "id": 47,
+    "name": "Seguimiento y monitoreo  de los indicadores  de desempeño y compromiso de mejora periódo 2024, en IPRESS y UGIPRESS.",
+    "trazabilidad": "SI",
+    "actividad_id": 15
+  },
+  {
+    "id": 48,
+    "name": "Reporte trimestral de avance de cumplimiento de  los indicadores de desempeño mediante el tablero de  seguimiento y monitoreo de los ID y CM 2024.",
+    "trazabilidad": "SI",
+    "actividad_id": 15
+  },
+  {
+    "id": 49,
+    "name": "Seguimiento y monitoreo de indicadores de los compromisos de gestión y metas de cobertura del FED en las DIRIS.",
+    "trazabilidad": "SI",
+    "actividad_id": 15
+  },
+  {
+    "id": 50,
+    "name": "Elaboración de informes de opinión de documentos técnicos en el marco de las funciones propias.",
+    "trazabilidad": "SI",
+    "actividad_id": 16
+  },
+  {
+    "id": 51,
+    "name": "Asistencia tecnica para operatividad de Centros Quirurgicos en las regiones y Lima Metropolitana",
+    "trazabilidad": "NO",
+    "actividad_id": 17
+  },
+  {
+    "id": 52,
+    "name": "Monitoreo de la produccion de las intervenciones Quirurgicas y Campañas Quirurgicas en las regiones y Lima Metropolitana",
+    "trazabilidad": "NO",
+    "actividad_id": 17
+  },
+  {
+    "id": 53,
+    "name": "Evaluacion de Plan de Desembalse Quirurgico en las regiones y Lima Metropolitana",
+    "trazabilidad": "NO",
+    "actividad_id": 17
+  },
+  {
+    "id": 54,
+    "name": "Intervenciones Quirurgicas en  regiones priorizadas y Lima Metropolitana",
+    "trazabilidad": "SI",
+    "actividad_id": 17
+  },
+  {
+    "id": 55,
+    "name": "Seguimiento y monitoreo de las acciones de fortalecimiento de la capacidad resolutiva de los establecimientos de salud de las Direcciones Generales de Salud/Gerencia Regional de Salud/Dirección de Redes Integradas de Salud en atención de casos de dengue.",
+    "trazabilidad": "SI",
+    "actividad_id": 18
+  },
+  {
+    "id": 56,
+    "name": "Seguimiento y Evaluación de las actividades programadas en el marco del Plan de acción aprobada por DS 004-204-SA.",
+    "trazabilidad": "SI",
+    "actividad_id": 18
+  },
+  {
+    "id": 57,
+    "name": "Elaboración  de documentos normativos de infraestructura, equipamiento y mantenimiento de establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 19
+  },
+  {
+    "id": 58,
+    "name": "Actualización de documentos normativos de infraestructura, equipamiento y mantenimiento de establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 19
+  },
+  {
+    "id": 59,
+    "name": "Fichas homologadas.",
+    "trazabilidad": "SI",
+    "actividad_id": 19
+  },
+  {
+    "id": 60,
+    "name": "Difusión de documentos normativos de infraestructura, equipamiento y mantenimiento de EESS: Diseño e impresión de documentos normativos mediante medios impresos, magnéticos e internet.",
+    "trazabilidad": "SI",
+    "actividad_id": 20
+  },
+  {
+    "id": 61,
+    "name": "Implementación de documentos normativos de infraestructura, equipamiento y mantenimiento de establecimientos de salud. Talleres macroregionales.",
+    "trazabilidad": "NO",
+    "actividad_id": 20
+  },
+  {
+    "id": 62,
+    "name": "Seguimiento de la aplicación y cumplimiento de los documentos normativos de infraestructura, equipamiento y mantenimiento de los establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 20
+  },
+  {
+    "id": 63,
+    "name": "Evaluación de los documentos normativos de infraestructura, equipamiento y mantenimiento de establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 20
+  },
+  {
+    "id": 64,
+    "name": "Taller para la elaboración del Plan Multianual de Equipamiento 2025-2027 de Establecimientos de Salud a los Gobiernos Regionales y órganos de Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 65,
+    "name": "Asistencia Técnica para la elaboración de los Planes de Equipamiento y Mantenimiento de los Establecimientos de Salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 66,
+    "name": "Asistencia Técnica en la formulación y registro de la IOARR de Optimiación y Reposición de Equipamiento.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 67,
+    "name": "Asistencia Técnica virtual para la elaboración de los Planes de Equipamiento  de los Establecimientos de Salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 68,
+    "name": "Revisión y opinión técnica de los planes de equipamiento y mantenimiento de Establecimientos de Salud a las unidades ejecutoras de Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 69,
+    "name": "Taller para la elaboración del Plan Multianual de Mantenimiento de Infraestructura y Equipamiento 2025-2027 de establecimientos de salud a los Gobiernos Regionales y órganos de Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 70,
+    "name": "Asistencia Técnica para la elaboración de los Planes de Mantenimiento de Infraestructura y Equipamiento de los Establecimientos de Salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 71,
+    "name": "Asistencia Técnica virtual para la elaboración de los Planes de Mantenimiento de Infraestructura y Equipamiento de los Establecimientos de Salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 72,
+    "name": "Revisión y opinión técnica de los planes de Mantenimiento de Infraestructura y Equipamiento de Establecimientos de Salud de las Unidades Ejecutoras de Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 21
+  },
+  {
+    "id": 73,
+    "name": "Seguimiento de la implementación de los Planes de Mantenimiento y Equipamiento de los Establecimientos de Salud de los GOREs y Lima Metropolitana.",
+    "trazabilidad": "SI",
+    "actividad_id": 22
+  },
+  {
+    "id": 74,
+    "name": "Opinión técnica a solicitud de las instituciones de salud del nivel nacional y regional, y DIRIS de Lima Metropolitana, relacionado a los documentos normativos de infraestructura, equipamiento y mantenimiento a los establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 23
+  },
+  {
+    "id": 75,
+    "name": "Opinión técnica a solicitud de los Gobiernos Regionales, DIRIS de Lima Metro.politana y demás instituciones del sector salud sobre aspectos de INFRAESTRUCTURA a nivel nacional",
+    "trazabilidad": "SI",
+    "actividad_id": 23
+  },
+  {
+    "id": 76,
+    "name": "Opinión técnica a solicitud de los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre aspectos de EQUIPAMIENTO en las IPRESS a nivel nacional",
+    "trazabilidad": "SI",
+    "actividad_id": 23
+  },
+  {
+    "id": 77,
+    "name": "Opinión técnica a solicitud de los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre aspectos de MANTENIMIENTO en las IPRESS a nivel nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 23
+  },
+  {
+    "id": 78,
+    "name": "Gestión para suscripción de convenios de colaboración con los gobiernos regionales y gobiernos locales para la asistencia técnica sobre la aplicación y cumplimiento de las normas técnicas de salud infraestructura, equipamiento y mantenimiento de establecimientos de salud.",
+    "trazabilidad": "NO",
+    "actividad_id": 24
+  },
+  {
+    "id": 79,
+    "name": "Elaboración de la metodología e instrumentos para la ejecución de actividades de asistencia técnica sobre la aplicación y cumplimiento de las normas técnica de infraestructrura y equipamiento.",
+    "trazabilidad": "NO",
+    "actividad_id": 24
+  },
+  {
+    "id": 80,
+    "name": "Programación conjunta con las DIRESAS/GERESAS para la asistencia técnica sobre la aplicación y cumplimiento de las normas técnicas de infraestructura, equipamiento y mantenimiento de los establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 81,
+    "name": "Ejecución de asistencia técnica virtual a las DIRESAS/GERESAS/DIRIS y EESS sobre la aplicación y cumplimiento de los documentos normativos de Infraestructura, Equipamiento y mantenimiento de los EESS.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 82,
+    "name": "Ejecución de asistencia técnica a los DIRESAS/GERESAS sobre la implementación de estrategias en los establecimientos de salud  frente al cambio climático.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 83,
+    "name": "Asistencia técnica a los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre INFRAESTRUCTURA a las IPRESS a nivel nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 84,
+    "name": "Asistencia técnica a los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre EQUIPAMIENTO a las IPRESS a nivel nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 85,
+    "name": "Asistencia técnica a los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre MANTENIMIENTO a las IPRESS a nivel nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 86,
+    "name": "Asistencia técnica virtual a los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre INFRAESTRUCTURA, EQUIPAMIENTO Y MANTENIMIENTO a las IPRESS a nivel nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 87,
+    "name": "Asistencia técnica a las instituciones del sector salud sobre infraestructura, equipamiento y el mantenimiento de las IPRESS en el marco de la RIS.",
+    "trazabilidad": "NO",
+    "actividad_id": 24
+  },
+  {
+    "id": 88,
+    "name": "Asistencia técnica otorgados mediante comisiones de servicio a los Gobiernos  Regionales y demás Instituciones del sector salud concerniente al  Equipamiento a Nivel Nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 24
+  },
+  {
+    "id": 89,
+    "name": "Supervisión y Asistencia Técnica  a los Gobiernos Regionales, DIRIS de Lima Metropolitana y demás instituciones del sector salud sobre información registrada en el ONIEES.",
+    "trazabilidad": "SI",
+    "actividad_id": 25
+  },
+  {
+    "id": 90,
+    "name": "Asistencia y apoyo técnico para el mejor uso de la Información estadísica a los equipos de trabajo de la DIEM.",
+    "trazabilidad": "SI",
+    "actividad_id": 25
+  },
+  {
+    "id": 91,
+    "name": "Programación trimestral de reuniones de las Sesiones Ordinarias con Miembros de la  Comisión Multisectorial de Naturaleza Permanente del ONIEES.",
+    "trazabilidad": "SI",
+    "actividad_id": 25
+  },
+  {
+    "id": 92,
+    "name": "Promover la Implementación y Desarrollo de cursos de capacitación en mantenimiento de infraestructura y equipamiento de los establecimientos de salud.",
+    "trazabilidad": "NO",
+    "actividad_id": 25
+  },
+  {
+    "id": 93,
+    "name": "Elaboración de perfiles de competencias de profesionales y técnicos en mantenimiento de infraestructura y equipamiento de los establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 25
+  },
+  {
+    "id": 94,
+    "name": "Asistencia Técnica virtual a los usuarios del ONIESS, fortalecimiento de las competencias y conocimientos en el manejo del sofware.",
+    "trazabilidad": "SI",
+    "actividad_id": 25
+  },
+  {
+    "id": 95,
+    "name": "Monitoreo y evaluación de la calidad de energía, del sistema eléctrico de los Establecimientos de Salud del segundo y tercer nivel de atención a nivel nacional.",
+    "trazabilidad": "SI",
+    "actividad_id": 26
+  },
+  {
+    "id": 96,
+    "name": "Monitoreo y evaluaciÓn del mantenimineto del  equipamiento electromecánico de las UPSSS Nutrición, lavandería, Esterilización  para el Fortalecimiento de las acciones de la calidad de servicio de Salud Público.",
+    "trazabilidad": "SI",
+    "actividad_id": 26
+  },
+  {
+    "id": 97,
+    "name": "Monitoreo y evaluación del mantenimiento del  equipamiento biomédico de los  Establecimentos  de Salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 26
+  },
+  {
+    "id": 98,
+    "name": "Monitoreo del mantenimiento de los sistemas térmicos en los Hospitales de  II - III Nivel de Atención.",
+    "trazabilidad": "SI",
+    "actividad_id": 26
+  },
+  {
+    "id": 99,
+    "name": "Asistencia técnica virtual para el fortalecimiento de las competencias y conocimientos a los  equipos técnicos  responsables del mantenimiento preventivo y/o correctivo de Infraestructura y Equipamiento.",
+    "trazabilidad": "SI",
+    "actividad_id": 26
+  },
+  {
+    "id": 100,
+    "name": "Monitoreo al mantenimiento a las Plantas Generadoras de Oxígeno Medicinal de las IPRESS a cargo de Ministerio de Salud y de los Gobiernos Regionales.",
+    "trazabilidad": "SI",
+    "actividad_id": 27
+  },
+  {
+    "id": 101,
+    "name": "Supervisión de la operatividad y funcionamiento de las plantas generadoras de oxígeno medicinal de la IPRESS del MINSA y de los Gobiernos Regionales.",
+    "trazabilidad": "SI",
+    "actividad_id": 27
+  },
+  {
+    "id": 102,
+    "name": "Acompañamiento técnico a las DIRESAs/GERESAs/DIRIS para el mantenimiento correctivo de la infraestructura y del equipamiento de los EE.SS afectados por el Fenómeno El Niño y lluvias intensas.",
+    "trazabilidad": "SI",
+    "actividad_id": 28
+  },
+  {
+    "id": 103,
+    "name": "Supervisión de las acciones desarrolladas por las DIRESAs/GERESAs/DIRIS para el mantenimiento correctivo de la infraestructura y del equipamiento de los EE.SS afectados por el Fenómeno El Niño y lluvias intensas.",
+    "trazabilidad": "SI",
+    "actividad_id": 28
+  },
+  {
+    "id": 104,
+    "name": "Asistencia tecnica en la Liquidación Técnica  y  seguimiento de la adquisicición del equipamiento requerido para proyectos,donaciones y planes.",
+    "trazabilidad": "SI",
+    "actividad_id": 29
+  },
+  {
+    "id": 105,
+    "name": "Opinión Técnica en la verificación física de mercancias de SUNAT.",
+    "trazabilidad": "SI",
+    "actividad_id": 29
+  },
+  {
+    "id": 106,
+    "name": "Opinión tecnica para la gestión del mejoramiento del equipamiento de UPSS/servicios en EESS I-3,I-4 priorizados ( Laboratorio, apoyo al Dx por imágenes, urgencia) -DPCAN",
+    "trazabilidad": "SI",
+    "actividad_id": 29
+  },
+  {
+    "id": 107,
+    "name": "Asistencia Técnica en aspectos técnicos de Mantenimiento Integral (Infraestructura -Equipamiento) de los Establecimientos de salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 30
+  },
+  {
+    "id": 108,
+    "name": "Asistencia Técnica en la formulación y registro de la IOARR de Optimización y Reposición de Equipamiento.",
+    "trazabilidad": "SI",
+    "actividad_id": 30
+  },
+  {
+    "id": 109,
+    "name": "Asistencia Técnica virtual, en aspectos técnicos de Mantenimiento Integral (Infraestructura -Equipamiento) de los Establecimientos de Salud.",
+    "trazabilidad": "SI",
+    "actividad_id": 30
+  },
+  {
+    "id": 110,
+    "name": "",
+    "trazabilidad": "",
+    "actividad_id": 31
+  },
+  {
+    "id": 111,
+    "name": "",
+    "trazabilidad": "",
+    "actividad_id": 32
+  },
+  {
+    "id": 112,
+    "name": "",
+    "trazabilidad": "",
+    "actividad_id": 33
+  },
+  {
+    "id": 113,
+    "name": "",
+    "trazabilidad": "",
+    "actividad_id": 36
+  }
+]

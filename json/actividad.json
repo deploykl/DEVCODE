@@ -1,0 +1,274 @@
+[
+  {
+    "id": 1,
+    "codigo": "AEI.02.AO.01",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "PROPONER Y CONDUCIR LA IMPLEMENTACIÓN DE LOS LINEAMIENTOS, PARA GARANTIZAR LA OPERATIVIDAD DE LOS SERVICIOS DE SALUD EN LAS IPRESS Y UGIPRESS PÚBLICAS A NIVEL NACIONAL"
+  },
+  {
+    "id": 2,
+    "codigo": "AEI.02.AO.02",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ASISTENCIA TÉCNICA LEGAL EN EL MARCO DE LA COMPETENCIA DE LA DIRECCIÓN GENERAL DE OPERACIONES EN SALUD"
+  },
+  {
+    "id": 3,
+    "codigo": "AEI.02.AO.03",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "FORMULACIÓN, APROBACIÓN E IMPLEMENTACIÓN DE INDICADORES DE DESEMPEÑO Y COMPROMISO DE MEJORA DE LA GESTIÓN DE LOS SERVICIOS"
+  },
+  {
+    "id": 4,
+    "codigo": "AEI.02.AO.04",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "EVALUACIÓN DE LOS INDICADORES DE DESEMPEÑO Y COMPROMISO DE MEJORA DE LA GESTIÓN"
+  },
+  {
+    "id": 5,
+    "codigo": "AEI.02.AO.05",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "FORMULACIÓN Y SUSCRIPCIÓN DE CONVENIOS DE GESTIÓN"
+  },
+  {
+    "id": 6,
+    "codigo": "AEI.02.AO.06",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ORGANIZAR Y REALIZAR ESTRATEGIAS DE DIFUSIÓN DE LAS ACCIONES DE DIRECCIÓN GENERAL DE OPERACIONES EN SALUD"
+  },
+  {
+    "id": 7,
+    "codigo": "AEI.02.AO.07",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ORGANIZAR, EJECUTAR, DAR SEGUIMIENTO Y EVALUACIÓN DE LOS PROCESOS ADMINISTRATIVOS DE LA DIRECCIÓN GENERAL DE OPERACIONES EN SALUD"
+  },
+  {
+    "id": 8,
+    "codigo": "AEI.02.AO.08",
+    "dependencia_id": 1,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ASISTENCIA TÉCNICA A LOS GOBIERNOS REGIONALES DEL PLAN DE IMPLEMENTACIÓN MULTIANUAL PARA LA PUESTA EN FUNCIONAMIENTO DE LOS NUEVOS ESTABLECIMIENTOS DE SALUD"
+  },
+  {
+    "id": 9,
+    "codigo": "AEI.04.AO.09",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ELABORAR NORMAS, LINEAMIENTOS, ESTÁNDARES, MECANISMOS Y PLANES PARA REALIZAR EL MONITOREO Y EVALUACIÓN DE LA GESTIÓN ADMINISTRATIVA"
+  },
+  {
+    "id": 10,
+    "codigo": "AEI.04.AO.10",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ELABORACIÓN DE MANUALES DE PROCEDIMIENTOS - MAPRO.(**)"
+  },
+  {
+    "id": 11,
+    "codigo": "AEI.02.AO.11",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "MONITOREO A IPRESS Y UGIPRESS A NIVEL NACIONAL, PARA CONTRIBUIR CON EL EFICIENTE Y ÓPTIMO FUNCIONAMIENTO DE LA GESTIÓN ADMINISTRATIVA"
+  },
+  {
+    "id": 12,
+    "codigo": "AEI.02.AO.12",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "SISTEMATIZACIÓN DE LA INFORMACIÓN DE LAS ACCIONES DE MONITOREO DE LAS IPRESS Y UGIPRESS"
+  },
+  {
+    "id": 13,
+    "codigo": "AEI.02.AO.13",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "REALIZAR Y COORDINAR LAS ASISTENCIAS TÉCNICAS PARA EL EFICIENTE Y ÓPTIMO FUNCIONAMIENTO DE LA GESTIÓN ADMINISTRATIVA EN LAS IPRESS Y UGIPRESS"
+  },
+  {
+    "id": 14,
+    "codigo": "AEI.02.AO.14",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ASISTENCIA TÉCNICA A LAS DIRESAS, GERESAS, DIRIS, REDES DE SALUD, HOSPITALES E INSTITUTOS EN EL PROCESO DE EVALUACIÓN DE INDICADORES DE DESEMPEÑO, COMPROMISO DE MEJORA DE LA GESTIÓN DE LOS SERVICIOS RELACIONADOS DE LOS CONVENIOS DE GESTIÓN"
+  },
+  {
+    "id": 15,
+    "codigo": "AEI.02.AO.15",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "SEGUIMIENTO Y MONITOREO DE LOS INDICADORES DE DESEMPEÑO, COMPROMISO DE MEJORA DE LA GESTIÓN DE LOS SERVICIOS RELACIONADOS A LOS CONVENIOS DE GESTIÓN, EN IPRESS Y UGIPRESS"
+  },
+  {
+    "id": 16,
+    "codigo": "AEI.04.AO.16",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "EMITIR OPINIÓN TÉCNICA A DOCUMENTOS NORMATIVOS, RELACIONADO A LAS FUNCIONES PROPIAS"
+  },
+  {
+    "id": 17,
+    "codigo": "AEI.02.AO.17",
+    "dependencia_id": 2,
+    "user_id": 1,
+    "estado": 1,
+    "name": "FORTALECIMIENTO DE LA CAPACIDAD OPERATIVA PARA DISMINUIR EL EMBALSE QUIRÚRGICO EN LOS GOBIERNOS REGIONALES Y LIMA METROPOLITANA"
+  },
+  {
+    "id": 18,
+    "codigo": "AEI.02.AO.18",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "SEGUIMIENTO Y MONITOREO DE LAS METAS Y ACTIVIDADES E INDICADORES DEL PLAN DE ACCIÓN, EN EL MARCO DE LA EMERGENCIA SANITARIA POR AFECTACIÓN DE LA CONTINUIDAD DE LOS SERVICIOS DE SALUD POR EPIDEMIA DEL DENGUE."
+  },
+  {
+    "id": 19,
+    "codigo": "AEI.04.AO.19",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701240 : ELABORACIÓN DE DOCUMENTOS NORMATIVOS EN INFRAESTRUCTURA, EQUIPAMIENTO Y MANTENIMIENTO EN SALUD"
+  },
+  {
+    "id": 20,
+    "codigo": "AEI.04.AO.20",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701241 : SEGUIMIENTO Y EVALUACIÓN DE DOCUMENTOS NORMATIVOS DE INFRAESTRUCTURA, EQUIPAMIENTO Y MANTENIMIENTO DE ESTABLECIMNIENTOS DE SALUD"
+  },
+  {
+    "id": 21,
+    "codigo": "AEI.04.AO.21",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701053 : ASISTENCIA TÉCNICA EN LA ELABORACIÓN DE LOS PLANES DE MANTENIMIENTO Y EQUIPAMIENTO DE ESTABLECIMIENTOS DE SALUD DIRIGIDO A LOS GOBIERNOS REGIONALES Y ÓRGANOS DE LIMA METROPOLITANA"
+  },
+  {
+    "id": 22,
+    "codigo": "AEI.04.AO.22",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701246 : SEGUIMIENTO DE LA IMPLEMENTACIÓN DE LOS PLANES DE MANTENIMIENTO Y EQUIPAMIENTO DE LOS ESTABLECIMIENTOS DE SALUD DE LOS GORES Y LIMA METROPOLITANA"
+  },
+  {
+    "id": 23,
+    "codigo": "AEI.04.AO.23",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701055 : EMITIR OPINIÓN TÉCNICA A LOS GOBIERNOS REGIONALES, DIRIS DE LIMA METROPOLITANA Y DEMÁS INSTITUCIONES DEL SECTOR SALUD SOBRE NORMATIVIDAD EN INFRAESTRUCTURA, EQUIPAMIENTO Y MANTENIMIENTO A LAS IPRESS A NIVEL NACIONAL"
+  },
+  {
+    "id": 24,
+    "codigo": "AEI.04.AO.24",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701239 : EJECUCIÓN DE ASISTENCIA TÉCNICA A LAS DIRESAS/GERESAS, DIRIS DE LIMA METROPOLITA Y DEMÁS INSTITUCIONES DE SALUD SOBRE LA APLICACIÓN Y CUMPLIMIENTO DE LAS NORMATIVIDAD DE INFRAESTRUCTURA, EQUIPAMIENTO Y MANTENIMIENTO DE ESTABLECIMIENTOS DE SALUD"
+  },
+  {
+    "id": 25,
+    "codigo": "AEI.04.AO.25",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701242 : GESTION DE LA INFORMACIÓN DEL OBSERVATORIO NACIONAL DE INFRAESTRUCTURA Y EQUIPAMIENTO DE LOS ESTABLECIMIENTOS DE SALUD"
+  },
+  {
+    "id": 26,
+    "codigo": "AEI.04.AO.26",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701243 : GESTIÓN DEL MONITOREO DE LA CALIDAD Y EFICIENCIA DEL EQUIPAMIENTO EN SALUD"
+  },
+  {
+    "id": 27,
+    "codigo": "AEI.04.AO.27",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "SEGUIMIENTO DEL MANTENIMIENTO DE LAS PLANTAS DE OXÍGENO MEDICINAL A VIVEL NACIONAL"
+  },
+  {
+    "id": 28,
+    "codigo": "AEI.04.AO.28",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701245 : EJECUCION DE LAS ACCIONES EN EL MARCO DEL PLAN DE CONTINGENCIA DE MINISTERIO DE SALUD FRENTE A LOS EFECTOS DEL FENOMENO EL NIÑO Y LLUVIAS INTENSAS 2023-2024"
+  },
+  {
+    "id": 29,
+    "codigo": "AEI.04.AO.29",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "AOI00011701247 : APOYO TECNICO EN INFRAESTRUCTURA, EQUIPAMIENTO, MANTENIMIENTO A LAS INSTITUCIONES DEL SECTOR SALUD"
+  },
+  {
+    "id": 30,
+    "codigo": "",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "ASISTENCIA TÉCNICA EN EL MARCO DEL PLAN MIL MINSA(**)"
+  },
+  {
+    "id": 31,
+    "codigo": "AEI.04.AO.30",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "MANTENIMIENTO PREVENTIVO DE KITS UCI"
+  },
+  {
+    "id": 32,
+    "codigo": "AEI.04.AO.31",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 1,
+    "name": "FORTALECIMIENTO DE LA ATENCION DE LOS SERVICIOS DE EMERGENCIAS Y SERVICIOS ESPECIALIZADOS - NUEVO HOSPITAL DE LIMA ESTE - VITART"
+  },
+  {
+    "id": 33,
+    "codigo": "",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 0,
+    "name": "MANTENIMIENTO DEL EQUIPAMIENTO DE LOS ESTABLECIMIENTOS DE SALUD"
+  },
+  {
+    "id": 34,
+    "codigo": "",
+    "dependencia_id": 3,
+    "user_id": 1,
+    "estado": 0,
+    "name": "MANTENIMIENTO DE EDIFICACIONES, OFICINAS Y ESTRUCTURAS"
+  }
+]

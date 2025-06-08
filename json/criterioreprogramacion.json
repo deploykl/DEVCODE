@@ -1,0 +1,567 @@
+[
+  {
+    "id": 1,
+    "name": "01 informe  por documento elaborado  (Directiva Administrativa, Decreto Supremo) , con programación en mayo y agosto.",
+    "tarea_id": 1
+  },
+  {
+    "id": 2,
+    "name": "01 acta de las reuniónes conducidas por el equipo de gestión de la dirección general (en su defecto el área designada), con programación en marzo, junio, setiembre, o con proyección en base a demanda.",
+    "tarea_id": 2
+  },
+  {
+    "id": 3,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 3
+  },
+  {
+    "id": 4,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 4
+  },
+  {
+    "id": 5,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 5
+  },
+  {
+    "id": 6,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 6
+  },
+  {
+    "id": 7,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 7
+  },
+  {
+    "id": 8,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 8
+  },
+  {
+    "id": 9,
+    "name": "Proyección en base a demanda.",
+    "tarea_id": 9
+  },
+  {
+    "id": 10,
+    "name": "01 informe en el  año 2024.",
+    "tarea_id": 10
+  },
+  {
+    "id": 11,
+    "name": "01 Decreto Supremo, anual.",
+    "tarea_id": 11
+  },
+  {
+    "id": 12,
+    "name": "Instrumento a través del cual se mide el rendimiento del personal en base al resultado esperado para el área o servicio y conjunto de acciones cuyo cumplimiento facilita la prestación de servicios de salud por parte del personal de salud y/o la gestión de la institución.",
+    "tarea_id": 12
+  },
+  {
+    "id": 13,
+    "name": "01 Reunión virtual o fisica de presentación de las fichas tecnicas de los indicadores y compromisos de mejora, en coordinación con las áreas técnicas del MINSA.",
+    "tarea_id": 13
+  },
+  {
+    "id": 14,
+    "name": "01 reunión mensual según cronograma, relacionado al proceso de evaluación de convenios de gestión 2023 con las areas técnicas del MINSA y equipos tecnicos de IPRESSS y UGIPRESS a nivel nacional.",
+    "tarea_id": 14
+  },
+  {
+    "id": 15,
+    "name": "01 cronograma elaborado por el grupo de trabajo de convenio de gestión, en el marco del Anexo 4 de la DA N° 338-MINSA/2022/DGOS",
+    "tarea_id": 15
+  },
+  {
+    "id": 16,
+    "name": "01 informe que contiene el listado final de las instituciones que obtuvieron un puntaje global de cumplimiento de los ID y CM  mayor a 60%, del periodo 2023.",
+    "tarea_id": 16
+  },
+  {
+    "id": 17,
+    "name": "01 informe que contiene el desarrollo del proceso de evaluacion y el análisis de las UO involucradas del MINSA.",
+    "tarea_id": 17
+  },
+  {
+    "id": 18,
+    "name": "01 reunión virtual o física relacionado al proceso de negociación de los ID y CM  2022, con las áreas técnicas del MINSA y los equipos técnicos de cada IPRESSS y UGIPRESS a nivel nacional.",
+    "tarea_id": 18
+  },
+  {
+    "id": 19,
+    "name": "01 acta de negociación que recopila los resultados de la negociación de los pesos ponderados de cada ID y CM, por cada IPRESS, UGIPRESS y GORES.",
+    "tarea_id": 19
+  },
+  {
+    "id": 20,
+    "name": "01 boletín por mes, la primera semana finalizando el mes.",
+    "tarea_id": 20
+  },
+  {
+    "id": 21,
+    "name": "01 informe por mes.",
+    "tarea_id": 21
+  },
+  {
+    "id": 22,
+    "name": "01 informe por mes.",
+    "tarea_id": 22
+  },
+  {
+    "id": 23,
+    "name": "01 Informe de elaboración de POI 2024 (enero).\n01 Informe de Modificación del 2023 - II SEM (marzo).\n01 Informe de evaluación del POI 2023 - Informe Final (abril).\n01 informe de seguimiento por cada bimensual (Junio).\n01 Informe de Modificación del 2024 (Julio).\n01 Informe de consolidación semestral 2024 (Agosto).\n01 Informe de Asistencia técnica para el POI 2025 (Octubre).\n01 reporte Ejecutivo mensual (sobre los avances de la ejecución de metas fisicas y presupuestales a las tres direcciones ejecutivas), dirigido a los Directores.",
+    "tarea_id": 23
+  },
+  {
+    "id": 24,
+    "name": "3 reportes semanales, con el análisis de la ejecución presupuestal de la DGOS.\n1 reporte final para incluirlo en el Reporte ejecutivo mensual a los Directores.",
+    "tarea_id": 24
+  },
+  {
+    "id": 25,
+    "name": "Reporte del SGD (300 aprox.) -  25 mensual.",
+    "tarea_id": 25
+  },
+  {
+    "id": 26,
+    "name": "2 reportes mensuales.",
+    "tarea_id": 26
+  },
+  {
+    "id": 27,
+    "name": "8 actas de asistencias técnicas en enero, y febrero, y de julio a diciembre)\n12 actas de asistencias técnicas de marzo a junio.",
+    "tarea_id": 27
+  },
+  {
+    "id": 28,
+    "name": "2 actas de asistencias técnicas por mes de enero a diciembre.",
+    "tarea_id": 28
+  },
+  {
+    "id": 29,
+    "name": "01 informe  que evidencia la elaboración del documento propuesto  (Directiva Administrativa, Norma Tecnica, según corresponda).",
+    "tarea_id": 29
+  },
+  {
+    "id": 30,
+    "name": "01 informe de validación del proyecto de documento normativo.",
+    "tarea_id": 30
+  },
+  {
+    "id": 31,
+    "name": "01 Nota Informativa, de envío de proyecto de documento normativo.",
+    "tarea_id": 31
+  },
+  {
+    "id": 32,
+    "name": "01 acta de por cada acción de socialización del documento normativo aprobado.",
+    "tarea_id": 32
+  },
+  {
+    "id": 33,
+    "name": "01 informe del documento elaborado.",
+    "tarea_id": 33
+  },
+  {
+    "id": 34,
+    "name": "01 Informe de priorización de problemas de la gestión administrativa por cada trimestre, (empezando por el ultimo trimeste del año anterior)",
+    "tarea_id": 34
+  },
+  {
+    "id": 35,
+    "name": "01 Plan por año.",
+    "tarea_id": 35
+  },
+  {
+    "id": 36,
+    "name": "06 acciones de monitoreo por IPRESS y/o UGIPRESS priorizadas en Lima Metropolitana por mes.",
+    "tarea_id": 36
+  },
+  {
+    "id": 37,
+    "name": "06 acciones de monitoreo por IPRESS y/o UGIPRESS priorizadas en regiones por mes.",
+    "tarea_id": 37
+  },
+  {
+    "id": 38,
+    "name": "01 informe remitido al órgano competente del MINSA, que da a conocer la problemática identificada en las acciones de monitoreo de IPRESS/ UGIPRESS, que corresponde atención según ROF MINSA.",
+    "tarea_id": 38
+  },
+  {
+    "id": 39,
+    "name": "04 Documentos por trimestre, del seguimiento realizado a IPRESS o UGIPRESS respecto del cumplimiento de las recomendaciones dadas en las acciones de monitoreo.",
+    "tarea_id": 39
+  },
+  {
+    "id": 40,
+    "name": "1 boletín de cada mes previo.",
+    "tarea_id": 40
+  },
+  {
+    "id": 41,
+    "name": "1 reporte mensual de los hallazgos en las acciones de monitoreo de IPRESS y UGIPRESS.",
+    "tarea_id": 41
+  },
+  {
+    "id": 42,
+    "name": "1 reportes mensual de seguimiento del cumplimiento de los compromisos en las acciones de monitoreo y asistencias tecnicas realizadas a IPRESS y UGIPRESS.",
+    "tarea_id": 42
+  },
+  {
+    "id": 43,
+    "name": "01 Plan por año.",
+    "tarea_id": 43
+  },
+  {
+    "id": 44,
+    "name": "02 acciones mensuales  de asistencia tecnica a IPRESS y UIGPRESS a nivel nacional, presenciales y virtuales.",
+    "tarea_id": 44
+  },
+  {
+    "id": 45,
+    "name": "01 accion mensual, según cronograma de asistencia tecnica.  2 acciones mensuales por DIMON,  (reprogramar meta fisica).",
+    "tarea_id": 45
+  },
+  {
+    "id": 46,
+    "name": "Se considera, 1 informe mensual de las Asistencias Técnicas de evaluación de los indicadores de desempeño y compromisos de mejora del periódo 2023. Que se realiza en el periodo de ejecucion de febrero a mayo del 2024.",
+    "tarea_id": 46
+  },
+  {
+    "id": 47,
+    "name": "01 informe mensual del seguimiento y monitoreo realizado en cada mes.",
+    "tarea_id": 47
+  },
+  {
+    "id": 48,
+    "name": "01 informe trimestral del seguimiento y monitoreo realizado sobre el cumplimiento de los indicadores de desempeño 2024.",
+    "tarea_id": 48
+  },
+  {
+    "id": 49,
+    "name": "01 informe del avance del cumplimiento de los indicadores de los compromisos de gestión y metas de cobertura del FED 2024 en las DIRIS. (Periodos especificos: enero, abril y julio del 2024)",
+    "tarea_id": 49
+  },
+  {
+    "id": 50,
+    "name": "15 informes de opinión técnica mensuales.\n\nProyectado según el promedio mesual de la producción del año 2023. (179/12=14.9)",
+    "tarea_id": 50
+  },
+  {
+    "id": 51,
+    "name": "Un informe mensual por cada tarea programada para el fortalecimiento de la capacidad operativa para disminuir el embalse  quirúrgico en los Gobiernos Regionales y Lima Metropolitana",
+    "tarea_id": 51
+  },
+  {
+    "id": 52,
+    "name": "Un informe mensual por cada tarea programada para el fortalecimiento de la capacidad operativa para disminuir el embalse  quirúrgico en los Gobiernos Regionales y Lima Metropolitana",
+    "tarea_id": 52
+  },
+  {
+    "id": 53,
+    "name": "Un informe mensual por cada tarea programada para el fortalecimiento de la capacidad operativa para disminuir el embalse  quirúrgico en los Gobiernos Regionales y Lima Metropolitana",
+    "tarea_id": 53
+  },
+  {
+    "id": 54,
+    "name": "Número de Intervenciones programadas mes a mes en el Plan Específico.",
+    "tarea_id": 54
+  },
+  {
+    "id": 55,
+    "name": "Un informe  que consolida el seguimiento de la implementación de las tareas.",
+    "tarea_id": 55
+  },
+  {
+    "id": 56,
+    "name": "Un informe, que consolida el avance y nivel de cumplimiento de las metas, idicadores y actividades.",
+    "tarea_id": 56
+  },
+  {
+    "id": 57,
+    "name": "Trimestral",
+    "tarea_id": 57
+  },
+  {
+    "id": 58,
+    "name": "Mensual",
+    "tarea_id": 58
+  },
+  {
+    "id": 59,
+    "name": "Trimestral",
+    "tarea_id": 59
+  },
+  {
+    "id": 60,
+    "name": "Trimestral",
+    "tarea_id": 60
+  },
+  {
+    "id": 61,
+    "name": "Trimestral",
+    "tarea_id": 61
+  },
+  {
+    "id": 62,
+    "name": "Trimestral",
+    "tarea_id": 62
+  },
+  {
+    "id": 63,
+    "name": "Trimestral",
+    "tarea_id": 63
+  },
+  {
+    "id": 64,
+    "name": "Mensual",
+    "tarea_id": 64
+  },
+  {
+    "id": 65,
+    "name": "Mensual",
+    "tarea_id": 65
+  },
+  {
+    "id": 66,
+    "name": "Mensual",
+    "tarea_id": 66
+  },
+  {
+    "id": 67,
+    "name": "Trimestral",
+    "tarea_id": 67
+  },
+  {
+    "id": 68,
+    "name": "Mensual",
+    "tarea_id": 68
+  },
+  {
+    "id": 69,
+    "name": "Mensual",
+    "tarea_id": 69
+  },
+  {
+    "id": 70,
+    "name": "Mensual",
+    "tarea_id": 70
+  },
+  {
+    "id": 71,
+    "name": "Trimestral",
+    "tarea_id": 71
+  },
+  {
+    "id": 72,
+    "name": "Mensual",
+    "tarea_id": 72
+  },
+  {
+    "id": 73,
+    "name": "Mensual",
+    "tarea_id": 73
+  },
+  {
+    "id": 74,
+    "name": "Mensual",
+    "tarea_id": 74
+  },
+  {
+    "id": 75,
+    "name": "Mensual",
+    "tarea_id": 75
+  },
+  {
+    "id": 76,
+    "name": "Mensual",
+    "tarea_id": 76
+  },
+  {
+    "id": 77,
+    "name": "Mensual",
+    "tarea_id": 77
+  },
+  {
+    "id": 78,
+    "name": "Anual",
+    "tarea_id": 78
+  },
+  {
+    "id": 79,
+    "name": "Anual",
+    "tarea_id": 79
+  },
+  {
+    "id": 80,
+    "name": "Mensual",
+    "tarea_id": 80
+  },
+  {
+    "id": 81,
+    "name": "Mensual",
+    "tarea_id": 81
+  },
+  {
+    "id": 82,
+    "name": "Trimestral",
+    "tarea_id": 82
+  },
+  {
+    "id": 83,
+    "name": "Mensual",
+    "tarea_id": 83
+  },
+  {
+    "id": 84,
+    "name": "Programación Mensual",
+    "tarea_id": 84
+  },
+  {
+    "id": 85,
+    "name": "Mensual",
+    "tarea_id": 85
+  },
+  {
+    "id": 86,
+    "name": "Mensual",
+    "tarea_id": 86
+  },
+  {
+    "id": 87,
+    "name": "Trimestral",
+    "tarea_id": 87
+  },
+  {
+    "id": 88,
+    "name": "Mensual",
+    "tarea_id": 88
+  },
+  {
+    "id": 89,
+    "name": "Mensual",
+    "tarea_id": 89
+  },
+  {
+    "id": 90,
+    "name": "Mensual",
+    "tarea_id": 90
+  },
+  {
+    "id": 91,
+    "name": "Trimestral",
+    "tarea_id": 91
+  },
+  {
+    "id": 92,
+    "name": "Semestral",
+    "tarea_id": 92
+  },
+  {
+    "id": 93,
+    "name": "Anual",
+    "tarea_id": 93
+  },
+  {
+    "id": 94,
+    "name": "Mensual",
+    "tarea_id": 94
+  },
+  {
+    "id": 95,
+    "name": "Mensual",
+    "tarea_id": 95
+  },
+  {
+    "id": 96,
+    "name": "Mensual",
+    "tarea_id": 96
+  },
+  {
+    "id": 97,
+    "name": "Mensual",
+    "tarea_id": 97
+  },
+  {
+    "id": 98,
+    "name": "Mensual",
+    "tarea_id": 98
+  },
+  {
+    "id": 99,
+    "name": "Mensual",
+    "tarea_id": 99
+  },
+  {
+    "id": 100,
+    "name": "Mensual",
+    "tarea_id": 100
+  },
+  {
+    "id": 101,
+    "name": "Mensual",
+    "tarea_id": 101
+  },
+  {
+    "id": 102,
+    "name": "Mensual",
+    "tarea_id": 102
+  },
+  {
+    "id": 103,
+    "name": "Mensual",
+    "tarea_id": 103
+  },
+  {
+    "id": 104,
+    "name": "Mensual",
+    "tarea_id": 104
+  },
+  {
+    "id": 105,
+    "name": "Mensual",
+    "tarea_id": 105
+  },
+  {
+    "id": 106,
+    "name": "Mensual",
+    "tarea_id": 106
+  },
+  {
+    "id": 107,
+    "name": "Mensual",
+    "tarea_id": 107
+  },
+  {
+    "id": 108,
+    "name": "Mensual",
+    "tarea_id": 108
+  },
+  {
+    "id": 109,
+    "name": "Mensual",
+    "tarea_id": 109
+  },
+  {
+    "id": 110,
+    "name": "",
+    "tarea_id": 110
+  },
+  {
+    "id": 111,
+    "name": "",
+    "tarea_id": 111
+  },
+  {
+    "id": 112,
+    "name": "",
+    "tarea_id": 112
+  },
+  {
+    "id": 113,
+    "name": "",
+    "tarea_id": 113
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Administración"
+  },
+  {
+    "id": 2,
+    "name": "Archivo"
+  },
+  {
+    "id": 3,
+    "name": "Área Legal"
+  },
+  {
+    "id": 4,
+    "name": "Asesor"
+  },
+  {
+    "id": 5,
+    "name": "Dirección Ejecutiva"
+  },
+  {
+    "id": 6,
+    "name": "Comunicaciones"
+  },
+  {
+    "id": 7,
+    "name": "Convenios"
+  },
+  {
+    "id": 8,
+    "name": "Diem"
+  },
+  {
+    "id": 9,
+    "name": "Dirección General"
+  },
+  {
+    "id": 10,
+    "name": "Gestión De La Información"
+  },
+  {
+    "id": 11,
+    "name": "Macro Centro"
+  },
+  {
+    "id": 12,
+    "name": "Macro Centro Medio"
+  },
+  {
+    "id": 13,
+    "name": "Macro Norte"
+  },
+  {
+    "id": 14,
+    "name": "Macro Oriente"
+  },
+  {
+    "id": 15,
+    "name": "Macro Sur"
+  },
+  {
+    "id": 16,
+    "name": "Oniees"
+  },
+  {
+    "id": 17,
+    "name": "Planeamiento Y Presupuesto"
+  },
+  {
+    "id": 18,
+    "name": "Secretaria General"
+  },
+  {
+    "id": 19,
+    "name": "Seguridad"
+  },
+  {
+    "id": 20,
+    "name": "Informática"
+  },
+  {
+    "id": 21,
+    "name": "UFE"
+  },
+  {
+    "id": 22,
+    "name": "UFI"
+  },
+  {
+    "id": 23,
+    "name": "UFM"
+  },
+  {
+    "id": 24,
+    "name": "UFN"
+  },
+  {
+    "id": 25,
+    "name": "UPP"
+  }
+]
