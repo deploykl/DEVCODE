@@ -130,23 +130,16 @@ class ActividadViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-
+    
         if user.is_superuser:
             return Actividad.objects.all()
-
-        # Verifica que el usuario tenga un grupo asociado
-        if user.grupo:
-            # Obtén el nombre del grupo del usuario
-            group_name = user.grupo.name
-
-            # Obtén el grupo correspondiente en tu modelo `Grupo`
-            try:
-                grupo = Grupo.objects.get(name=group_name)
-                return Actividad.objects.filter(grupo=grupo)
-            except Grupo.DoesNotExist:
-                return Actividad.objects.none()
-        else:
-            return Actividad.objects.none()
+    
+        if user.acceso_poi and user.dependencia:
+            # Mostrar solo actividades de la misma dependencia que el usuario
+            return Actividad.objects.filter(dependencia=user.dependencia)
+    
+        # Usuario sin permisos o sin dependencia
+        return Actividad.objects.none()
 
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
@@ -452,12 +445,3 @@ class ArchivoViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(archivos, many=True)
         return Response(serializer.data)
-
-
-class GrupoViewSet(viewsets.ModelViewSet):
-    queryset = Grupo.objects.all()
-    serializer_class = GrupoSerializer
-    permission_classes = [IsAuthenticated]
-    ordering = ["id"]
-    ordering_fields = "__all__"
-    filter_backends = (DjangoFilterBackend, OrderingFilter)

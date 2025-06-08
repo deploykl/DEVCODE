@@ -12,7 +12,5 @@ router.register(r'reporte-tarea', ReporteTareaViewSet)
 router.register(r'reporte-actividad', ReporteActividadViewSet)
 router.register(r'archivo', ArchivoViewSet)
 
-router.register(r'grupo', GrupoViewSet)
-
 
 urlpatterns = router.urls

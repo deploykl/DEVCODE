@@ -8,7 +8,6 @@
         <TableComponent :headers="[
           { key: 'codigo', label: 'CÓDIGO', filterable: false },
           { key: 'name', label: 'ACTIVIDAD', filterable: false },
-          { key: 'grupo_name', label: 'GRUPO', filterable: true },
           { key: 'estado', label: 'ESTADO', filterable: true },
           { key: 'dependencia_name', label: 'CENTRO DE COSTO', filterable: true },
           { key: 'medida_name', label: 'MEDIDA', filterable: true }
@@ -36,13 +35,6 @@
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
                 <textarea class="form-control" id="name" v-model="form.name" rows="4" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="grupo" class="form-label">Grupo</label>
-                <select class="form-select" id="grupo" v-model="form.grupo">
-                  <option disabled value="">-- Elija una opción --</option>
-                  <option v-for="gru in grupos" :key="gru.id" :value="gru.id">{{ gru.name }}</option>
-                </select>
               </div>
               <div class="mb-3">
                 <label for="estado" class="form-label">Estado</label>
@@ -88,7 +80,6 @@ import * as bootstrap from 'bootstrap';
 const dependencias = ref([]);
 const medidas = ref([]); 
 const actividades = ref([]);
-const grupos = ref([]);
 
 const isEditing = ref(false);
 
@@ -124,18 +115,16 @@ const LISTAR = async () => {
   try {
     const token = getAuthToken();
     // Ejecutar todas las solicitudes en paralelo
-    const [responseDependencias, responseMedidas, responseActividades, responseGrupo] = await Promise.all([
+    const [responseDependencias, responseMedidas, responseActividades] = await Promise.all([
       api.get('personal/dependencia/', { headers: { Authorization: `Bearer ${token}` } }),
       api.get('poi/medida-actividad/', { headers: { Authorization: `Bearer ${token}` } }),
       api.get('poi/actividad/', { headers: { Authorization: `Bearer ${token}` } }),
-      api.get('poi/grupo/', { headers: { Authorization: `Bearer ${token}` } }),
     ]);
 
     // Asignar los datos de las respuestas
     dependencias.value = responseDependencias.data;
     medidas.value = responseMedidas.data;
     actividades.value = responseActividades.data.activities;
-    grupos.value = responseGrupo.data;
 
     // Verificar que group_name esté presente en cada actividad
     console.log(actividades.value);

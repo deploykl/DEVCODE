@@ -4,36 +4,6 @@ from api.user.models import User
 from api.poi.choices import TIPO_CHOICES, TRAZABILIDAD_CHOICES
 from django.contrib.auth.models import Group
 
-class Grupo(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        # Guardamos la instancia del modelo Grupo
-        super(Grupo, self).save(*args, **kwargs)
-
-        # Intentamos obtener el grupo existente por su nombre
-        group, created = Group.objects.get_or_create(name=self.name)
-        if not created:
-            # Si el grupo ya existe, solo actualizamos su nombre si es necesario
-            # Note: `Group` doesn't have an ID or `name` change method, so we need to handle this differently.
-            if group.name != self.name:
-                group.name = self.name
-                group.save()  # Update the existing group name
-        # Note: If created is True, a new group is created with the same name
-
-    def delete(self, *args, **kwargs):
-        # Sincronizamos la eliminación con el modelo Group de Django
-        try:
-            group = Group.objects.get(name=self.name)
-            group.delete()
-        except Group.DoesNotExist:
-            # Si el grupo no existe, no hacemos nada
-            pass
-        # Elimina la instancia del modelo Grupo
-        super(Grupo, self).delete(*args, **kwargs)
     
 class MedidaActividad(models.Model):
     codigo = models.CharField(max_length=150, verbose_name="Código")
@@ -53,7 +23,6 @@ class Actividad(models.Model):
         verbose_name='Centro de costo'
     )
     medida = models.ForeignKey(MedidaActividad, on_delete=models.CASCADE, verbose_name='Medida')
-    grupo = models.ForeignKey(Grupo, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Grupo')
     
     def __str__(self):
         return f"{self.codigo}, {self.name}"

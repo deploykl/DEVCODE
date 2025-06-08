@@ -5,7 +5,6 @@ from django.db.models import Sum
 class ActividadSerializer(serializers.ModelSerializer):
     dependencia_name = serializers.ReadOnlyField(source='dependencia.name')
     medida_name  = serializers.CharField(source='medida.name', read_only=True)
-    grupo_name = serializers.CharField(source='grupo.name', read_only=True)  # Asegúrate de incluir esto
     dependencia_actividad_count = serializers.SerializerMethodField()
     suma_prog_fisica = serializers.SerializerMethodField()
     suma_repro_fisica = serializers.SerializerMethodField()
@@ -19,7 +18,7 @@ class ActividadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Actividad
-        fields = ("id", "codigo", "name", "estado", "grupo_name", "grupo",
+        fields = ("id", "codigo", "name", "estado",
                   "user", "dependencia_name","medida","medida_name","dependencia", 
                   "dependencia_actividad_count", "suma_prog_fisica",
                   "suma_repro_fisica", "suma_ejec_fisica",
@@ -153,7 +152,3 @@ class MedidaTareaSerializer(serializers.ModelSerializer):
         model = MedidaTarea
         fields = '__all__'
         
-class GrupoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Grupo
-        fields = '__all__'   

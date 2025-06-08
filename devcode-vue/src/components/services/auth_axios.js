@@ -20,6 +20,11 @@ const api = axios.create({
 // Interceptor for requests: Add authentication token
 api.interceptors.request.use(
   config => {
+    // Excluir la ruta de login de añadir el token
+    if (config.url.includes('user/login/')) {
+      return config;
+    }
+    
     const token = getAuthToken();
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;

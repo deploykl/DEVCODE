@@ -91,13 +91,12 @@ class LoginView(APIView):
         if not user.check_password(password):
             return Response({'detail': 'Contraseña incorrecta'}, status=status.HTTP_401_UNAUTHORIZED)
 
-       # Verificar si el usuario tiene un grupo asociado
+        # Verificar que el usuario tenga acceso al POI
+        if not user.acceso_poi:
+            return Response({'detail': 'El usuario no tiene acceso al módulo POI'}, status=status.HTTP_403_FORBIDDEN)
+
         grupo_name = user.groups.first().name if user.groups.exists() else None
 
-        if not grupo_name:
-            return Response({'detail': 'El usuario no tiene un grupo asignado. Contacte al administrador.'}, status=status.HTTP_403_FORBIDDEN)
-
-        # Generar tokens si el usuario tiene un grupo válido
         refresh = RefreshToken.for_user(user)
         access_token = str(refresh.access_token)
 
@@ -106,10 +105,13 @@ class LoginView(APIView):
             'refresh': str(refresh),
             'is_superuser': user.is_superuser,
             'is_staff': user.is_staff,
-            'group': grupo_name,  # Añadir el nombre del grupo
+            'group': grupo_name,  # Puede ser None si no tiene grupo
+            'dependencia_id': user.dependencia.id if user.dependencia else None,
         }
 
         return Response(user_data, status=status.HTTP_200_OK)
+
+
 
 
     

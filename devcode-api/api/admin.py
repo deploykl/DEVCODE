@@ -28,5 +28,4 @@ admin.site.register(User, UserAdmin)
 
 
 #===================    POI ==================
-admin.site.register(Grupo)
 

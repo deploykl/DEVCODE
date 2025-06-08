@@ -32,8 +32,11 @@
                   <span class="input-group-text">
                     <i class="fas fa-lock"></i>
                   </span>
-                  <input type="password" id="password" v-model="password" class="form-control" placeholder="Contraseña"
-                    required />
+                  <input :type="showPassword ? 'text' : 'password'" id="password" v-model="password"
+                    class="form-control" placeholder="Contraseña" required />
+                  <button class="btn btn-outline-secondary" type="button" @click="toggleShowPassword">
+                    <i :class="showPassword ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+                  </button>
                 </div>
               </div>
               <div class="text-center">
@@ -61,17 +64,21 @@ import { api } from '@/components/services/auth_axios';
 const username = ref('')
 const password = ref('')
 const errorMessage = ref('')
+const showPassword = ref(false)
 const router = useRouter()
 
+const toggleShowPassword = () => {
+  showPassword.value = !showPassword.value
+}
+
 const handleLowerCASE = (event) => {
-  const targetField = event.target.id; // Obtener el ID del campo de entrada
+  const targetField = event.target.id;
   if (targetField === 'username') {
-    username.value = event.target.value.toLowerCase(); // Actualizar username
+    username.value = event.target.value.toLowerCase();
   } else if (targetField === 'password') {
-    password.value = event.target.value.toLowerCase(); // Actualizar password
+    password.value = event.target.value.toLowerCase();
   }
 };
-
 
 const handleSubmit = async () => {
   try {
@@ -82,59 +89,57 @@ const handleSubmit = async () => {
 
     console.log('Respuesta del backend:', response.data);
 
-    const { access, refresh, is_superuser, is_staff, group } = response.data;
+    const { access, refresh, is_superuser, is_staff, group, acceso_poi } = response.data;
 
-    if (access) {
-      localStorage.setItem('auth_token', access);
-    } else {
+    if (!access) {
       errorMessage.value = 'No se recibió token de acceso.';
       return;
     }
 
+    // Store the access token and user data
+    localStorage.setItem('auth_token', access);
+
     if (refresh) {
       localStorage.setItem('refreshToken', refresh);
-    } else {
-      errorMessage.value = 'No se recibió token de refresco.';
-      return;
     }
 
     localStorage.setItem('is_superuser', is_superuser ? 'true' : 'false');
     localStorage.setItem('is_staff', is_staff ? 'true' : 'false');
-    localStorage.setItem('group', group || 'No definido');
+    localStorage.setItem('acceso_poi', acceso_poi ? 'true' : 'false');
+    localStorage.setItem('dependencia_id', response.data.dependencia_id)
 
-    console.log('Grupo del usuario:', group || 'No definido');
-
-    // Verificar permisos y redirigir según el grupo
-    if (is_superuser || (group && group !== 'No definido')) {
-      username.value = '';
-      password.value = '';
-
-      const groupRoutes = {
-        'MATERIALES': '/modulos/materiales',
-        'ADMIN': '/dashboard'
-        // Puedes agregar más grupos y rutas aquí
-      };
-
-      router.push(groupRoutes[group] || '/dasboard');
-    } else {
-      errorMessage.value = 'No tiene grupo asociado con la actividad.';
+    if (group) {
+      localStorage.setItem('group', group);
     }
+
+    username.value = '';
+    password.value = '';
+
+    router.push('/dashboard');
+
   } catch (error) {
-    if (error.response && error.response.data && error.response.data.detail) {
+    if (error.response && error.response.status === 403) {
+      errorMessage.value = error.response.data.detail || 'Su cuenta aún no cuenta con acceso al sistema.';
+    }
+    else if (error.response && error.response.data && error.response.data.detail) {
       errorMessage.value = error.response.data.detail;
-    } else {
-      errorMessage.value = 'Servidor deshabilitado. Por favor contactar con el personal del Data Center.';
+    }
+    else {
+      errorMessage.value = 'Error en el servidor. Por favor intente nuevamente.';
     }
     console.error('Error:', error);
   }
 };
-
 </script>
 
 <style scoped>
-/* Estilo para el borde morado en la parte inferior de la tarjeta */
 .card-footer {
   border-bottom: 5px solid #6f42c1;
-  /* Morado */
+}
+
+/* Estilo opcional para el botón del ojo */
+.btn-outline-secondary {
+  border-color: #ced4da;
+  border-left: 0;
 }
 </style>
