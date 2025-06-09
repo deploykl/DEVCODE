@@ -226,20 +226,29 @@ onMounted(async () => {
   }
 });
 
+// Función modificada para manejar correctamente el caso cuando repro_fisica es 0
 const calcularPorcentajeFisica = (reporte) => {
-  if (reporte.repro_fisica > 0) {
-    return (reporte.ejec_fisica / reporte.repro_fisica * 100).toFixed(2);
+  if (reporte.repro_fisica === 0) {
+    return reporte.ejec_fisica > 0 ? 'N/A' : '0.00'; // MP = Mala Programación
   }
-  return '0.00';
+  return (reporte.ejec_fisica / reporte.repro_fisica * 100).toFixed(2);
 };
 
+// Función de sustento actualizada
+// Función de sustento actualizada
 const calcularSustento = (reporte) => {
-  let sustento = { text: '', class: '' };
+  let sustento = { 
+    text: '', 
+    class: '', 
+    porcentaje: calcularPorcentajeFisica(reporte),
+    esValido: true
+  };
 
   if (reporte.repro_fisica === 0) {
     if (reporte.ejec_fisica > 0) {
-      sustento.text = 'Ejecución no programada';
-      sustento.class = 'text-danger';
+      sustento.text = 'Ejecución no programada'; // Cambiado aquí
+      sustento.class = 'text-info';
+      sustento.esValido = false;
     } else {
       sustento.text = 'No programado';
       sustento.class = 'text-secondary';
@@ -258,16 +267,17 @@ const calcularSustento = (reporte) => {
   return sustento;
 };
 
-
-
-
 const getBadgeClass = (reporte) => {
+  const porcentaje = calcularPorcentajeFisica(reporte);
+  
   if (reporte.repro_fisica === 0 && reporte.ejec_fisica > 0) {
-    return 'bg-danger';
+    return 'bg-info'; // Para "Mala programación"
   } else if (reporte.repro_fisica > reporte.ejec_fisica) {
     return 'bg-danger';
-  } else if (calcularPorcentajeFisica(reporte) === '100.00') {
+  } else if (porcentaje === '100.00') {
     return 'bg-success';
+  } else if (porcentaje.includes('MP')) {
+    return 'bg-danger'; // Clase para "Mala programación"
   } else {
     return 'bg-dark';
   }

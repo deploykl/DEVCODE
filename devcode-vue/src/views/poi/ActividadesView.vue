@@ -138,7 +138,7 @@
             <th scope="col">N°</th>
             <th>Dependencia</th>
             <th v-if="isStaff || (isSuperuser && !isStaff)">Estado</th>
-            <th v-if="isStaff || (isSuperuser && !isStaff)">Grupo</th>
+            <th v-if="isStaff || (isSuperuser && !isStaff)">Código</th>
             <th>Actividad Operativa</th>
             <th v-if="isStaff || (isSuperuser && !isStaff)">Prog.</th>
             <th>Act.</th>
@@ -166,7 +166,7 @@
                 {{ actividad.estado ? 'Activo' : 'Inactivo' }}
               </span>
             </td>
-            <td v-if="isStaff || (isSuperuser && !isStaff)">{{ actividad.grupo_name }}</td>
+            <td v-if="isStaff || (isSuperuser && !isStaff)">{{ actividad.codigo }}</td>
             <td>{{ actividad.name }}</td>
             <td v-if="isStaff || (isSuperuser && !isStaff)">{{ actividad.suma_prog_fisica || 0 }}</td>
             <td>{{ actividad.suma_repro_fisica || 0 }}</td>
