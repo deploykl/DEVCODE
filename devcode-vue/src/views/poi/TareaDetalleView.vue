@@ -158,7 +158,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { api, getAuthToken } from '@/components/services/auth_axios';
 import { SwalSuccess, SwalWarning, SwalDelete, SwalUpdate } from '@/components/widgets/SwalComponent'; // Asegúrate de que la ruta sea correcta
@@ -248,12 +248,6 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error al obtener los detalles de la tarea:', error.response ? error.response.data : error.message);
   }
-    actualizarEstadosReportes(); // Llamar a la función para inicializar estados
-
-});
-// Observar cambios en el mes actual
-watch(mesActual, () => {
-  actualizarEstadosReportes(); // Actualiza los estados cuando cambia el mes actual
 });
 
 const calcularPorcentajeFisica = (reporte) => {
@@ -375,21 +369,6 @@ const actualizarEstado = async (reporte) => {
   } catch (error) {
     console.error('Error al actualizar el estado:', error.response ? error.response.data : error.message);
   }
-};
-
-// Función para actualizar el estado de los reportes
-const actualizarEstadosReportes = () => {
-  reportes.value.forEach(reporte => {
-    const mesReporte = reporte.mes.toUpperCase();
-    // Habilitar el mes anterior y bloquear el mes antes de él
-    if (mesReporte === mesAnterior.value) {
-      reporte.campos_bloqueados = true; // Habilitar el mes anterior
-    } else if (mesReporte === mesAntesAnterior.value) {
-      reporte.campos_bloqueados = false; // Bloquear el mes antes de anterior
-    } else {
-      reporte.campos_bloqueados = false; // Bloquear otros meses
-    }
-  });
 };
 
 const guardarRegistro = async (reporte) => {
