@@ -5,6 +5,7 @@ import ActividadesView from '../views/poi/admin/ActividadesView.vue'; // Ejemplo
 import MedidaActividadView from '../views/poi/admin/MedidaActividadView.vue'; // Ejemplo de vista para admin
 import TareasView from '../views/poi/admin/TareasView.vue'; // Ejemplo de vista para admin
 import MedidaTareaView from '../views/poi/admin/MedidaTareaView.vue'; // Ejemplo de vista para admin
+import CamposView from '../views/poi/admin/CamposView.vue'; // Ejemplo de vista para admin
 
 const adminPOI = [
   {
@@ -72,6 +73,16 @@ const adminPOI = [
     component: MedidaTareaView,
     meta: {
       title: 'MEDIDA DE TAREA',
+      requiresAuth: true,
+      isAdmin: true,
+    },
+  },
+    {
+    path: '/admin/campos',
+    name: 'admin-campos',
+    component: CamposView,
+    meta: {
+      title: 'BLOQUEAR CAMPOS',
       requiresAuth: true,
       isAdmin: true,
     },

@@ -96,14 +96,18 @@ class ArchivoSerializer(serializers.ModelSerializer):
 # =========================== RELACIÓN PARA TAREA =========================  
     
 class ReporteTareaSerializer(serializers.ModelSerializer):
+    tarea_name = serializers.CharField(source='tarea.name', read_only=True)
+    actividad_name = serializers.CharField(source='tarea.actividad.name', read_only=True)
+    dependencia_name = serializers.CharField(source='tarea.actividad.dependencia.name', read_only=True)
+    
     class Meta:
         model = ReporteTarea
         fields = '__all__'
         extra_kwargs = {
-            'fecha_creacion': {'read_only': True},  # Asegúrate de que `fecha_creacion` sea solo de lectura
-            'sustento': {'max_length': None},  # Elimina cualquier límite
-            'alerta': {'max_length': None},
-            'recomendaciones': {'max_length': None}
+            'fecha_creacion': {'read_only': True},
+            'sustento': {'required': False, 'allow_blank': True},
+            'alerta': {'required': False, 'allow_blank': True},
+            'recomendaciones': {'required': False, 'allow_blank': True}
         }
 class ReporteActividadSerializer(serializers.ModelSerializer):
     actividad_name = serializers.CharField(source='actividad.name', read_only=True)  # Agregar este campo
@@ -116,6 +120,7 @@ class ReporteActividadSerializer(serializers.ModelSerializer):
 class TareaSerializer(serializers.ModelSerializer):
     actividad_name = serializers.ReadOnlyField(source="actividad.name")
     medida_name  = serializers.CharField(source='medida.name', read_only=True)
+    actividad_medida_name = serializers.CharField(source='actividad.medida.name', read_only=True)
     mes = ReporteTareaSerializer(many=True, read_only=True, source='report_tarea')
     TotalProgFisica = serializers.SerializerMethodField()
     TotalReproFisica = serializers.SerializerMethodField()
@@ -126,7 +131,7 @@ class TareaSerializer(serializers.ModelSerializer):
         model = Tarea
         fields = (
             "id", "name", "trazabilidad", "actividad","medida",
-            "medida_name","actividad_name", "definicion", 
+            "medida_name","actividad_name", "definicion","actividad_medida_name", 
             "mes", "criterio", "TotalProgFisica", "TotalReproFisica", 
             "TotalEjecFisica", "PorEjecAvance")
     

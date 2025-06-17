@@ -145,8 +145,8 @@
                     </router-link>
                 </li>
                 <li v-if="isStaff || (isSuperuser && !isStaff)" class="nav-item">
-                    <router-link :to="{ name: 'admin-tareas' }" class="nav-link collapsed">
-                        <i class="fa-regular fa-paperclip"></i><span>otro</span>
+                    <router-link :to="{ name: 'admin-campos' }" class="nav-link collapsed">
+                        <i class="fa-regular fa-paperclip"></i><span>Habilitar Campos</span>
                     </router-link>
                 </li>
                 <!-- Menú UTILES -->

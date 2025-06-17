@@ -12,11 +12,16 @@ from rest_framework import viewsets, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend  # type: ignore
 from rest_framework.filters import OrderingFilter
+from rest_framework.pagination import PageNumberPagination
 
 from api.poi.serializers import *
 from api.poi.models import *
 
-
+class ReporteTareaPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+    
 @extend_schema_view(
     list=extend_schema(description="Permite obtener una lista de tarea"),
     retrieve=extend_schema(description="Permite obtener una tarea"),
@@ -368,11 +373,69 @@ class ReporteTareaViewSet(viewsets.ModelViewSet):
     queryset = ReporteTarea.objects.all()
     serializer_class = ReporteTareaSerializer
     permission_classes = [IsAuthenticated]
-    ordering = ["id"]
-    ordering_fields = "__all__"
-    filter_backends = (DjangoFilterBackend, OrderingFilter)
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filterset_fields = {
+        'year': ['exact'],
+        'mes': ['exact', 'iexact'],
+        'tarea__id': ['exact'],
+    }
+    ordering_fields = ['year', 'mes', 'tarea__name']
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        
+        # Obtener parámetros de consulta
+        year = self.request.query_params.get('year')
+        mes = self.request.query_params.get('mes')
+        tarea_id = self.request.query_params.get('tarea_id')
+        
+        # Aplicar filtros
+        if year:
+            queryset = queryset.filter(year=year)
+        if mes:
+            queryset = queryset.filter(mes__iexact=mes)
+        if tarea_id:
+            queryset = queryset.filter(tarea_id=tarea_id)
+            
+        return queryset.select_related('tarea', 'tarea__actividad')
 
-
+    @action(detail=False, methods=['post'], url_path='bulk-update')
+    def bulk_update(self, request):
+        ids = request.data.get('ids', [])
+        campos_bloqueados = request.data.get('campos_bloqueados', None)
+        
+        if not ids or campos_bloqueados is None:
+            return Response(
+                {'error': 'IDs and campos_bloqueados are required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+            
+        # Update all reports with the given IDs
+        updated = ReporteTarea.objects.filter(id__in=ids).update(
+            campos_bloqueados=campos_bloqueados
+        )
+        
+        return Response({
+            'status': 'success',
+            'updated_count': updated
+        })
+           
+    @action(detail=False, methods=['get'])
+    def resumen(self, request):
+        queryset = self.filter_queryset(self.get_queryset())
+        
+        # Calcular totales
+        total_prog = queryset.aggregate(Sum('prog_fisica'))['prog_fisica__sum'] or 0
+        total_repro = queryset.aggregate(Sum('repro_fisica'))['repro_fisica__sum'] or 0
+        total_ejec = queryset.aggregate(Sum('ejec_fisica'))['ejec_fisica__sum'] or 0
+        
+        return Response({
+            'total_prog_fisica': total_prog,
+            'total_repro_fisica': total_repro,
+            'total_ejec_fisica': total_ejec,
+            'porcentaje_avance': round((total_ejec / total_repro * 100), 2) if total_repro else 0
+        })
+    
 class ReporteActividadViewSet(viewsets.ModelViewSet):
     queryset = ReporteActividad.objects.all()
     serializer_class = ReporteActividadSerializer

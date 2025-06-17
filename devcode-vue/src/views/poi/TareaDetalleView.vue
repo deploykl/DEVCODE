@@ -35,7 +35,10 @@
           </thead>
           <tbody>
             <template v-for="(reporte) in reportes" :key="reporte.id">
-              <tr :class="{ 'current-month': reporte.mes.toUpperCase() === mesActual }">
+              <tr :class="{
+                'current-month': reporte.mes.toUpperCase() === mesActual,
+                'previous-month': reporte.mes.toUpperCase() === mesAnterior
+              }">
                 <td class="month-name">{{ reporte.mes }}</td>
 
                 <td v-if="isStaff || (isSuperuser && !isStaff)" class="toggle-cell">
@@ -81,7 +84,8 @@
 
                 <td class="comment-cell">
                   <div class="textarea-container">
-                    <textarea v-model="reporte.alerta" :disabled="!reporte.campos_bloqueados" maxlength="500"
+                    <textarea v-model="reporte.alerta"
+                      :disabled="!reporte.campos_bloqueados || !(isStaff || (isSuperuser && !isStaff))" maxlength="500"
                       placeholder="Ingrese alertas..." rows="3"></textarea>
                     <span class="char-counter">{{ reporte.alerta ? reporte.alerta.length : 0 }}/500</span>
                   </div>
@@ -89,7 +93,8 @@
 
                 <td class="comment-cell">
                   <div class="textarea-container">
-                    <textarea v-model="reporte.recomendaciones" :disabled="!reporte.campos_bloqueados" maxlength="500"
+                    <textarea v-model="reporte.recomendaciones"
+                      :disabled="!reporte.campos_bloqueados || !(isStaff || (isSuperuser && !isStaff))" maxlength="500"
                       placeholder="Ingrese recomendaciones..." rows="3"></textarea>
                     <span class="char-counter">{{ reporte.recomendaciones ? reporte.recomendaciones.length : 0
                     }}/500</span>
@@ -108,10 +113,13 @@
                 </td>
               </tr>
 
-              <tr v-if="reporte.mes.toUpperCase() === mesActual && reporte.campos_bloqueados" class="month-reminder">
+              <tr v-if="reporte.mes.toUpperCase() === mesAnterior && reporte.campos_bloqueados"
+                class="month-reminder previous-month">
                 <td :colspan="isStaff || (isSuperuser && !isStaff) ? 11 : 10" class="reminder-message">
-                  <i class="fas fa-clock"></i> Días restantes para el final del mes: <strong>{{ diasRestantesMes
-                  }}</strong>
+                  <i class="fas fa-exclamation-triangle"></i>
+                  Faltan <strong>{{ diasRestantesMes }}</strong> días de {{ mesActual }} para que se bloquee el reporte
+                  de {{ reporte.mes.toUpperCase() }}.
+
                 </td>
               </tr>
             </template>
@@ -150,7 +158,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { api, getAuthToken } from '@/components/services/auth_axios';
 import { SwalSuccess, SwalWarning, SwalDelete, SwalUpdate } from '@/components/widgets/SwalComponent'; // Asegúrate de que la ruta sea correcta
@@ -183,12 +191,12 @@ const validarInput = (event) => {
 const validarEjecucionFisica = (reporte) => {
   // Convertir a número entero
   reporte.ejec_fisica = Math.round(Number(reporte.ejec_fisica)) || 0;
-  
+
   // Asegurar que no sea negativo
   if (reporte.ejec_fisica < 0) {
     reporte.ejec_fisica = 0;
   }
-  
+
   // Si la ejecución física es mayor a la programada/reprogramada, ajustar al máximo permitido
   const maxPermitido = reporte.repro_fisica || reporte.prog_fisica || 0;
   if (reporte.ejec_fisica > maxPermitido) {
@@ -198,6 +206,12 @@ const validarEjecucionFisica = (reporte) => {
 
 const mesActual = computed(() => {
   const fecha = new Date();
+  return fecha.toLocaleString('es-ES', { month: 'long' }).toUpperCase();
+});
+
+const mesAnterior = computed(() => {
+  const fecha = new Date();
+  fecha.setMonth(fecha.getMonth() - 1);
   return fecha.toLocaleString('es-ES', { month: 'long' }).toUpperCase();
 });
 
@@ -223,14 +237,23 @@ onMounted(async () => {
     });
     tarea.value = response.data;
     reportes.value = response.data.mes || [];
-    // Crear reportes faltantes automáticamente al cargar la tarea
-    //await crearReportesFaltantes();
+    
+    // Asegurar que el mes anterior esté siempre activado
     reportes.value.forEach(reporte => {
-      reporte.campos_bloqueados = reporte.mes.toUpperCase() === mesActual.value ? true : reporte.campos_bloqueados;
+      if (reporte.mes.toUpperCase() === mesAnterior.value) {
+        reporte.campos_bloqueados = true;
+      }
     });
+
   } catch (error) {
     console.error('Error al obtener los detalles de la tarea:', error.response ? error.response.data : error.message);
   }
+    actualizarEstadosReportes(); // Llamar a la función para inicializar estados
+
+});
+// Observar cambios en el mes actual
+watch(mesActual, () => {
+  actualizarEstadosReportes(); // Actualiza los estados cuando cambia el mes actual
 });
 
 const calcularPorcentajeFisica = (reporte) => {
@@ -330,6 +353,12 @@ const getBadgeClass = (reporte) => {
 
 
 const actualizarEstado = async (reporte) => {
+  // Prevenir desactivar el mes anterior
+  if (reporte.mes.toUpperCase() === mesAnterior.value && !reporte.campos_bloqueados) {
+    reporte.campos_bloqueados = true; // Forzar a que permanezca activado
+    return;
+  }
+
   const accessToken = localStorage.getItem('auth_token');
   if (!accessToken) {
     console.error('No se encontró el token de autenticación.');
@@ -346,6 +375,21 @@ const actualizarEstado = async (reporte) => {
   } catch (error) {
     console.error('Error al actualizar el estado:', error.response ? error.response.data : error.message);
   }
+};
+
+// Función para actualizar el estado de los reportes
+const actualizarEstadosReportes = () => {
+  reportes.value.forEach(reporte => {
+    const mesReporte = reporte.mes.toUpperCase();
+    // Habilitar el mes anterior y bloquear el mes antes de él
+    if (mesReporte === mesAnterior.value) {
+      reporte.campos_bloqueados = true; // Habilitar el mes anterior
+    } else if (mesReporte === mesAntesAnterior.value) {
+      reporte.campos_bloqueados = false; // Bloquear el mes antes de anterior
+    } else {
+      reporte.campos_bloqueados = false; // Bloquear otros meses
+    }
+  });
 };
 
 const guardarRegistro = async (reporte) => {
@@ -539,19 +583,19 @@ const crearReportesFaltantes = async () => {
 }
 
 /* Estilo para el mes actual */
-.current-month {
+.previous-month {
   background-color: rgba(103, 58, 183, 0.05);
   position: relative;
 }
 
-.current-month::after {
+.previous-month::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #673ab7, #9c27b0);
+  background: linear-gradient(90deg, #673ab7, #b02727);
 }
 
 .month-name {
@@ -896,6 +940,7 @@ textarea:disabled {
     min-height: 60px;
   }
 }
+
 .floating-action-buttons {
   position: fixed;
   right: 0;
@@ -966,7 +1011,7 @@ textarea:disabled {
     transform: none;
     margin-top: 1rem;
   }
-  
+
   .floating-action-buttons .action-buttons {
     flex-direction: row;
     flex-wrap: wrap;
@@ -975,19 +1020,19 @@ textarea:disabled {
     border-radius: 8px;
     border-right: 1px solid #eaeaea;
   }
-  
+
   .icon-button {
     width: auto;
     padding: 0 15px;
     border-radius: 20px;
   }
-  
+
   .icon-button .button-text {
     position: static;
     opacity: 1;
     margin-left: 8px;
   }
-  
+
   .icon-button:hover {
     padding: 0 15px;
   }
