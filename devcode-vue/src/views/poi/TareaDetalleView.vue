@@ -1,17 +1,33 @@
 <template>
   <main id="main" class="main-container">
     <div v-if="tarea" class="task-details">
-      <div class="task-header">
-        <span class="activity-name">AO - {{ tarea.actividad_name }}</span>
-        <h1 class="task-title">Tarea - {{ tarea.name }}</h1>
-        <div class="task-meta">
-          <div class="meta-item">
-            <span class="meta-label">Criterio de reprogramación:</span>
-            <span class="meta-value">{{ tarea.criterio }}</span>
+      <div class="task-header p-4 bg-light rounded-3 shadow-sm mb-4">
+        <!-- Badge con ícono -->
+        <span class="badge bg-primary mb-3">
+          <i class="bi bi-activity me-1"></i>AO - {{ tarea.actividad_name }}
+        </span>
+
+        <!-- Título principal -->
+        <h1 class="display-6 mb-4 fw-bold text-primary">Tarea - {{ tarea.name }}</h1>
+
+        <!-- Sección de metadatos -->
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="p-3 bg-white rounded-2 border">
+              <h5 class="text-uppercase text-muted small fw-bold mb-3">
+                <i class="bi bi-calendar-check me-2"></i>Criterio de reprogramación
+              </h5>
+              <p class="mb-0 fs-5">{{ tarea.criterio }}</p>
+            </div>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Definición operacional:</span>
-            <span class="meta-value">{{ tarea.definicion }}</span>
+
+          <div class="col-lg-6">
+            <div class="p-3 bg-white rounded-2 border">
+              <h5 class="text-uppercase text-muted small fw-bold mb-3">
+                <i class="bi bi-file-text me-2"></i>Definición operacional
+              </h5>
+              <p class="mb-0 fs-5">{{ tarea.definicion }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -237,7 +253,7 @@ onMounted(async () => {
     });
     tarea.value = response.data;
     reportes.value = response.data.mes || [];
-    
+
     // Asegurar que el mes anterior esté siempre activado
     reportes.value.forEach(reporte => {
       if (reporte.mes.toUpperCase() === mesAnterior.value) {

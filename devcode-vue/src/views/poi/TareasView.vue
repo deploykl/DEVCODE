@@ -4,15 +4,28 @@
       <div class="card-body p-0">
         <div class="table-responsive">
           <!-- Subtítulo de medida general -->
-          <div class="px-3 pt-3 pb-2 border-bottom">
-            <h2 class="text-muted mb-0">
-              {{ tareas[0]?.actividad_name || 'Sin medida específica' }}
-            </h2>
-            <h6 class="text-muted mb-0">
-              Unidad de medida de actividad - {{ tareas[0]?.actividad_medida_name || 'Sin medida específica' }}
-            </h6>
+          <div class="px-4 pt-4 pb-3 border-bottom bg-light">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <!-- Badge para el nombre de la actividad -->
+              <h2 class="mb-0">
+                <span class="badge bg-primary bg-opacity-10 text-primary fs-6 p-2">
+                  <i class="bi bi-clipboard-check me-2"></i>
+                  {{ tareas[0]?.actividad_name || 'Sin medida específica' }}
+                </span>
+              </h2>
+            </div>
+
+            <!-- Línea de unidad de medida -->
+            <div class="d-flex align-items-center gap-2">
+              <span class="text-muted small">Unidad de medida de Actividad:</span>
+              <!-- Badge para la unidad de medida -->
+              <span class="badge bg-success bg-opacity-10 text-success">
+                <i class="bi bi-rulers me-1"></i>
+                {{ tareas[0]?.actividad_medida_name || 'Sin medida específica' }}
+              </span>
+            </div>
           </div>
-          
+
           <table class="table table-hover align-middle">
             <thead class="table-light">
               <tr>
