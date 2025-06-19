@@ -453,24 +453,28 @@ class ReporteActividadViewSet(viewsets.ModelViewSet):
     
     @action(detail=False, methods=['post'], url_path='bulk-update')
     def bulk_update(self, request):
-        ids = request.data.get('ids', [])
-        campos_bloqueados = request.data.get('campos_bloqueados', None)
-        
-        if not ids or campos_bloqueados is None:
-            return Response(
-                {'error': 'IDs and campos_bloqueados are required'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-            
-        # Update all reports with the given IDs
-        updated = ReporteActividad.objects.filter(id__in=ids).update(
-            campos_bloqueados=campos_bloqueados
-        )
-        
-        return Response({
-            'status': 'success',
-            'updated_count': updated
-        })
+          """
+          Versión simplificada - solo actualiza campos_bloqueados
+          sin validaciones de fecha/mes
+          """
+          ids = request.data.get('ids', [])
+          campos_bloqueados = request.data.get('campos_bloqueados', None)
+
+          if not ids or campos_bloqueados is None:
+              return Response(
+                  {'error': 'Se requieren IDs y campos_bloqueados'},
+                  status=status.HTTP_400_BAD_REQUEST
+              )
+
+          # Actualización masiva simple
+          updated = ReporteActividad.objects.filter(id__in=ids).update(
+              campos_bloqueados=campos_bloqueados
+          )
+
+          return Response({
+              'status': 'success',
+              'updated_count': updated
+          })   
 
 
 class ArchivoViewSet(viewsets.ModelViewSet):

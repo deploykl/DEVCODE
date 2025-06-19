@@ -115,7 +115,13 @@ class ReporteActividadSerializer(serializers.ModelSerializer):
     class Meta:
         model = ReporteActividad
         fields = '__all__'
-
+        read_only_fields = ('id', 'fecha_creacion', 'actividad_name')
+        extra_kwargs = {
+            'actividad': {'required': False},
+            'mes': {'required': False},
+            'year': {'required': False},
+            # otros campos según necesidad
+        }
                                          
 class TareaSerializer(serializers.ModelSerializer):
     actividad_name = serializers.ReadOnlyField(source="actividad.name")
