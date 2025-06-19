@@ -60,14 +60,8 @@
 
               <td v-if="isStaff || (isSuperuser && !isStaff)" class="status-cell">
                 <div class="form-check form-switch">
-                  <input 
-                    class="form-check-input" 
-                    type="checkbox" 
-                    role="switch" 
-                    v-model="reporte.campos_bloqueados" 
-                    @change="actualizarEstado(reporte)"
-                    :disabled="reporte.mes.toUpperCase() === mesAnterior"
-                  >
+                  <input class="form-check-input" type="checkbox" role="switch" v-model="reporte.campos_bloqueados"
+                    @change="actualizarEstado(reporte)" :disabled="reporte.mes.toUpperCase() === mesAnterior">
                   <label class="form-check-label small ms-2">
                     {{ reporte.campos_bloqueados ? 'Activado' : 'Bloqueado' }}
                   </label>
@@ -76,153 +70,94 @@
 
               <!-- Programado 5.21 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.prog_5_21)"
-                  @input="formatInput($event, 'prog_5_21', reporte)"
-                  @blur="formatBlur($event, 'prog_5_21', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.prog_5_21)"
-                />
+                <input :value="formatInputValue(reporte.prog_5_21)" @input="formatInput($event, 'prog_5_21', reporte)"
+                  @blur="formatBlur($event, 'prog_5_21', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.prog_5_21)" />
               </td>
-              
+
               <!-- Programado 5.23 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.prog_5_23)"
-                  @input="formatInput($event, 'prog_5_23', reporte)"
-                  @blur="formatBlur($event, 'prog_5_23', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.prog_5_23)"
-                />
+                <input :value="formatInputValue(reporte.prog_5_23)" @input="formatInput($event, 'prog_5_23', reporte)"
+                  @blur="formatBlur($event, 'prog_5_23', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.prog_5_23)" />
               </td>
-              
+
               <!-- Programado 5.26 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.prog_5_26)"
-                  @input="formatInput($event, 'prog_5_26', reporte)"
-                  @blur="formatBlur($event, 'prog_5_26', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.prog_5_26)"
-                />
+                <input :value="formatInputValue(reporte.prog_5_26)" @input="formatInput($event, 'prog_5_26', reporte)"
+                  @blur="formatBlur($event, 'prog_5_26', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.prog_5_26)" />
               </td>
-              
+
               <td class="amount-total bg-light fw-bold">
                 {{ formatCurrency(calcularProgPpto(reporte)) }}
               </td>
 
               <!-- Reprogramado 5.21 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.act_5_21)"
-                  @input="formatInput($event, 'act_5_21', reporte)"
-                  @blur="formatBlur($event, 'act_5_21', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.act_5_21)"
-                />
+                <input :value="formatInputValue(reporte.act_5_21)" @input="formatInput($event, 'act_5_21', reporte)"
+                  @blur="formatBlur($event, 'act_5_21', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.act_5_21)" />
               </td>
-              
+
               <!-- Reprogramado 5.23 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.act_5_23)"
-                  @input="formatInput($event, 'act_5_23', reporte)"
-                  @blur="formatBlur($event, 'act_5_23', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.act_5_23)"
-                />
+                <input :value="formatInputValue(reporte.act_5_23)" @input="formatInput($event, 'act_5_23', reporte)"
+                  @blur="formatBlur($event, 'act_5_23', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.act_5_23)" />
               </td>
-              
+
               <!-- Reprogramado 5.26 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.act_5_26)"
-                  @input="formatInput($event, 'act_5_26', reporte)"
-                  @blur="formatBlur($event, 'act_5_26', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.act_5_26)"
-                />
+                <input :value="formatInputValue(reporte.act_5_26)" @input="formatInput($event, 'act_5_26', reporte)"
+                  @blur="formatBlur($event, 'act_5_26', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.act_5_26)" />
               </td>
-              
+
               <td class="amount-total bg-light fw-bold">
                 {{ formatCurrency(calcularActPpto(reporte)) }}
               </td>
 
               <!-- Ejecutado 5.21 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.ejec_5_21)"
-                  @input="formatInput($event, 'ejec_5_21', reporte)"
-                  @blur="formatBlur($event, 'ejec_5_21', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.ejec_5_21)"
-                />
+                <input :value="formatInputValue(reporte.ejec_5_21)" @input="formatInput($event, 'ejec_5_21', reporte)"
+                  @blur="formatBlur($event, 'ejec_5_21', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.ejec_5_21)" />
               </td>
-              
+
               <!-- Ejecutado 5.23 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.ejec_5_23)"
-                  @input="formatInput($event, 'ejec_5_23', reporte)"
-                  @blur="formatBlur($event, 'ejec_5_23', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.ejec_5_23)"
-                />
+                <input :value="formatInputValue(reporte.ejec_5_23)" @input="formatInput($event, 'ejec_5_23', reporte)"
+                  @blur="formatBlur($event, 'ejec_5_23', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.ejec_5_23)" />
               </td>
-              
+
               <!-- Ejecutado 5.26 -->
               <td class="amount-cell">
-                <input 
-                  :value="formatInputValue(reporte.ejec_5_26)"
-                  @input="formatInput($event, 'ejec_5_26', reporte)"
-                  @blur="formatBlur($event, 'ejec_5_26', reporte)"
-                  @focus="handleFocus($event)"
-                  type="text" 
-                  :disabled="!reporte.campos_bloqueados"
-                  class="form-control form-control-sm text-end" 
-                  :placeholder="getPlaceholder(reporte.ejec_5_26)"
-                />
+                <input :value="formatInputValue(reporte.ejec_5_26)" @input="formatInput($event, 'ejec_5_26', reporte)"
+                  @blur="formatBlur($event, 'ejec_5_26', reporte)" @focus="handleFocus($event)" type="text"
+                  :disabled="!reporte.campos_bloqueados" class="form-control form-control-sm text-end"
+                  :placeholder="getPlaceholder(reporte.ejec_5_26)" />
               </td>
-              
+
               <td class="amount-total bg-light fw-bold">
                 {{ formatCurrency(calcularEjecPpto(reporte)) }}
               </td>
 
               <td class="comment-cell">
                 <div class="comment-textarea-wrapper">
-                  <textarea
-                    v-model="reporte.comentario"
-                    :disabled="!reporte.campos_bloqueados"
+                  <textarea v-model="reporte.comentario" :disabled="!reporte.campos_bloqueados"
                     class="form-control form-control-sm comment-textarea"
-                    placeholder="Escriba su comentario aquí (máx. 500 caracteres)"
-                    maxlength="500"
-                    rows="3"
-                    @input="autoResizeTextarea($event)"
-                  ></textarea>
+                    placeholder="Escriba su comentario aquí (máx. 500 caracteres)" maxlength="500" rows="3"
+                    @input="autoResizeTextarea($event)"></textarea>
                   <span class="character-counter small text-muted">
                     {{ reporte.comentario ? reporte.comentario.length : 0 }}/500
                   </span>
@@ -242,13 +177,23 @@
               </td>
             </tr>
 
-            <tr v-if="reporte.mes.toUpperCase() === mesAnterior && reporte.campos_bloqueados" class="table-warning">
-              <td :colspan="isStaff || (isSuperuser && !isStaff) ? 14 : 13" class="small text-danger">
-                <i class="fas fa-exclamation-circle me-2"></i>
-                Faltan <strong>{{ diasRestantesMes }}</strong> días de {{ mesActual }} para que se bloquee el reporte
-                de {{ reporte.mes.toUpperCase() }}.
-              </td>
-            </tr>
+           <tr v-if="reporte.mes.toUpperCase() === mesAnterior && reporte.campos_bloqueados"
+    class="month-reminder">
+    <td :colspan="isStaff || (isSuperuser && !isStaff) ? 16 : 15" class="reminder-message p-0">
+        <div class="reminder-container">
+            <div class="reminder-content">
+                <i class="fas fa-exclamation-circle reminder-icon"></i>
+                <div class="reminder-text">
+                    <span class="reminder-detail">
+                        <span class="highlight-text">Atención:</span> El reporte de <strong>{{ reporte.mes.toUpperCase() }}</strong> 
+                        se bloqueará en <strong>{{ diasRestantesMes }}</strong> días
+                    </span>
+                </div>
+                <i class="fas fa-clock reminder-icon"></i>
+            </div>
+        </div>
+    </td>
+</tr>
             <!-- Agrega esto dentro de tu template, preferiblemente al final -->
 
           </template>
@@ -277,19 +222,19 @@
         </tbody>
       </table>
     </div>
-<div class="floating-action-buttons">
-  <div class="action-buttons">
-    <button @click="guardarTodosRegistros" class="btn-save icon-button" :disabled="loading">
-      <i class="fas" :class="loading ? 'fa-spinner fa-spin' : 'fa-save'"></i>
-      <span class="button-text">{{ loading ? 'Guardando...' : 'Guardar Cambios' }}</span>
-    </button>
-    <button @click="crearReportesFaltantes" class="btn-update icon-button">
-      <i class="fas fa-sync-alt"></i>
-      <span class="button-text">Actualizar</span>
-    </button>
-  </div>
-</div>
-   
+    <div class="floating-action-buttons">
+      <div class="action-buttons">
+        <button @click="guardarTodosRegistros" class="btn-save icon-button" :disabled="loading">
+          <i class="fas" :class="loading ? 'fa-spinner fa-spin' : 'fa-save'"></i>
+          <span class="button-text">{{ loading ? 'Guardando...' : 'Guardar Cambios' }}</span>
+        </button>
+        <button @click="crearReportesFaltantes" class="btn-update icon-button">
+          <i class="fas fa-sync-alt"></i>
+          <span class="button-text">Actualizar</span>
+        </button>
+      </div>
+    </div>
+
   </main>
 </template>
 
@@ -349,16 +294,16 @@ const formatInputValue = (value) => {
 const formatInput = (event, field, reporte) => {
   // Permitir solo números y un punto decimal
   let value = event.target.value.replace(/[^0-9.]/g, '');
-  
+
   // Manejar múltiples puntos decimales
   const decimalParts = value.split('.');
   if (decimalParts.length > 2) {
     value = decimalParts[0] + '.' + decimalParts.slice(1).join('');
   }
-  
+
   // Guardar el valor sin formato en el modelo
   reporte[field] = value === '' ? null : value;
-  
+
   // Mostrar el valor limpio (sin formato)
   event.target.value = value;
 };
@@ -366,23 +311,23 @@ const formatInput = (event, field, reporte) => {
 // Función para manejar el evento blur (formato final)
 const formatBlur = (event, field, reporte) => {
   let value = event.target.value.replace(/[^0-9.]/g, '');
-  
+
   if (value === '') {
     reporte[field] = null;
     event.target.value = '';
     return;
   }
-  
+
   const num = parseFloat(value);
   if (isNaN(num)) {
     reporte[field] = null;
     event.target.value = '';
     return;
   }
-  
+
   // Guardar con 2 decimales
   reporte[field] = num.toFixed(2);
-  
+
   // Aplicar formato visual solo al perder el foco
   event.target.value = num.toLocaleString('es-PE', {
     minimumFractionDigits: 2,
@@ -396,7 +341,7 @@ const handleFocus = (event) => {
   // Al enfocar, mostrar el valor numérico puro sin formato
   const value = event.target.value.replace(/[^0-9.]/g, '');
   event.target.value = value === '' ? '' : value;
-  
+
   // Seleccionar todo el texto para facilitar la edición
   event.target.select();
 };
@@ -587,9 +532,10 @@ const totalPorcentajeAvance = computed(() => {
 </script>
 
 <style scoped>
-#main{
+#main {
   margin-top: 0;
 }
+
 /* Estilos base */
 .table {
   font-size: 0.85rem;
@@ -597,7 +543,8 @@ const totalPorcentajeAvance = computed(() => {
   border-spacing: 0;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   vertical-align: middle;
   padding: 0.5rem;
 }
@@ -611,6 +558,129 @@ const totalPorcentajeAvance = computed(() => {
   padding-right: 8px;
   min-width: 80px;
 }
+
+/* Estilos para el recordatorio - Versión elegante rojiza */
+.month-reminder {
+    background-color: rgba(255, 238, 238, 0.85);
+    position: relative;
+    border-left: 4px solid #FF5252;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.month-reminder:hover {
+    background-color: rgba(255, 228, 228, 0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-container {
+    padding: 14px 20px;
+}
+
+.reminder-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reminder-icon {
+    font-size: 1.4rem;
+    color: #FF5252;
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+.reminder-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.highlight-text {
+    color: #D32F2F;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.reminder-detail {
+    font-size: 0.95rem;
+    color: #5F3636;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+.reminder-detail strong {
+    color: #D32F2F;
+    font-weight: 600;
+    position: relative;
+}
+
+.reminder-detail strong:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #FF8A80;
+    opacity: 0.6;
+}
+
+/* Efecto de aparición mejorado */
+@keyframes gentlePulse {
+    0% { opacity: 0.8; transform: scale(0.98); }
+    50% { opacity: 1; transform: scale(1.005); }
+    100% { opacity: 0.8; transform: scale(0.98); }
+}
+
+.month-reminder {
+    animation: fadeInUp 0.5s ease-out forwards, gentlePulse 4s ease-in-out infinite 0.5s;
+}
+
+/* Borde decorativo */
+.month-reminder:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FF5252, transparent);
+    opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reminder-container {
+        padding: 12px 10px;
+    }
+    
+    .reminder-content {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .reminder-icon {
+        font-size: 1.2rem;
+    }
+    
+    .reminder-detail {
+        font-size: 0.85rem;
+        flex-basis: 100%;
+    }
+    
+    .highlight-text {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+}
+
 .floating-action-buttons {
   position: fixed;
   right: 0;
@@ -726,6 +796,7 @@ const totalPorcentajeAvance = computed(() => {
     padding: 0 15px;
   }
 }
+
 .amount-cell input:focus {
   background-color: #fff8e1;
   border-color: #ffc107;
@@ -800,7 +871,8 @@ const totalPorcentajeAvance = computed(() => {
 }
 
 /* Estilos para totales */
-.total-amount, .amount-total {
+.total-amount,
+.amount-total {
   background-color: #f8f9fa;
 }
 
@@ -814,7 +886,7 @@ const totalPorcentajeAvance = computed(() => {
   .table {
     font-size: 0.8rem;
   }
-  
+
   .comment-textarea {
     min-width: 150px;
   }
@@ -825,11 +897,11 @@ const totalPorcentajeAvance = computed(() => {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .comment-textarea {
     min-width: 120px;
   }
-  
+
   .progress-cell {
     min-width: 160px;
   }
@@ -839,11 +911,11 @@ const totalPorcentajeAvance = computed(() => {
   .header-section {
     text-align: center;
   }
-  
+
   .comment-textarea {
     min-width: 100px;
   }
-  
+
   .progress-cell {
     min-width: 140px;
   }
