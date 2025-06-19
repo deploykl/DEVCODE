@@ -1,7 +1,6 @@
 <template>
-  <main id="main" class="container-fluid py-4">
-    <div class="header-section mb-4 pb-3 border-bottom">
-      <h2 class="activity-title h4 fw-bold text-primary">Reporte de Actividad</h2>
+  <main id="main" class="container-fluid ">
+    <div class="header-section mb-4 border-bottom">
       <p class="activity-name h5 text-secondary">{{ reportes[0]?.actividad_name }}</p>
     </div>
 
@@ -588,6 +587,9 @@ const totalPorcentajeAvance = computed(() => {
 </script>
 
 <style scoped>
+#main{
+  margin-top: 0;
+}
 /* Estilos base */
 .table {
   font-size: 0.85rem;
