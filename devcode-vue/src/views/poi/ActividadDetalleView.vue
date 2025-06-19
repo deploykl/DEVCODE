@@ -1,161 +1,304 @@
 <template>
-  <main id="main" class="main">
-    <p class="h5 text-primary">Actividad:</p>
-    <p class="h6 text-secondary">{{ reportes[0]?.actividad_name }}</p>
+  <main id="main" class="container-fluid py-4">
+    <div class="header-section mb-4 pb-3 border-bottom">
+      <h2 class="activity-title h4 fw-bold text-primary">Reporte de Actividad</h2>
+      <p class="activity-name h5 text-secondary">{{ reportes[0]?.actividad_name }}</p>
+    </div>
 
     <div class="table-responsive">
-      <table class="modern-table">
-        <thead>
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
           <tr>
-            <th class="month-col">Año</th>
-            <th class="month-col">Mes</th>
-            <th v-if="isStaff || (isSuperuser && !isStaff)" class="status-col">Campos</th>
-            <th class="numeric-col">Prog. Gen. 5.21</th>
-            <th class="numeric-col">Prog. Gen. 5.23</th>
-            <th class="numeric-col">Prog. Gen. 5.26</th>
-            <th class="numeric-col">Prog. PRESUPUESTAL</th>
-            <th class="numeric-col">Act. Gen. 5.21</th>
-            <th class="numeric-col">Act. Gen. 5.23</th>
-            <th class="numeric-col">Act. Gen. 5.26</th>
-            <th class="numeric-col">Act. PRESUPUESTAL</th>
-            <th class="numeric-col">Ejec. Gen. 5.21</th>
-            <th class="numeric-col">Ejec. Gen. 5.23</th>
-            <th class="numeric-col">Ejec. Gen. 5.26</th>
-            <th class="numeric-col">Ejec. PRESUPUESTAL</th>
-            <th class="percent-col">% avance</th>
+            <th class="period-col">Periodo</th>
+            <th v-if="isStaff || (isSuperuser && !isStaff)" class="status-col">Estado</th>
+
+            <th colspan="4" class="group-header text-center bg-light">Programado</th>
+            <th colspan="4" class="group-header text-center bg-light">Reprogramado</th>
+            <th colspan="4" class="group-header text-center bg-light">Ejecutado</th>
+
+            <th class="comment-col">Comentario</th>
+            <th class="progress-col">Avance</th>
+          </tr>
+
+          <tr class="subheaders">
+            <th class="period-col"></th>
+            <th v-if="isStaff || (isSuperuser && !isStaff)" class="status-col"></th>
+
+            <th class="amount-col">5.21</th>
+            <th class="amount-col">5.23</th>
+            <th class="amount-col">5.26</th>
+            <th class="amount-col">Total</th>
+
+            <th class="amount-col">5.21</th>
+            <th class="amount-col">5.23</th>
+            <th class="amount-col">5.26</th>
+            <th class="amount-col">Total</th>
+
+            <th class="amount-col">5.21</th>
+            <th class="amount-col">5.23</th>
+            <th class="amount-col">5.26</th>
+            <th class="amount-col">Total</th>
+
+            <th class="comment-col"></th>
+            <th class="progress-col"></th>
           </tr>
         </thead>
+
         <tbody>
           <template v-for="reporte in reportes" :key="reporte.id">
             <tr :class="{
-              'current-month': reporte.mes.toUpperCase() === mesActual,
-              'previous-month': reporte.mes.toUpperCase() === mesAnterior
+              'table-success': reporte.mes.toUpperCase() === mesActual,
+              'table-warning': reporte.mes.toUpperCase() === mesAnterior
             }">
-              <td>{{ reporte.year }}</td>
-              <td class="month-name">
-                <span :class="['badge', reporte.mes.toUpperCase() === mesActual ? 'bg-success' : 'bg-secondary']">
-                  {{ reporte.mes }}
-                </span>
+              <td class="period-cell">
+                <div class="d-flex flex-column align-items-center">
+                  <span class="small text-muted">{{ reporte.year }}</span>
+                  <span :class="['badge', reporte.mes.toUpperCase() === mesActual ? 'bg-success' : 'bg-secondary']">
+                    {{ reporte.mes }}
+                  </span>
+                </div>
               </td>
 
-              <td v-if="isStaff || (isSuperuser && !isStaff)" class="toggle-cell">
-                <label class="toggle-switch">
-                  <input type="checkbox" v-model="reporte.campos_bloqueados" @change="actualizarEstado(reporte)" />
-                  <span class="toggle-slider" :class="{ 'active': reporte.campos_bloqueados }"></span>
-                  <span class="toggle-label">{{ reporte.campos_bloqueados ? 'Activado' : 'Bloqueado' }}</span>
-                </label>
+              <td v-if="isStaff || (isSuperuser && !isStaff)" class="status-cell">
+                <div class="form-check form-switch">
+                  <input 
+                    class="form-check-input" 
+                    type="checkbox" 
+                    role="switch" 
+                    v-model="reporte.campos_bloqueados" 
+                    @change="actualizarEstado(reporte)"
+                    :disabled="reporte.mes.toUpperCase() === mesAnterior"
+                  >
+                  <label class="form-check-label small ms-2">
+                    {{ reporte.campos_bloqueados ? 'Activado' : 'Bloqueado' }}
+                  </label>
+                </div>
               </td>
 
-              <!-- Campos de Progreso General -->
-              <td class="numeric-input">
-                <input v-model.number="reporte.prog_5_21" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
+              <!-- Programado 5.21 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.prog_5_21)"
+                  @input="formatInput($event, 'prog_5_21', reporte)"
+                  @blur="formatBlur($event, 'prog_5_21', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.prog_5_21)"
+                />
               </td>
-              <td class="numeric-input">
-                <input v-model.number="reporte.prog_5_23" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
+              
+              <!-- Programado 5.23 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.prog_5_23)"
+                  @input="formatInput($event, 'prog_5_23', reporte)"
+                  @blur="formatBlur($event, 'prog_5_23', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.prog_5_23)"
+                />
               </td>
-              <td class="numeric-input">
-                <input v-model.number="reporte.prog_5_26" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
+              
+              <!-- Programado 5.26 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.prog_5_26)"
+                  @input="formatInput($event, 'prog_5_26', reporte)"
+                  @blur="formatBlur($event, 'prog_5_26', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.prog_5_26)"
+                />
               </td>
-
-              <!-- Campo de Prog. PRESUPUESTAL, solo lectura -->
-              <td class="numeric-input">
-                <input :value="calcularProgPpto(reporte)" type="text" class="readonly-cell" readonly>
-              </td>
-
-              <!-- Campos de Actividad General -->
-              <td class="numeric-input">
-                <input v-model.number="reporte.act_5_21" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
-              </td>
-              <td class="numeric-input">
-                <input v-model.number="reporte.act_5_23" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
-              </td>
-              <td class="numeric-input">
-                <input v-model.number="reporte.act_5_26" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
-              </td>
-              <td class="numeric-input">
-                <input :value="calcularActPpto(reporte)" type="text" class="readonly-cell" readonly>
-              </td>
-
-              <!-- Campos de Ejecución General -->
-              <td class="numeric-input">
-                <input v-model.number="reporte.ejec_5_21" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
-              </td>
-              <td class="numeric-input">
-                <input v-model.number="reporte.ejec_5_23" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
-              </td>
-              <td class="numeric-input">
-                <input v-model.number="reporte.ejec_5_26" type="text" :disabled="!reporte.campos_bloqueados"
-                  @keydown="validarInput">
-              </td>
-              <td class="numeric-input">
-                <input :value="calcularEjecPpto(reporte)" type="text" class="readonly-cell" readonly>
+              
+              <td class="amount-total bg-light fw-bold">
+                {{ formatCurrency(calcularProgPpto(reporte)) }}
               </td>
 
-              <td class="percent-cell" :class="getTextClassPresupuestal(PorcentajeAvance(reporte))">
-                <span :class="getBadgeClassPresupuestal(PorcentajeAvance(reporte))">
-                  {{ PorcentajeAvance(reporte) }}%
-                </span>
-                <span class="ms-2">{{ getMensajeAvancePresupuestal(PorcentajeAvance(reporte)) }}</span>
+              <!-- Reprogramado 5.21 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.act_5_21)"
+                  @input="formatInput($event, 'act_5_21', reporte)"
+                  @blur="formatBlur($event, 'act_5_21', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.act_5_21)"
+                />
+              </td>
+              
+              <!-- Reprogramado 5.23 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.act_5_23)"
+                  @input="formatInput($event, 'act_5_23', reporte)"
+                  @blur="formatBlur($event, 'act_5_23', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.act_5_23)"
+                />
+              </td>
+              
+              <!-- Reprogramado 5.26 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.act_5_26)"
+                  @input="formatInput($event, 'act_5_26', reporte)"
+                  @blur="formatBlur($event, 'act_5_26', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.act_5_26)"
+                />
+              </td>
+              
+              <td class="amount-total bg-light fw-bold">
+                {{ formatCurrency(calcularActPpto(reporte)) }}
+              </td>
+
+              <!-- Ejecutado 5.21 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.ejec_5_21)"
+                  @input="formatInput($event, 'ejec_5_21', reporte)"
+                  @blur="formatBlur($event, 'ejec_5_21', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.ejec_5_21)"
+                />
+              </td>
+              
+              <!-- Ejecutado 5.23 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.ejec_5_23)"
+                  @input="formatInput($event, 'ejec_5_23', reporte)"
+                  @blur="formatBlur($event, 'ejec_5_23', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.ejec_5_23)"
+                />
+              </td>
+              
+              <!-- Ejecutado 5.26 -->
+              <td class="amount-cell">
+                <input 
+                  :value="formatInputValue(reporte.ejec_5_26)"
+                  @input="formatInput($event, 'ejec_5_26', reporte)"
+                  @blur="formatBlur($event, 'ejec_5_26', reporte)"
+                  @focus="handleFocus($event)"
+                  type="text" 
+                  :disabled="!reporte.campos_bloqueados"
+                  class="form-control form-control-sm text-end" 
+                  :placeholder="getPlaceholder(reporte.ejec_5_26)"
+                />
+              </td>
+              
+              <td class="amount-total bg-light fw-bold">
+                {{ formatCurrency(calcularEjecPpto(reporte)) }}
+              </td>
+
+              <td class="comment-cell">
+                <div class="comment-textarea-wrapper">
+                  <textarea
+                    v-model="reporte.comentario"
+                    :disabled="!reporte.campos_bloqueados"
+                    class="form-control form-control-sm comment-textarea"
+                    placeholder="Escriba su comentario aquí (máx. 500 caracteres)"
+                    maxlength="500"
+                    rows="3"
+                    @input="autoResizeTextarea($event)"
+                  ></textarea>
+                  <span class="character-counter small text-muted">
+                    {{ reporte.comentario ? reporte.comentario.length : 0 }}/500
+                  </span>
+                </div>
+              </td>
+
+              <td class="progress-cell" :class="getTextClassPresupuestal(PorcentajeAvance(reporte))">
+                <div class="d-flex flex-column align-items-start">
+                  <span :class="getBadgeClassPresupuestal(PorcentajeAvance(reporte))" class="badge mb-1">
+                    {{ PorcentajeAvance(reporte) }}%
+                  </span>
+                  <span class="small text-wrap text-start">
+                    {{ getMensajeAvancePresupuestal(PorcentajeAvance(reporte)) }}
+                    <span v-if="PorcentajeAvance(reporte) > 100" class="text-dark">(OBSERVADO)</span>
+                  </span>
+                </div>
               </td>
             </tr>
 
-            <!-- Mensaje recordatorio para el mes anterior -->
-          <tr v-if="reporte.mes.toUpperCase() === mesAnterior && !reporte.campos_bloqueados"
-    class="month-reminder previous-month">
-  <td :colspan="isStaff || (isSuperuser && !isStaff) ? 16 : 15" class="reminder-message">
-    <i class="fas fa-exclamation-triangle"></i>
-    Faltan <strong>{{ diasRestantesMes }}</strong> días de {{ mesActual }} para que se bloquee el reporte
-    de {{ reporte.mes.toUpperCase() }}.
-  </td>
-</tr>
+            <tr v-if="reporte.mes.toUpperCase() === mesAnterior && reporte.campos_bloqueados" class="table-warning">
+              <td :colspan="isStaff || (isSuperuser && !isStaff) ? 14 : 13" class="small text-danger">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Faltan <strong>{{ diasRestantesMes }}</strong> días de {{ mesActual }} para que se bloquee el reporte
+                de {{ reporte.mes.toUpperCase() }}.
+              </td>
+            </tr>
+            <!-- Agrega esto dentro de tu template, preferiblemente al final -->
+
           </template>
 
-          <!-- Fila de totales -->
-          <tr class="summary-row">
-            <td :colspan="isStaff || (isSuperuser && !isStaff) ? 3 : 2" class="summary-label">Total</td>
-            <td class="summary-value">{{ totalProgGen521 }}</td>
-            <td class="summary-value">{{ totalProgGen523 }}</td>
-            <td class="summary-value">{{ totalProgGen526 }}</td>
-            <td class="summary-value">{{ totalProgPpto }}</td>
-            <td class="summary-value">{{ totalActGen521 }}</td>
-            <td class="summary-value">{{ totalActGen523 }}</td>
-            <td class="summary-value">{{ totalActGen526 }}</td>
-            <td class="summary-value">{{ totalReproPpto }}</td>
-            <td class="summary-value">{{ totalEjecGen521 }}</td>
-            <td class="summary-value">{{ totalEjecGen523 }}</td>
-            <td class="summary-value">{{ totalEjecGen526 }}</td>
-            <td class="summary-value">{{ totalEjecPpto }}</td>
-            <td class="summary-percent">{{ totalPorcentajeAvance }}%</td>
+          <tr class="table-primary">
+            <td :colspan="isStaff || (isSuperuser && !isStaff) ? 2 : 1" class="fw-bold">TOTALES</td>
+
+            <td class="total-amount fw-bold">{{ formatCurrency(totalProgGen521) }}</td>
+            <td class="total-amount fw-bold">{{ formatCurrency(totalProgGen523) }}</td>
+            <td class="total-amount fw-bold">{{ formatCurrency(totalProgGen526) }}</td>
+            <td class="total-amount fw-bold bg-info">{{ formatCurrency(totalProgPpto) }}</td>
+
+            <td class="total-amount fw-bold">{{ formatCurrency(totalActGen521) }}</td>
+            <td class="total-amount fw-bold">{{ formatCurrency(totalActGen523) }}</td>
+            <td class="total-amount fw-bold">{{ formatCurrency(totalActGen526) }}</td>
+            <td class="total-amount fw-bold bg-info">{{ formatCurrency(totalReproPpto) }}</td>
+
+            <td class="total-amount fw-bold">{{ formatCurrency(totalEjecGen521) }}</td>
+            <td class="total-amount fw-bold">{{ formatCurrency(totalEjecGen523) }}</td>
+            <td class="total-amount fw-bold">{{ formatCurrency(totalEjecGen526) }}</td>
+            <td class="total-amount fw-bold bg-info">{{ formatCurrency(totalEjecPpto) }}</td>
+
+            <td class="total-comment"></td>
+            <td class="total-progress fw-bold bg-info">{{ totalPorcentajeAvance }}%</td>
           </tr>
         </tbody>
       </table>
     </div>
-
-    <div class="floating-action-buttons">
-      <div class="action-buttons">
-        <button @click="guardarTodosRegistros" class="btn-save icon-button" :disabled="loading">
-          <i class="fas" :class="loading ? 'fa-spinner fa-spin' : 'fa-save'"></i>
-          <span class="button-text">{{ loading ? 'Guardando...' : 'Guardar' }}</span>
-        </button>
-      </div>
-    </div>
+<div class="floating-action-buttons">
+  <div class="action-buttons">
+    <button @click="guardarTodosRegistros" class="btn-save icon-button" :disabled="loading">
+      <i class="fas" :class="loading ? 'fa-spinner fa-spin' : 'fa-save'"></i>
+      <span class="button-text">{{ loading ? 'Guardando...' : 'Guardar Cambios' }}</span>
+    </button>
+    <button @click="crearReportesFaltantes" class="btn-update icon-button">
+      <i class="fas fa-sync-alt"></i>
+      <span class="button-text">Actualizar</span>
+    </button>
+  </div>
+</div>
+   
   </main>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, nextTick } from 'vue';
 import { api, getAuthToken } from '@/components/services/auth_axios';
 import { useRoute } from 'vue-router';
 import { SwalSuccess, SwalWarning, SwalDelete, SwalUpdate } from '@/components/widgets/SwalComponent';
-import CurrencyFormatter from '@/components/widgets/FormatoMoneda.vue';
 import {
   getBadgeClassPresupuestal,
   getTextClassPresupuestal,
@@ -168,6 +311,101 @@ const loading = ref(false);
 const route = useRoute();
 const isSuperuser = ref(false);
 const isStaff = ref(false);
+
+// Función para autoajustar altura del textarea
+const autoResizeTextarea = (event) => {
+  const textarea = event.target;
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+};
+
+// Aplicar autoajuste al montar el componente
+onMounted(() => {
+  nextTick(() => {
+    document.querySelectorAll('.comment-textarea').forEach(textarea => {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    });
+  });
+});
+
+// Función para formatear moneda (para mostrar en totales)
+const formatCurrency = (value) => {
+  const num = parseFloat(value || 0);
+  return new Intl.NumberFormat('es-PE', {
+    style: 'currency',
+    currency: 'PEN',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(num).replace('PEN', 'S/');
+};
+
+// Función simplificada para mostrar valores en inputs
+const formatInputValue = (value) => {
+  if (value === null || value === undefined || value === '') return '';
+  return value; // Mostrar el valor exacto sin formato
+};
+
+// Función para manejar el evento input
+const formatInput = (event, field, reporte) => {
+  // Permitir solo números y un punto decimal
+  let value = event.target.value.replace(/[^0-9.]/g, '');
+  
+  // Manejar múltiples puntos decimales
+  const decimalParts = value.split('.');
+  if (decimalParts.length > 2) {
+    value = decimalParts[0] + '.' + decimalParts.slice(1).join('');
+  }
+  
+  // Guardar el valor sin formato en el modelo
+  reporte[field] = value === '' ? null : value;
+  
+  // Mostrar el valor limpio (sin formato)
+  event.target.value = value;
+};
+
+// Función para manejar el evento blur (formato final)
+const formatBlur = (event, field, reporte) => {
+  let value = event.target.value.replace(/[^0-9.]/g, '');
+  
+  if (value === '') {
+    reporte[field] = null;
+    event.target.value = '';
+    return;
+  }
+  
+  const num = parseFloat(value);
+  if (isNaN(num)) {
+    reporte[field] = null;
+    event.target.value = '';
+    return;
+  }
+  
+  // Guardar con 2 decimales
+  reporte[field] = num.toFixed(2);
+  
+  // Aplicar formato visual solo al perder el foco
+  event.target.value = num.toLocaleString('es-PE', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+    useGrouping: true
+  });
+};
+
+// Función para manejar el foco
+const handleFocus = (event) => {
+  // Al enfocar, mostrar el valor numérico puro sin formato
+  const value = event.target.value.replace(/[^0-9.]/g, '');
+  event.target.value = value === '' ? '' : value;
+  
+  // Seleccionar todo el texto para facilitar la edición
+  event.target.select();
+};
+
+// Función para obtener placeholder
+const getPlaceholder = (value) => {
+  return value === null || value === undefined || value === '' ? '0.00' : '';
+};
 
 // Obtener mes actual y anterior
 const mesActual = computed(() => {
@@ -193,16 +431,12 @@ onMounted(() => {
 
   isSuperuser.value = superuser === 'true';
   isStaff.value = staff === 'true';
+  LISTAR();
 });
 
 const actualizarEstado = async (reporte) => {
-  // Prevenir desactivar el mes anterior (forzar que permanezca activado/bloqueado según tu lógica)
   if (reporte.mes.toUpperCase() === mesAnterior.value && !reporte.campos_bloqueados) {
-    reporte.campos_bloqueados = true; // Forzar a que permanezca activado
-    await SwalWarning({
-      title: 'Mes anterior protegido',
-      text: 'El mes anterior debe permanecer activado'
-    });
+    reporte.campos_bloqueados = true;
     return;
   }
 
@@ -213,8 +447,8 @@ const actualizarEstado = async (reporte) => {
   }
 
   try {
-    await api.patch(`poi/reporte-actividad/${reporte.id}/`, 
-      { campos_bloqueados: reporte.campos_bloqueados }, 
+    await api.patch(`poi/reporte-actividad/${reporte.id}/`,
+      { campos_bloqueados: reporte.campos_bloqueados },
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -224,37 +458,25 @@ const actualizarEstado = async (reporte) => {
     );
   } catch (error) {
     console.error('Error al actualizar el estado:', error.response ? error.response.data : error.message);
-    reporte.campos_bloqueados = !reporte.campos_bloqueados; // Revertir el cambio visual
+    reporte.campos_bloqueados = !reporte.campos_bloqueados;
   }
 };
 
 const LISTAR = async () => {
   try {
-    const response = await api.get(`poi/reporte-actividad/?actividad=${route.params.id}`, 
+    const response = await api.get(`poi/reporte-actividad/?actividad=${route.params.id}`,
       { headers: { Authorization: `Bearer ${getAuthToken()}` } }
     );
-    
+
     reportes.value = response.data.map(reporte => {
-      // Forzar bloqueo para mes anterior
       if (reporte.mes.toUpperCase() === mesAnterior.value) {
-        return { ...reporte, campos_bloqueados: false };
+        return { ...reporte, campos_bloqueados: true };
       }
       return reporte;
     });
-    
+
   } catch (error) {
     console.error('Error:', error);
-  }
-};
-
-onMounted(() => {
-  LISTAR();
-});
-
-const validarInput = (event) => {
-  const char = event.key;
-  if (!/^\d$/.test(char) && char !== '.' && !["Backspace", "Tab", "ArrowLeft", "ArrowRight"].includes(char)) {
-    event.preventDefault();
   }
 };
 
@@ -265,18 +487,18 @@ const guardarTodosRegistros = async () => {
 
   try {
     await Promise.all(reportes.value.map(async (reporte) => {
-      // Preparar datos para enviar
       const datosActualizar = {
         campos_bloqueados: reporte.campos_bloqueados,
-        prog_5_21: reporte.prog_5_21 || 0,
-        prog_5_23: reporte.prog_5_23 || 0,
-        prog_5_26: reporte.prog_5_26 || 0,
-        act_5_21: reporte.act_5_21 || 0,
-        act_5_23: reporte.act_5_23 || 0,
-        act_5_26: reporte.act_5_26 || 0,
-        ejec_5_21: reporte.ejec_5_21 || 0,
-        ejec_5_23: reporte.ejec_5_23 || 0,
-        ejec_5_26: reporte.ejec_5_26 || 0,
+        prog_5_21: reporte.prog_5_21 === null ? null : (reporte.prog_5_21 || 0),
+        prog_5_23: reporte.prog_5_23 === null ? null : (reporte.prog_5_23 || 0),
+        prog_5_26: reporte.prog_5_26 === null ? null : (reporte.prog_5_26 || 0),
+        act_5_21: reporte.act_5_21 === null ? null : (reporte.act_5_21 || 0),
+        act_5_23: reporte.act_5_23 === null ? null : (reporte.act_5_23 || 0),
+        act_5_26: reporte.act_5_26 === null ? null : (reporte.act_5_26 || 0),
+        ejec_5_21: reporte.ejec_5_21 === null ? null : (reporte.ejec_5_21 || 0),
+        ejec_5_23: reporte.ejec_5_23 === null ? null : (reporte.ejec_5_23 || 0),
+        ejec_5_26: reporte.ejec_5_26 === null ? null : (reporte.ejec_5_26 || 0),
+        comentario: reporte.comentario || '',
         prog_ppto: calcularProgPpto(reporte),
         repro_ppto: calcularActPpto(reporte),
         ejec_ppto: calcularEjecPpto(reporte)
@@ -284,7 +506,7 @@ const guardarTodosRegistros = async () => {
 
       try {
         const response = await api.put(
-          `poi/reporte-actividad/${reporte.id}/`, 
+          `poi/reporte-actividad/${reporte.id}/`,
           datosActualizar,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -295,7 +517,7 @@ const guardarTodosRegistros = async () => {
         }
       } catch (error) {
         errores.push({
-          reporteId: reporte.id, 
+          reporteId: reporte.id,
           error: error.response ? error.response.data : error.message
         });
         console.error('Error en reporte', reporte.id, error.response?.data);
@@ -366,201 +588,93 @@ const totalPorcentajeAvance = computed(() => {
 </script>
 
 <style scoped>
-.main {
-  padding: 2rem;
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-  color: #333;
-}
-
-.modern-table {
-  width: 100%;
+/* Estilos base */
+.table {
+  font-size: 0.85rem;
   border-collapse: separate;
   border-spacing: 0;
-  margin: 1.5rem 0;
 }
 
-.modern-table th {
-  background-color: #f8f9fa;
-  color: #495057;
-  font-weight: 600;
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 2px solid #dee2e6;
-}
-
-.modern-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #eaeaea;
+.table th, .table td {
   vertical-align: middle;
+  padding: 0.5rem;
 }
 
-.month-col {
-  width: 100px;
-}
-
-.status-col {
-  width: 120px;
-}
-
-.numeric-col {
-  width: 100px;
-}
-
-.percent-col {
-  width: 120px;
-}
-
-.numeric-input input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+/* Estilos para celdas de montos */
+.amount-cell input {
+  font-family: 'Courier New', monospace;
   text-align: right;
+  direction: ltr;
+  unicode-bidi: isolate;
+  padding-right: 8px;
+  min-width: 80px;
+}
+.floating-action-buttons {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-.numeric-input input:disabled {
-  background-color: #f5f5f5;
-  color: #999;
-  cursor: not-allowed;
+.floating-action-buttons .action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  border-right: none;
+  transition: all 0.3s ease;
 }
 
-.readonly-cell {
-  background-color: #f5f5f5;
-  color: #666;
-  border: 1px solid #ddd;
-  padding: 8px;
-  border-radius: 4px;
-  text-align: right;
-}
-
-.toggle-switch {
+.icon-button {
   position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
   cursor: pointer;
 }
 
-.toggle-switch input {
+.icon-button .button-text {
+  position: absolute;
+  left: 100%;
   opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-slider {
-  position: relative;
-  width: 40px;
-  height: 20px;
-  background-color: #ccc;
-  border-radius: 20px;
-  transition: .3s;
-}
-
-.toggle-slider::before {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  left: 2px;
-  top: 2px;
-  background-color: white;
-  transition: .3s;
-}
-
-.toggle-slider.active {
-  background-color: #4CAF50;
-}
-
-.toggle-slider.active::before {
-  transform: translateX(20px);
-}
-
-.toggle-label {
-  font-size: 0.85rem;
-  color: #555;
-}
-
-.previous-month {
-  background-color: rgba(103, 58, 183, 0.05);
-  position: relative;
-}
-
-.previous-month::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #673ab7, #b02727);
-}
-
-.month-reminder {
-  background-color: #fff3f3;
-}
-
-.reminder-message {
-  padding: 8px;
+  transition: all 0.3s ease;
+  pointer-events: none;
   font-size: 0.9rem;
-  color: #d32f2f;
-  text-align: center;
+  margin-left: 10px;
 }
 
-.reminder-message i {
-  margin-right: 6px;
+.icon-button:hover {
+  width: auto;
+  padding: 0 15px 0 15px;
+  border-radius: 20px;
 }
 
-.summary-row {
-  background-color: #f8f9fa;
-  font-weight: 600;
-}
-
-.summary-label {
-  text-align: right;
-  padding-right: 20px !important;
-}
-
-.summary-value {
-  text-align: right;
-}
-
-.summary-percent {
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.floating-action-buttons {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 1000;
-}
-
-.action-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.icon-button:hover .button-text {
+  opacity: 1;
+  left: 40px;
 }
 
 .btn-save {
   background-color: #673ab7;
   color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
 }
 
 .btn-save:hover {
   background-color: #5e35b1;
-  transform: translateY(-2px);
 }
 
 .btn-save:disabled {
@@ -568,78 +682,228 @@ const totalPorcentajeAvance = computed(() => {
   cursor: not-allowed;
 }
 
-.icon-button {
+.btn-update {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-update:hover {
+  background-color: #fb8c00;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .floating-action-buttons {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+
+  .floating-action-buttons .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 8px;
+    border-right: 1px solid #eaeaea;
+  }
+
+  .icon-button {
+    width: auto;
+    padding: 0 15px;
+    border-radius: 20px;
+  }
+
+  .icon-button .button-text {
+    position: static;
+    opacity: 1;
+    margin-left: 8px;
+  }
+
+  .icon-button:hover {
+    padding: 0 15px;
+  }
+}
+.amount-cell input:focus {
+  background-color: #fff8e1;
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+.amount-cell input::placeholder {
+  text-align: right;
+  opacity: 0.5;
+}
+
+/* Estilos para el textarea de comentarios */
+.comment-textarea-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: 200px;
 }
 
-.button-text {
+.comment-textarea {
+  resize: none;
+  overflow-y: hidden;
+  min-height: 38px;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  padding-right: 30px;
+}
+
+.comment-textarea:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.character-counter {
   position: absolute;
-  white-space: nowrap;
-  left: 100%;
-  margin-left: 10px;
-  background: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: opacity 0.3s;
+  bottom: 2px;
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 3px;
+  border-radius: 3px;
+  font-size: 0.7rem;
 }
 
-.btn-save:hover .button-text {
-  opacity: 1;
-}
-
-.percent-cell {
-  display: flex;
-  align-items: center;
+/* Estilos para celdas de progreso */
+.progress-cell {
+  min-width: 180px;
 }
 
 .badge {
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
   font-weight: 500;
 }
 
-.bg-success {
-  background-color: #4CAF50;
+/* Colores de filas */
+.table-success td {
+  background-color: rgba(25, 135, 84, 0.05);
 }
 
-.bg-danger {
-  background-color: #f44336;
+.table-warning td {
+  background-color: rgba(255, 193, 7, 0.05);
 }
 
-.bg-warning {
-  background-color: #ff9800;
+/* Estilo para el switch */
+.form-switch .form-check-input {
+  width: 2.5em;
+  height: 1.3em;
+  cursor: pointer;
 }
 
-.bg-secondary {
-  background-color: #6c757d;
+.form-switch .form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
 }
 
-.text-success {
-  color: #4CAF50;
+/* Estilos para totales */
+.total-amount, .amount-total {
+  background-color: #f8f9fa;
 }
 
-.text-danger {
-  color: #f44336;
+.table-primary td {
+  background-color: #e7f1ff;
+  font-weight: bold;
 }
 
-.text-warning {
-  color: #ff9800;
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .table {
+    font-size: 0.8rem;
+  }
+  
+  .comment-textarea {
+    min-width: 150px;
+  }
 }
 
-.text-secondary {
+@media (max-width: 992px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .comment-textarea {
+    min-width: 120px;
+  }
+  
+  .progress-cell {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    text-align: center;
+  }
+  
+  .comment-textarea {
+    min-width: 100px;
+  }
+  
+  .progress-cell {
+    min-width: 140px;
+  }
+}
+
+/* Animaciones y transiciones */
+.table-hover tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para inputs numéricos */
+input[type="text"].form-control-sm.text-end {
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Mejoras visuales para los headers */
+.group-header {
+  position: relative;
+}
+
+.group-header:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #dee2e6;
+}
+
+.subheaders th {
+  font-weight: normal;
+  font-size: 0.8rem;
   color: #6c757d;
 }
 
-@media (max-width: 1200px) {
-  .modern-table {
-    display: block;
-    overflow-x: auto;
-  }
+/* Efecto hover para filas */
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Estilo para el botón de guardar */
+.btn-primary:disabled {
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.fa-spinner {
+  margin-right: 8px;
 }
 </style>

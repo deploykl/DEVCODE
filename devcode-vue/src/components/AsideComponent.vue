@@ -1,6 +1,6 @@
 <template>
     <!-- ======= Sidebar ======= -->
-    <aside v-if="!isControlPage" id="sidebar" class="sidebar d-flex flex-column">
+<aside v-if="(isSuperuser && isStaff) && !isControlPage" id="sidebar" class="sidebar d-flex flex-column">
         <ul class="sidebar-nav" id="sidebar-nav">
             <!-- Menú común para todas las rutas -->
 

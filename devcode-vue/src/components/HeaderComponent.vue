@@ -5,17 +5,12 @@
         <img :src="require('@/assets/img/logo1.png')" alt="logo">
         <span class="d-none d-lg-block">H-Gestión</span>
       </a>
-      <i class="fas fa-bars toggle-sidebar-btn" @click="$emit('toggleAside')"></i>
+      <i 
+        v-if="isStaff" 
+        class="fas fa-bars toggle-sidebar-btn" 
+        @click="$emit('toggleAside')"
+      ></i>
     </div><!-- End Logo -->
-
-    <!-- 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div>
-    -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -27,34 +22,32 @@
         <li class="nav-item me-4">
           <clock-component-vue />
         </li>
-       <!-- End Notification Nav -->
         <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" @click="toggleDropdown"
             data-bs-toggle="">
             <img :src="userImage" alt="Profile Picture" class="img-fluid rounded-circle">
             <span class="d-none d-md-block  ps-2">{{ userName }} {{ userLastName }}</span>
-          </a><!-- End Profile Image Icon -->
-          <!-- End ProfiLe Dropdown Items -->
-        </li><!-- End Profile Nav -->
+          </a>
+        </li>
         <li class="nav-item dropdown pe-3">
           <a class="btn btn-danger w-100" @click="logout">
             <i class="fa-solid fa-right-from-bracket"></i>
             <span> Salir</span>
-          </a class><!-- End Profile Image Icon -->
-          <!-- End Profie Dropdown Items -->
+          </a>
         </li>
-        <!-- End Dependency Display -->
       </ul>
-    </nav><!-- End Icons Navigation -->
-  </header><!-- End Header -->
+    </nav>
+  </header>
 </template>
 
 <script setup>
 import ClockComponentVue from '../components/widgets/ClockComponent.vue';
-
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { api, getAuthToken } from '@/components/services/auth_axios';
+
+// Definir isStaff como ref
+const isStaff = ref(false);
 
 const userName = ref('');
 const userLastName = ref('');
@@ -72,17 +65,18 @@ const fetchUserProfile = async () => {
       });
       userName.value = response.data.first_name || '';
       userLastName.value = response.data.last_name || '';
-      //userImage.value = response.data.image ? `http://127.0.0.1:8000${response.data.image}` : 'http://127.0.0.1:8000/media/img/empty.png';
       userImage.value = response.data.image ? `${imgServerURL}${response.data.image}` : `${imgServerURL}media/img/empty.png`;
+      
+      // Obtener el estado de is_staff del perfil del usuario si está disponible
+      if (response.data.is_staff !== undefined) {
+        isStaff.value = response.data.is_staff;
+        localStorage.setItem('is_staff', response.data.is_staff);
+      }
     } catch (error) {
       console.error('Error al obtener el perfil:', error);
     }
   }
 };
-
-onMounted(() => {
-  fetchUserProfile();
-});
 
 const logout = async () => {
   const refreshToken = localStorage.getItem('refreshToken');
@@ -93,8 +87,6 @@ const logout = async () => {
   }
 
   try {
-    console.log('Token de refresco enviado para blacklist:', refreshToken);
-
     const response = await api.post('user/logout/', {
       refresh: refreshToken,
     });
@@ -104,6 +96,7 @@ const logout = async () => {
       localStorage.removeItem('auth_token');
       localStorage.removeItem('user_name');
       localStorage.removeItem('user_lastname');
+      localStorage.removeItem('is_staff');
       router.push('/');
     }
   } catch (error) {
@@ -111,6 +104,11 @@ const logout = async () => {
   }
 };
 
+onMounted(() => {
+  // Obtener is_staff de localStorage o del perfil
+  isStaff.value = localStorage.getItem('is_staff') === 'true';
+  fetchUserProfile();
+});
 </script>
 
 <style scoped>
@@ -120,5 +118,11 @@ a {
 
 button i {
   background-color: rgb(255, 255, 255) !important;
+}
+
+.toggle-sidebar-btn {
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 </style>

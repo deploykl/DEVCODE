@@ -80,6 +80,7 @@ class ReporteActividad(models.Model):
     ejec_5_23 = models.DecimalField(verbose_name='Ejec. Gen. 5.23', max_digits=15, decimal_places=2, null=True, blank=True)
     ejec_5_26 = models.DecimalField(verbose_name='Ejec. Gen. 5.26', max_digits=15, decimal_places=2, null=True, blank=True)
     campos_bloqueados = models.BooleanField(default=False, verbose_name="Campos Bloqueados")
+    comentario = models.TextField(verbose_name='Recomendaciones', blank=True, null=True)  
     
     def __str__(self):
         return f"{self.actividad} - {self.year} - {self.mes}"    

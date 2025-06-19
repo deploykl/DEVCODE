@@ -1,6 +1,6 @@
 <template>
   <!-- HEADER -->
-  <header-component-vue v-if="showHeader" @toggleAside="toggleAside" />
+  <header-component-vue :is-staff="true" v-if="showHeader" @toggleAside="toggleAside" />
   <!-- Transición para el aside -->
   <transition name="slide">
     <aside-component-vue v-if="showAside" />
@@ -28,6 +28,7 @@ const route = useRoute();
 
 // Estado para controlar la visibilidad del aside
 const isAsideVisible = ref(true);
+const isStaff = ref(false); // Asegúrate de obtener este valor del localStorage o API
 
 // Función para alternar la visibilidad del aside
 const toggleAside = () => {
@@ -47,12 +48,16 @@ const toggleAside = () => {
 
 // Asegúrate de aplicar la clase adecuada al cargar la págin
 onMounted(() => {
-  if (isAsideVisible.value) {
+  isStaff.value = localStorage.getItem('is_staff') === 'true';
+
+// Colapsar automáticamente si NO es staff
+  if (!isStaff.value) {
+    isAsideVisible.value = false;
+    document.body.classList.add('sidebar-collapsed');
+    document.body.classList.remove('sidebar-expanded');
+  } else {
     document.body.classList.add('sidebar-expanded');
     document.body.classList.remove('sidebar-collapsed');
-  } else {
-    document.body.classList.remove('sidebar-expanded');
-    document.body.classList.add('sidebar-collapsed');
   }
 });
 

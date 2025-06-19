@@ -1,26 +1,33 @@
 <template>
   <!-- Contenedor para los botones -->
   <div class="btn-container">
-
     <!-- Botón de retroceso -->
     <button 
       class="btn btn-warning btn-float btn-back" 
       @click="goBack"
       :disabled="isOnActividades">
-      <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
+      <i class="fas fa-arrow-left"></i>
     </button>
 
     <!-- Botón de inicio -->
     <router-link :to="{ name: 'actividades' }" class="btn-link">
       <button class="btn btn-success btn-float">
-        <i class="fas fa-home"></i> <!-- Ícono de Font Awesome -->
+        <i class="fas fa-home"></i>
       </button>
     </router-link>
     
     <!-- Botón de avance -->
     <button class="btn btn-info btn-float btn-forward" @click="goForward">
-      <i class="fas fa-arrow-right"></i> <!-- Ícono de Font Awesome -->
+      <i class="fas fa-arrow-right"></i>
     </button>
+
+    <!-- Botón Dashboard rectangular -->
+    <router-link :to="{ name: 'dashboard' }" class="btn-dashboard">
+      <button class="btn btn-primary">
+        <i class="fas fa-tachometer-alt me-2"></i>
+        Dashboard
+      </button>
+    </router-link>
   </div>
 </template>
 
@@ -31,19 +38,16 @@ import { computed } from 'vue';
 const router = useRouter();
 const route = useRoute();
 
-// Función para ir hacia atrás en el historial
 const goBack = () => {
   if (!isOnActividades.value) {
-    router.go(-1); // Navega a la página anterior si no estás en 'actividades'
+    router.go(-1);
   }
 };
 
-// Función para ir hacia adelante en el historial
 const goForward = () => {
-  router.go(1); // Navega a la siguiente página en el historial
+  router.go(1);
 };
 
-// Computed que verifica si estamos en la ruta 'actividades'
 const isOnActividades = computed(() => {
   return route.name === 'actividades';
 });
@@ -55,12 +59,20 @@ const isOnActividades = computed(() => {
   display: flex;
   flex-direction: row;
   gap: 8px;
+  align-items: center;
 }
 
 .btn-link {
   display: flex;
+  text-decoration: none;
 }
 
+.btn-dashboard {
+  margin-left: auto; /* Empuja el botón a la derecha */
+  text-decoration: none;
+}
+
+/* Estilo para botones circulares */
 .btn-float {
   border-radius: 50%;
   width: 40px;
@@ -75,12 +87,24 @@ const isOnActividades = computed(() => {
   border: 2px solid #fff;
 }
 
-.btn-float:disabled {
-  cursor: not-allowed; /* Mostrar el cursor de no permitido cuando está deshabilitado */
-  opacity: 0.5; /* Reducir opacidad cuando está deshabilitado */
+/* Estilo para botón Dashboard rectangular */
+.btn-dashboard .btn {
+  border-radius: 20px; /* Bordes ligeramente redondeados */
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
 }
 
-.btn-float:hover {
+.btn-float:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-float:hover,
+.btn-dashboard .btn:hover {
   background-color: #fff;
   color: #333;
   border: 2px solid #333;
@@ -96,6 +120,11 @@ const isOnActividades = computed(() => {
   color: #fff;
 }
 
+.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
 .btn-back:hover {
   background-color: #fff;
   color: #9c3e32;
@@ -104,5 +133,15 @@ const isOnActividades = computed(() => {
 .btn-forward:hover {
   background-color: #fff;
   color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #3b82f6;
+}
+
+/* Ajuste para ícono dentro del botón Dashboard */
+.btn-dashboard .btn i {
+  margin-right: 8px;
 }
 </style>
