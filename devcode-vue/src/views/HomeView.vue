@@ -22,6 +22,30 @@
             materiales, optimizando recursos y procesos para una gestión eficiente y orientada a resultados en la
             institución.</p>
           <!-- Botón con ícono de Font Awesome -->
+          
+          <div class="row row-cols-1 row-cols-md-2 g-3 mt-4">
+            <div class="col">
+              <a href="modulos/usuarios" class="btn btn-outline-primary btn-lg w-100">
+                <i class="bi bi-people-fill me-2"></i> Personal
+              </a>
+            </div>
+            <div class="col">
+              <a href="/modulos/gasto" class="btn btn-outline-success btn-lg w-100">
+                <i class="bi bi-cash-coin me-2"></i> Gasto Diario
+              </a>
+            </div>
+            <div class="col">
+              <a href="/modulos/informatica" class="btn btn-outline-info btn-lg w-100">
+                <i class="bi bi-pc-display-horizontal me-2"></i> Informática
+              </a>
+            </div>
+            <div class="col">
+              <a href="/modulos/patrimonio" class="btn btn-outline-warning btn-lg text-dark w-100">
+                <i class="bi bi-box-seam me-2"></i> Patrimonio
+              </a>
+            </div>
+          </div>
+
 
         </div>
       </div>

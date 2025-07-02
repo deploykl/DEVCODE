@@ -8,6 +8,11 @@
                 <!-- Menú completo para superusuarios -->
                 <li class="nav-heading">Administración</li>
                 <!-- ... todo el menú de administración ... -->
+                  <li v-if="isStaff || (isSuperuser && !isStaff)" class="nav-item">
+                    <router-link :to="{ name: 'Modulo-gasto' }" class="nav-link collapsed">
+                        <i class="fa-regular fa-paperclip"></i><span>Módulos de admin</span>
+                    </router-link>
+                </li>
             </template>
 
             <li class="nav-heading">Pages</li>
