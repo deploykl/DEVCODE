@@ -3,9 +3,7 @@
     <header>
       <div class="d-flex justify-content-between align-items-center py-2">
         <img src="@/assets/img/login/logo.png" alt="Logo" class="img-fluid logo">
-        <a class="btn btn-primary px-4" href="/login">
-          <i class="bi bi-box-arrow-in-right"></i> Login
-        </a>
+       
       </div>
     </header>
     <!-- Example row of columns -->
