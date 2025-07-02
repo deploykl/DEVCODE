@@ -22,30 +22,15 @@
             materiales, optimizando recursos y procesos para una gestión eficiente y orientada a resultados en la
             institución.</p>
           <!-- Botón con ícono de Font Awesome -->
-          
-          <div class="row row-cols-1 row-cols-md-2 g-3 mt-4">
-            <div class="col">
-              <a href="modulos/usuarios" class="btn btn-outline-primary btn-lg w-100">
-                <i class="bi bi-people-fill me-2"></i> Personal
-              </a>
-            </div>
-            <div class="col">
-              <a href="/modulos/gasto" class="btn btn-outline-success btn-lg w-100">
-                <i class="bi bi-cash-coin me-2"></i> Gasto Diario
-              </a>
-            </div>
-            <div class="col">
-              <a href="/modulos/informatica" class="btn btn-outline-info btn-lg w-100">
-                <i class="bi bi-pc-display-horizontal me-2"></i> Informática
-              </a>
-            </div>
-            <div class="col">
-              <a href="/modulos/patrimonio" class="btn btn-outline-warning btn-lg text-dark w-100">
-                <i class="bi bi-box-seam me-2"></i> Patrimonio
-              </a>
-            </div>
-          </div>
 
+         <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+  <div class="col" v-for="item in modulos" :key="item.texto">
+    <a :href="item.ruta" class="btn btn-modulo shadow-sm d-flex flex-column align-items-center justify-content-center text-center w-100 h-100 py-4">
+      <i :class="item.icono + ' fs-2 mb-2'"></i>
+      <span class="fs-5 fw-semibold">{{ item.texto }}</span>
+    </a>
+  </div>
+</div>
 
         </div>
       </div>
@@ -78,13 +63,68 @@
 
 <script setup>
 const currentYear = new Date().getFullYear();
+
+
+const modulos = [
+  {
+    texto: 'Planeamiento Operativo',
+    ruta: '/dashboard',
+    icono: 'bi bi-bar-chart-steps', // Representa procesos y planeamiento
+    clase: 'btn-outline-primary'
+  },
+  {
+    texto: 'Gasto Diario',
+    ruta: '/modulos/gasto',
+    icono: 'bi bi-wallet2', // Ícono de billetera más claro
+    clase: 'btn-outline-success'
+  },
+  {
+    texto: 'Bienes y Servicios',
+    ruta: '/modulos/informatica',
+    icono: 'bi bi-box-seam', // Representa productos, bienes almacenados
+    clase: 'btn-outline-info'
+  },
+  {
+    texto: 'Informática',
+    ruta: '/modulos/informatica',
+    icono: 'bi bi-cpu', // Ícono técnico para TI / hardware
+    clase: 'btn-outline-info'
+  },
+  {
+    texto: 'Personal',
+    ruta: '/modulos/usuarios',
+    icono: 'bi bi-person-badge', // Representa claramente empleados/personal
+    clase: 'btn-outline-info'
+  },
+  {
+    texto: 'Patrimonio',
+    ruta: '/modulos/usuarios',
+    icono: 'bi bi-building', // Representa edificios/bienes institucionales
+    clase: 'btn-outline-primary'
+  }
+];
+
 </script>
 
 <style scoped>
 .bg-header {
   background-color: #083758;
 }
-
+.btn-modulo {
+  border: 2px solid var(--bs-border-color);
+  border-radius: 12px;
+  height: 160px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  color: #333;
+}
+.btn-modulo:hover {
+  transform: translateY(-4px);
+  background-color: #f8f9fa;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
 header {
   width: 100%;
 }
