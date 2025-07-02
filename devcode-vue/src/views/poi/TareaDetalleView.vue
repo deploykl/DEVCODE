@@ -77,7 +77,7 @@
 
                 <td class="numeric-input">
                   <input v-model.number="reporte.ejec_fisica" type="text" :disabled="!reporte.campos_bloqueados"
-                    @input="validarEjecucionFisica(reporte)" maxlength="3" />
+                    @input="reporte" maxlength="3" />
                 </td>
 
                 <td class="percent-cell">
