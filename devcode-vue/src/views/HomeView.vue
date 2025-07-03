@@ -3,7 +3,7 @@
     <header>
       <div class="d-flex justify-content-between align-items-center py-2">
         <img src="@/assets/img/login/logo.png" alt="Logo" class="img-fluid logo">
-       
+
       </div>
     </header>
     <!-- Example row of columns -->
@@ -21,14 +21,15 @@
             institución.</p>
           <!-- Botón con ícono de Font Awesome -->
 
-         <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-  <div class="col" v-for="item in modulos" :key="item.texto">
-    <a :href="item.ruta" class="btn btn-modulo shadow-sm d-flex flex-column align-items-center justify-content-center text-center w-100 h-100 py-4">
-      <i :class="item.icono + ' fs-2 mb-2'"></i>
-      <span class="fs-5 fw-semibold">{{ item.texto }}</span>
-    </a>
-  </div>
-</div>
+          <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+            <div class="col" v-for="item in modulos" :key="item.texto">
+              <a :href="item.ruta"
+                class="btn btn-modulo shadow-sm d-flex flex-column align-items-center justify-content-center text-center w-100 h-100 py-4">
+                <i :class="item.icono + ' fs-2 mb-2'"></i>
+                <span class="fs-5 fw-semibold">{{ item.texto }}</span>
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -108,6 +109,7 @@ const modulos = [
 .bg-header {
   background-color: #083758;
 }
+
 .btn-modulo {
   border: 2px solid var(--bs-border-color);
   border-radius: 12px;
@@ -117,12 +119,14 @@ const modulos = [
   font-weight: 500;
   color: #333;
 }
+
 .btn-modulo:hover {
   transform: translateY(-4px);
   background-color: #f8f9fa;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
+
 header {
   width: 100%;
 }
