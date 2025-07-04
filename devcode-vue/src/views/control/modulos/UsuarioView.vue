@@ -14,9 +14,10 @@
                     { key: 'area_name', label: 'ÁREA', filterable: true },
                     { key: 'condition_name', label: 'CONDICIÓN LABORAL', filterable: true },
                     { key: 'cargo_name', label: 'CARGO', filterable: true },
-                    { key: 'celular', label: 'CELULAR', filterable: true },
+                    { key: 'celular', label: 'CELULAR', filterable: false},
                     { key: 'salario', label: 'SALARIO', filterable: true },
-                    { key: 'grupoOcupacional_name', label: 'GRUPO', filterable: true },
+                    { key: 'grupoOcupacional_name', label: 'GRUPO_Ocu', filterable: true },
+                    { key: 'generica_name', label: 'Generica', filterable: true },
                 ]" :items="usuario" @edit="UPDATE_ID" @delete="DELETE" @delete-multiple="ELIMINARMULTIPLE" />
             </div>
         </div>
@@ -322,7 +323,7 @@ const ADD = async () => {
             ...(form.value.celular !== null && { celular: form.value.celular }),
             ...(form.value.fecha_inicio !== null && { fecha_inicio: form.value.fecha_inicio }),
             ...(form.value.fecha_cesado !== null && { fecha_cesado: form.value.fecha_cesado }),
-            ...(form.value.salario !== null && { salario: form.value.salario }),
+            salario: form.value.salario !== null ? form.value.salario : null
         };
 
         const response = await api.post('user/usuario/', userData, {

@@ -24,7 +24,7 @@ class User(AbstractUser):  # AbstractUser  heredo data del User
     celular  = models.IntegerField(verbose_name="Celular" , blank=True, null = True)
     fecha_inicio = models.DateField(verbose_name="Fecha de Inicio", null=True, blank=True)
     fecha_cesado = models.DateField(verbose_name="Fecha de Cese", null=True, blank=True)
-    salario = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Sueldo")
+    salario = models.DecimalField(null=True, blank=True,max_digits=10, decimal_places=2, verbose_name="Sueldo")
     acceso_poi = models.BooleanField(default=False, verbose_name="Acceso al POI")
     acceso_administracion = models.BooleanField(null=True, blank=True) 
     
