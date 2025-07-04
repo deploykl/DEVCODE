@@ -64,6 +64,12 @@ class UsuarioSerializer(serializers.ModelSerializer):
     grupo_name = serializers.ReadOnlyField(
         source="grupo.name"
     )  # Leer el nombre del grupo
+    grupoOcupacional_name = serializers.ReadOnlyField(
+        source="grupoOcupacional.descripcion"
+    )  # Nuevo campo
+    generica_name = serializers.ReadOnlyField(
+        source="generica.descripcion"
+    )  # Nuevo campo
 
     class Meta:
         model = User
@@ -84,11 +90,14 @@ class UsuarioSerializer(serializers.ModelSerializer):
             "cargo",
             "grupo_name",  # Agregar el campo grupo
             "grupo",  # Asegúrate de incluir este campo para el ID del grupo
-            
             "celular",
             "fecha_inicio",
             "fecha_cesado",
             "salario",
+            "grupoOcupacional_name",  # Nuevo campo
+            "grupoOcupacional",  # Nuevo campo
+            "generica_name",  # Nuevo campo
+            "generica",  # Nuevo campo
         ]
 
 

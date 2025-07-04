@@ -1,7 +1,5 @@
 <template>
-
     <main id="main" class="main">
-
         <div class="card">
             <div class="card-body mt-2">
                 <button type="button" class="btn btn-success float-start mt-1" @click="openModal">
@@ -17,86 +15,125 @@
                     { key: 'condition_name', label: 'CONDICIÓN LABORAL', filterable: true },
                     { key: 'cargo_name', label: 'CARGO', filterable: true },
                     { key: 'celular', label: 'CELULAR', filterable: true },
-                    { key: 'fecha_inicio', label: 'FECHA INICIO', filterable: true },
-                    { key: 'fecha_cesado', label: 'FECHA CESADO', filterable: true },
                     { key: 'salario', label: 'SALARIO', filterable: true },
-                    { key: 'grupo_name', label: 'GRUPO', filterable: true },
+                    { key: 'grupoOcupacional_name', label: 'GRUPO', filterable: true },
                 ]" :items="usuario" @edit="UPDATE_ID" @delete="DELETE" @delete-multiple="ELIMINARMULTIPLE" />
             </div>
         </div>
 
         <!-- Modal para Agregar/Editar Usuario -->
-        <div class="modal fade" id="addActivityModal" tabindex="-1" aria-labelledby="addActivityModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+        <div class="modal fade" id="addActivityModal" tabindex="-1" aria-labelledby="addActivityModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="addActivityModalLabel">{{ isEditing ? 'Editar Usuario' : 'Agregar Usuario' }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            @click="resetForm"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="resetForm"></button>
                     </div>
                     <div class="modal-body">
                         <form @submit.prevent="isEditing ? UPDATE() : ADD()">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Nombre de usuario</label>
-                                <input type="text" class="form-control" id="username" v-model="form.username"
-                                    required />
+                            <div class="row">
+                                <!-- Columna 1 -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Nombre de usuario</label>
+                                        <input type="text" class="form-control" id="username" v-model="form.username" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="first_name" class="form-label">Nombres</label>
+                                        <input type="text" class="form-control" id="first_name" v-model="form.first_name" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="last_name" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="last_name" v-model="form.last_name" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Correo</label>
+                                        <input type="email" class="form-control" id="email" v-model="form.email" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="dependencia" class="form-label">Dependencia</label>
+                                        <select class="form-select" id="dependencia" v-model="form.dependencia" required>
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="dep in dependencia" :key="dep.id" :value="dep.id">{{ dep.name }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="area" class="form-label">Área</label>
+                                        <select class="form-select" id="area" v-model="form.area" required>
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="ar in area" :key="ar.id" :value="ar.id">{{ ar.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Columna 2 -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="condition" class="form-label">Condición</label>
+                                        <select class="form-select" id="condition" v-model="form.condition" required>
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="con in condition" :key="con.id" :value="con.id">{{ con.name }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cargo" class="form-label">Cargo</label>
+                                        <select class="form-select" id="cargo" v-model="form.cargo">
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="car in cargo" :key="car.id" :value="car.id">{{ car.name }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="grupo" class="form-label">Grupo</label>
+                                        <select class="form-select" id="grupo" v-model="form.grupo">
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="gru in grupo" :key="gru.id" :value="gru.id">{{ gru.name }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="celular" class="form-label">Celular (Opcional)</label>
+                                        <input type="number" class="form-control" id="celular" v-model="form.celular" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="fecha_inicio" class="form-label">Fecha Inicio (Opcional)</label>
+                                        <input type="date" class="form-control" id="fecha_inicio" v-model="form.fecha_inicio" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="fecha_cesado" class="form-label">Fecha Cesado (Opcional)</label>
+                                        <input type="date" class="form-control" id="fecha_cesado" v-model="form.fecha_cesado" />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="first_name" class="form-label">Nombres</label>
-                                <input type="text" class="form-control" id="first_name" v-model="form.first_name"
-                                    required />
+                            
+                            <!-- Segunda fila de columnas -->
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="salario" class="form-label">Salario (Opcional)</label>
+                                        <input type="number" step="0.01" class="form-control" id="salario" v-model="form.salario" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="grupoOcupacional" class="form-label">Grupo Ocupacional</label>
+                                        <select class="form-select" id="grupoOcupacional" v-model="form.grupoOcupacional">
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="goc in grupoOcupacional" :key="goc.id" :value="goc.id">{{ goc.descripcion }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="generica" class="form-label">Genérica</label>
+                                        <select class="form-select" id="generica" v-model="form.generica">
+                                            <option disabled value="">-- Elija una opción --</option>
+                                            <option v-for="gen in generica" :key="gen.id" :value="gen.id">{{ gen.descripcion }}</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="last_name" class="form-label">Apellidos</label>
-                                <input type="text" class="form-control" id="last_name" v-model="form.last_name"
-                                    required />
+                            
+                            <div class="d-flex justify-content-end mt-3">
+                                <button type="submit" class="btn btn-primary me-2">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="resetForm">Cancelar</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Correo</label>
-                                <input type="email" class="form-control" id="email" v-model="form.email" required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="dependencia" class="form-label">Dependencia</label>
-                                <select class="form-select" id="dependencia" v-model="form.dependencia" required>
-                                    <option disabled value="">-- Elija una opción --</option>
-                                    <option v-for="dep in dependencia" :key="dep.id" :value="dep.id">{{ dep.name }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="area" class="form-label">Área</label>
-                                <select class="form-select" id="area" v-model="form.area" required>
-                                    <option disabled value="">-- Elija una opción --</option>
-                                    <option v-for="ar in area" :key="ar.id" :value="ar.id">{{ ar.name }}</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="condition" class="form-label">Condición</label>
-                                <select class="form-select" id="condition" v-model="form.condition" required>
-                                    <option disabled value="">-- Elija una opción --</option>
-                                    <option v-for="con in condition" :key="con.id" :value="con.id">{{ con.name }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="cargo" class="form-label">Cargo</label>
-                                <select class="form-select" id="cargo" v-model="form.cargo" required>
-                                    <option disabled value="">-- Elija una opción --</option>
-                                    <option v-for="car in cargo" :key="car.id" :value="car.id">{{ car.name }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="grupo" class="form-label">Grupo</label>
-                                <select class="form-select" id="grupo" v-model="form.grupo">
-                                    <option disabled value="">-- Elija una opción --</option>
-                                    <option v-for="gru in grupo" :key="gru.id" :value="gru.id">{{ gru.name }}</option>
-                                </select>
-
-                            </div>
-                            <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Agregar'
-                            }}</button>
                         </form>
                     </div>
                 </div>
@@ -118,7 +155,8 @@ const area = ref([]);
 const grupo = ref([]);
 const dependencia = ref([]);
 const cargo = ref([])
-
+const grupoOcupacional = ref([]);
+const generica = ref([]);
 
 const isEditing = ref(false);
 
@@ -129,14 +167,14 @@ const defaultFormValues = {
     last_name: '',
     condition: '',
     dependencia: '',
-    cargo: '',
+    cargo: null,  // Cambiado a null para que sea claramente opcional
     area: '',
-
-    celular: '',
-    fecha_inicio: '',
-    fecha_cesado: '',
-    salario: '',
-    grupo: '',
+    grupoOcupacional: null,  // Nuevo campo
+    generica: null,         // Nuevo campo
+    celular: null,  // Cambiado a null
+    fecha_inicio: null,  // Cambiado a null
+    fecha_cesado: null,  // Cambiado a null
+    salario: null  // Cambiado a null
 };
 
 // Inicializa el formulario con los valores predeterminados
@@ -158,25 +196,36 @@ const openModal = () => {
     }
 };
 
+// Actualiza LISTAR para cargar los nuevos datos
 const LISTAR = async () => {
     try {
         const token = getAuthToken();
 
-        // Ejecutar todas las solicitudes en paralelo
-        const [responseUsuario, responseCondition, responseDependencias, responseCargo, responseGrupo] = await Promise.all([
+        const [
+            responseUsuario, 
+            responseCondition, 
+            responseDependencias, 
+            responseCargo, 
+            responseGrupo,
+            responseGrupoOcupacional,
+            responseGenerica
+        ] = await Promise.all([
             api.get('user/usuario/', { headers: { Authorization: `Bearer ${token}` } }),
             api.get('personal/condition/', { headers: { Authorization: `Bearer ${token}` } }),
             api.get('personal/dependencia/', { headers: { Authorization: `Bearer ${token}` } }),
             api.get('personal/cargo/', { headers: { Authorization: `Bearer ${token}` } }),
             api.get('user/group/', { headers: { Authorization: `Bearer ${token}` } }),
+            api.get('personal/grupo_ocupacional/', { headers: { Authorization: `Bearer ${token}` } }),
+            api.get('personal/generica/', { headers: { Authorization: `Bearer ${token}` } })
         ]);
 
-        // Asignar los datos de las respuestas
         usuario.value = responseUsuario.data;
         condition.value = responseCondition.data;
         dependencia.value = responseDependencias.data;
         cargo.value = responseCargo.data;
         grupo.value = responseGrupo.data;
+        grupoOcupacional.value = responseGrupoOcupacional.data;
+        generica.value = responseGenerica.data;
 
     } catch (error) {
         console.error('Error al obtener los datos:', error.response ? error.response.data : error.message);
@@ -213,16 +262,32 @@ const UPDATE_ID = (usuario) => {
 
 const UPDATE = async () => {
     try {
-        console.log('Datos a enviar:', form.value); // Para depuración
-        
         const token = getAuthToken();
-        const response = await api.put(`user/usuario/${form.value.id}/`, form.value, {
+
+        // Preparar los datos para actualizar
+        const updateData = {
+            username: form.value.username,
+            first_name: form.value.first_name,
+            last_name: form.value.last_name,
+            email: form.value.email,
+            condition: form.value.condition,
+            dependencia: form.value.dependencia,
+            ...(form.value.cargo && { cargo: form.value.cargo }),
+            ...(form.value.grupoOcupacional && { grupoOcupacional: form.value.grupoOcupacional }),
+            ...(form.value.generica && { generica: form.value.generica }),
+            area: form.value.area,
+            grupo: form.value.grupo,
+            // Campos opcionales
+            celular: form.value.celular !== null ? form.value.celular : null,
+            fecha_inicio: form.value.fecha_inicio !== null ? form.value.fecha_inicio : null,
+            fecha_cesado: form.value.fecha_cesado !== null ? form.value.fecha_cesado : null,
+            salario: form.value.salario !== null ? form.value.salario : null
+        };
+
+        const response = await api.put(`user/usuario/${form.value.id}/`, updateData, {
             headers: { Authorization: `Bearer ${token}` },
         });
-        
-        console.log('Respuesta del servidor:', response.data); // Para depuración
-        
-        // Actualizar el usuario en la tabla
+
         const index = usuario.value.findIndex(item => item.id === form.value.id);
         if (index !== -1) {
             usuario.value[index] = response.data;
@@ -230,14 +295,59 @@ const UPDATE = async () => {
 
         bootstrap.Modal.getInstance(document.getElementById('addActivityModal')).hide();
         resetForm();
-
         await SwalUpdate();
     } catch (error) {
         console.error('Error al actualizar:', error.response ? error.response.data : error.message);
         alert('Error al actualizar: ' + (error.response?.data?.message || error.message));
     }
 };
+const ADD = async () => {
+    try {
+        const token = getAuthToken();
 
+        // Preparar los datos del formulario para enviar
+        const userData = {
+            username: form.value.username,
+            first_name: form.value.first_name,
+            last_name: form.value.last_name,
+            email: form.value.email,
+            condition: form.value.condition,
+            dependencia: form.value.dependencia,
+            ...(form.value.cargo && { cargo: form.value.cargo }),
+            ...(form.value.grupoOcupacional && { grupoOcupacional: form.value.grupoOcupacional }),
+            ...(form.value.generica && { generica: form.value.generica }),
+            area: form.value.area,
+            grupo: form.value.grupo,
+            // Campos opcionales - solo se incluyen si tienen valor
+            ...(form.value.celular !== null && { celular: form.value.celular }),
+            ...(form.value.fecha_inicio !== null && { fecha_inicio: form.value.fecha_inicio }),
+            ...(form.value.fecha_cesado !== null && { fecha_cesado: form.value.fecha_cesado }),
+            ...(form.value.salario !== null && { salario: form.value.salario }),
+        };
+
+        const response = await api.post('user/usuario/', userData, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        usuario.value.push(response.data);
+        bootstrap.Modal.getInstance(document.getElementById('addActivityModal')).hide();
+        resetForm();
+        await SwalSuccess('Usuario creado exitosamente');
+    } catch (error) {
+        console.error('Error al crear usuario:', error.response ? error.response.data : error.message);
+
+        let errorMessage = 'Error al crear el usuario';
+        if (error.response && error.response.data) {
+            if (typeof error.response.data === 'object') {
+                errorMessage = Object.values(error.response.data).join('\n');
+            } else {
+                errorMessage = error.response.data;
+            }
+        }
+
+        alert(errorMessage);
+    }
+};
 const DELETE = async (id) => {
     try {
         const result = await SwalWarning();
